@@ -5,7 +5,8 @@
 <body id="homepage">
 	<div class="wrapper bs">
 		<ul class="nav">
-				<li><span>Welcome Igor</span></li>
+            <t:if test="userExists">
+				<li><span>Welcome ${user.name}</span></li>
 				<li>
 					<a t:type="pageLink" page="admin">Dashboard</a>
                 </li>
@@ -18,7 +19,7 @@
 				<li class="last">
 					<a t:type="pagelink" page="admin/logout">Log out</a>
 				</li>
-
+            </t:if>
 		</ul>
 
 		<div id="top">

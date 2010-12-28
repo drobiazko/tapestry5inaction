@@ -1,5 +1,6 @@
 package com.tapestry5inaction.tlog.pages;
 
+import com.tapestry5inaction.tlog.annotations.PublicPage;
 import com.tapestry5inaction.tlog.entities.Article;
 import com.tapestry5inaction.tlog.entities.Comment;
 import com.tapestry5inaction.tlog.services.GravatarService;
@@ -11,6 +12,7 @@ import org.apache.tapestry5.hibernate.annotations.CommitAfter;
 import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
+@PublicPage
 public class Read {
 
     @PageActivationContext
@@ -49,7 +51,7 @@ public class Read {
 
     }
 
-    public String getResponsesCountMessage(){
+    public String getResponsesCountMessage() {
         return messages.format("responses-count", article.getComments().size(), article.getTitle());
     }
 

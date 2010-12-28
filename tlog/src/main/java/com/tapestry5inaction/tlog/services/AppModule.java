@@ -13,6 +13,7 @@ import org.apache.tapestry5.ioc.annotations.Startup;
 import org.apache.tapestry5.services.ApplicationStateContribution;
 import org.apache.tapestry5.services.ApplicationStateCreator;
 import org.apache.tapestry5.services.ApplicationStateManager;
+import org.apache.tapestry5.services.ComponentRequestHandler;
 
 public class AppModule {
 
@@ -57,6 +58,13 @@ public class AppModule {
         configuration.add("Meta", new SidebarBlockContribution(
                 SidebarBlocks.class, "meta"), "after:*");
     }
+
+    @Contribute(ComponentRequestHandler.class)
+    public static void provideComponentRequestFilters(
+            OrderedConfiguration configuration) {
+        configuration.addInstance("PageAccess", PageAccessFilter.class);
+    }
+
 
     @Startup
     public static void initDemoData(@Autobuild

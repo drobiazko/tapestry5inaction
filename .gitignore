@@ -1,4 +1,5 @@
 target
+test-output
 *.iml
 .idea
 META-INF

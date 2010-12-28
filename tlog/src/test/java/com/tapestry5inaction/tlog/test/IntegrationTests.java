@@ -6,6 +6,8 @@ import org.testng.annotations.Test;
 
 public class IntegrationTests extends SeleniumTestCase {
 
+    private static final String SUBMIT = "//input[@type='submit']";
+
     @Test
     public void home() {
         open("/");
@@ -41,6 +43,42 @@ public class IntegrationTests extends SeleniumTestCase {
 
         assertTextPresent("1 Responses to Hello world!", "Igor", "Bla bla bla");
 
+
+    }
+
+    @Test
+    public void login() {
+        open("/");
+
+        click("link=Log in");
+
+        waitForPageToLoad();
+
+        assertTextPresent("User", "Password");
+
+        click(SUBMIT);
+
+        waitForPageToLoad();
+
+        assertTextPresent("User name is required", "Password is required");
+
+        type("userName", "foo");
+        type("password", "bar");
+
+        click(SUBMIT);
+
+        waitForPageToLoad();
+
+        assertTextPresent("Invalid user name or password");
+
+        type("userName", "admin");
+        type("password", "admin");
+
+        click(SUBMIT);
+
+        waitForPageToLoad();
+
+        assertTextPresent("Welcome admin");
 
     }
 }

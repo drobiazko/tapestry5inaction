@@ -1,6 +1,7 @@
 package com.tapestry5inaction.tlog.components.admin;
 
 import com.tapestry5inaction.tlog.entities.Blog;
+import com.tapestry5inaction.tlog.entities.User;
 import org.apache.tapestry5.BindingConstants;
 import org.apache.tapestry5.Block;
 import org.apache.tapestry5.annotations.Import;
@@ -21,4 +22,11 @@ public class Layout {
     @Property
     @Parameter(defaultPrefix = BindingConstants.LITERAL)
     private Block sidebar;
+
+    @SessionState(create = false)
+    @Property(write = false)
+    private User user;
+
+    @Property(write = false)
+    private boolean userExists;
 }
