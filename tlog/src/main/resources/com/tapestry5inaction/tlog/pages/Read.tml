@@ -1,0 +1,65 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+
+
+    <div t:type="articleDisplay" article="article"/>
+
+    <h3 id="comments">${responsesCountMessage}</h3>
+
+    <ol class="commentlist">
+
+        <li t:type="loop" source="article.comments" value="currentComment">
+           <img src="${avatar}" class='avatar avatar-32 photo avatar-default' height='32' width='32'/>
+            <cite>
+                <t:if test="currentComment.website">
+                    <a href="${currentComment.website}" rel="external nofollow" class="url">${currentComment.author}</a>
+                    <p:else>
+                        ${currentComment.author}
+                    </p:else>
+                </t:if>
+            </cite> Says:
+
+            <br/>
+
+            <small class="commentmetadata">
+                <a href="#comment-${currentComment.id}">
+                    <span t:type="output" value="comment.publishDate" format="literal:MMMM d, yyyy 'at' hh:mm a"/>
+                </a>
+            </small>
+
+             <p>
+                <div t:type="outputraw" value="currentComment.content"/>
+            </p>
+        </li>
+    </ol>
+
+    <h3 id="respond">${message:respond}</h3>
+
+
+    <form t:type="form" t:id="commentform" clientValidation="false">
+        <t:errors/>
+
+        <p>
+            <input t:type="textfield" t:id="author" value="comment.author" validate="required"/>
+            <label t:type="label" for="author"/>
+        </p>
+
+
+       <p>
+            <input t:type="textfield" t:id="email" value="comment.email" validate="required"/>
+            <label t:type="label" for="email"/>
+        </p>
+
+       <p>
+            <input t:type="textfield" t:id="website" value="comment.website"/>
+            <label t:type="label" for="website"/>
+        </p>
+
+
+        <p><textarea t:type="textarea" t:id="commentText" value="comment.content" cols="100%" rows="10" validate="required"/></p>
+
+        <p><input name="submit" type="submit" id="submit" tabindex="5" value="${message:submit-value}"/></p>
+
+    </form>
+
+
+</html>

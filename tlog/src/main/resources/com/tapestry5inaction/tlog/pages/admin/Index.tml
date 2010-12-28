@@ -1,0 +1,14 @@
+<html t:type="admin/layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" title="title">
+    <div>
+        <table>
+            <tr>
+                <td>47</td>
+                <td>Articles</td>
+            </tr>
+            <tr>
+                <td>134</td>
+                <td>Comments</td>
+            </tr>
+        </table>
+    </div>
+</html>

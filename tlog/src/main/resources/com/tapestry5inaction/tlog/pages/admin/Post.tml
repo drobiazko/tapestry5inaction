@@ -1,0 +1,9 @@
+<html t:type="admin/layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter" title="title">
+
+    <form t:type="beaneditform" object="article" exclude="publishDate">
+        <p:content>
+            <textarea t:type="textarea" value="article.content" t:mixins="ckeditor"/>
+        </p:content>
+    </form>
+
+</html>

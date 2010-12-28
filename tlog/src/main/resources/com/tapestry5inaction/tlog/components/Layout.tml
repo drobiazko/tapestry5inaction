@@ -1,0 +1,36 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+<head profile="http://gmpg.org/xfn/11">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <title>${blog.name}</title>
+
+    <link rel="stylesheet" href="${context:skin/style.css}" type="text/css"/>
+
+    <style type="text/css" media="screen">
+        #page {
+            background: url("${context:skin/images/kubrickbgwide.jpg}") repeat-y top;
+            border: none;
+        }
+    </style>
+
+</head>
+<body>
+<div id="page">
+    <t:header/>
+
+    <hr/>
+
+    <div id="content" class="narrowcolumn">
+        <t:body/>
+    </div>
+
+    <t:sidebar/>
+
+    <hr/>
+
+    <t:footer/>
+</div>
+<!-- Gorgeous design by Michael Heilemann - http://binarybonsai.com/kubrick/ -->
+</body>
+</html>

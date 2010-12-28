@@ -1,0 +1,104 @@
+<div xml:space="default" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <t:block id="pages">
+        <h2>${message:pages}</h2>
+        <ul>
+            <li>
+                <a t:type="pagelink" page="Index">${message:about}</a>
+            </li>
+        </ul>
+    </t:block>
+
+    <t:block id="archives">
+        <h2>Archives</h2>
+        <ul>
+            <li>
+                <a href="http://wp-themes.com/?m=200810" title="October 2008">October 2008</a>
+            </li>
+            <li>
+                <a href="http://wp-themes.com/?m=200809" title="September 2008">September 2008 </a>
+            </li>
+
+            <li>
+                <a href="http://wp-themes.com/?m=200806" title="June 2008">June 2008</a>
+            </li>
+        </ul>
+    </t:block>
+
+    <t:block id="categories">
+        <h2>Categories</h2>
+        <ul>
+            <li class="cat-item cat-item-5">
+                <a href="http://wp-themes.com/?cat=5" title="View all posts filed under Parent"
+                        >Parent</a> (1)
+                <ul class="children">
+                    <li class="cat-item cat-item-6">
+                        <a href="http://wp-themes.com/?cat=6"
+                           title="View all posts filed under First Child Category">First Child
+                            Category</a> (1)
+                    </li>
+                    <li class="cat-item cat-item-7">
+                        <a href="http://wp-themes.com/?cat=7"
+                           title="View all posts filed under Second Child Category">Second Child
+                            Category</a> (1)
+                        <ul class="children">
+                            <li class="cat-item cat-item-8">
+                                <a href="http://wp-themes.com/?cat=8"
+                                   title="View all posts filed under One Grandchild Category">One
+                                    Grandchild Category</a> (1)
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="cat-item cat-item-1">
+                <a href="http://wp-themes.com/?cat=1"
+                   title="View all posts filed under Uncategorized">Uncategorized</a> (6)
+            </li>
+        </ul>
+    </t:block>
+
+    <t:block id="blogroll">
+        <h2>Blogroll</h2>
+        <ul class="xoxo blogroll">
+            <li>
+                <a href="http://wordpress.org/development/">Development Blog</a>
+            </li>
+            <li>
+                <a href="http://codex.wordpress.org/">Documentation</a>
+            </li>
+            <li>
+                <a href="http://wordpress.org/extend/plugins/">Plugins</a>
+            </li>
+            <li>
+                <a href="http://wordpress.org/extend/ideas/">Suggest Ideas</a>
+            </li>
+            <li>
+                <a href="http://wordpress.org/support/">Support Forum</a>
+            </li>
+
+            <li>
+                <a href="http://wordpress.org/extend/themes/">Themes</a>
+            </li>
+            <li>
+                <a href="http://planet.wordpress.org/">WordPress Planet</a>
+            </li>
+
+        </ul>
+
+    </t:block>
+
+    <t:block id="meta">
+        <h2>${message:meta}</h2>
+        <ul>
+            <li>
+                <a t:type="pagelink" page="admin/Login">${message:log-in}</a>
+            </li>
+            <li>
+                <a href="http://tapestry.apache.org/" title="${message:powered-by-tapestry}"
+                        >Tapestry</a>
+            </li>
+        </ul>
+    </t:block>
+
+</div>
