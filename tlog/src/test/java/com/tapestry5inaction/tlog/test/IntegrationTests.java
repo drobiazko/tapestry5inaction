@@ -47,7 +47,7 @@ public class IntegrationTests extends SeleniumTestCase {
     }
 
     @Test
-    public void login() {
+    public void login_logout() {
         open("/");
 
         click("link=Log in");
@@ -79,6 +79,23 @@ public class IntegrationTests extends SeleniumTestCase {
         waitForPageToLoad();
 
         assertTextPresent("Welcome admin");
+
+        click("link=Log out");
+
+        waitForPageToLoad();
+
+        assertTextPresent("Tapestry 5 Blog", "Welcome to WordPress.", "Lorem ipsum dolor sit amet");
+
+    }
+
+
+    @Test
+    public void access_denied() {
+        open("/admin/post");
+
+        waitForPageToLoad();
+
+        assertTextPresent("Tapestry 5 Blog - Administration", "User", "Password");
 
     }
 }
