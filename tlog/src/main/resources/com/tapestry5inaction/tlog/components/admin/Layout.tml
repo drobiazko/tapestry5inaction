@@ -37,7 +37,7 @@
 		</div>
 
 		<div class="col">
-			<h3 class="first">Why you should choose Tapestry 5 ?</h3>
+			<h3 class="first">Why you should choose Tapestry 5?</h3>
 			<p>
 				<t:delegate to="sidebar" />
 			</p>
@@ -53,7 +53,7 @@
 		<div class="clearer"></div>
 
 		<div id="footer">Created with <a href="http://tapestry.apache.org/">Apache Tapestry 5</a>, Hibernate 3 and Tapx components.
-		Get the source code of Hotel Booking at <a href="http://github.com/drobiazko/tapestry5inaction/tlog">Github</a></div>
+		Get the source code of Tapestry 5 Blog at <a href="http://github.com/drobiazko/tapestry5inaction/tlog">Github</a></div>
 
 	</div>
 </body>
