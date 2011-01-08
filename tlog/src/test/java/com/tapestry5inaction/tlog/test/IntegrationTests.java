@@ -71,18 +71,9 @@ public class IntegrationTests extends SeleniumTestCase {
 
         assertTextPresent("Invalid user name or password");
 
-        type("userName", "admin");
-        type("password", "admin");
+        login();
 
-        click(SUBMIT);
-
-        waitForPageToLoad();
-
-        assertTextPresent("Welcome admin");
-
-        click("link=Log out");
-
-        waitForPageToLoad();
+        logout();
 
         assertTextPresent("Tapestry 5 Blog", "Welcome to WordPress.", "Lorem ipsum dolor sit amet");
 
@@ -97,5 +88,76 @@ public class IntegrationTests extends SeleniumTestCase {
 
         assertTextPresent("Tapestry 5 Blog - Administration", "User", "Password");
 
+    }
+
+    @Test
+    public void post() {
+        open("/admin/");
+
+        login();
+
+        click("link=Post");
+
+        waitForPageToLoad();
+
+        click(SUBMIT);
+
+        waitForPageToLoad();
+
+        assertTextPresent("You must provide a value for Title.", "You must provide a value for Textarea.");
+
+        type("title", "New Article");
+        runScript("CKEDITOR.instances['textarea'].setData('<p>New Content</p>');");
+
+        click(SUBMIT);
+
+        waitForPageToLoad();
+
+        assertTextPresent("The article has been saved");
+
+        open("/");
+
+        assertTextPresent("New Article", "New Content", "Lorem ipsum dolor sit amet");
+
+        open("/admin/listarticles");
+
+
+        click("link=New Article");
+
+        waitForPageToLoad();
+
+        type("title", "UPDATE: New Article");
+        runScript("CKEDITOR.instances['textarea'].setData('<p>UPDATE: New Content</p>');");
+
+        click(SUBMIT);
+
+        waitForPageToLoad();
+
+        assertTextPresent("The article has been saved");
+
+        logout();
+
+        assertTextPresent("UPDATE: New Article", "UPDATE: New Content", "Lorem ipsum dolor sit amet");
+
+    }
+
+    private void login(){
+
+        type("userName", "admin");
+        type("password", "admin");
+
+        click(SUBMIT);
+
+        waitForPageToLoad();
+
+        assertTextPresent("Welcome admin");
+
+
+    }
+
+    private void logout(){
+        click("link=Log out");
+
+        waitForPageToLoad();
     }
 }
