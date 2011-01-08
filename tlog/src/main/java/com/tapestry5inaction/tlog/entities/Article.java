@@ -1,6 +1,7 @@
 package com.tapestry5inaction.tlog.entities;
 
 import org.apache.tapestry5.beaneditor.NonVisual;
+import org.apache.tapestry5.beaneditor.Validate;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -15,12 +16,14 @@ public class Article {
     private Long id;
 
     @Column
+    @Validate("required")
     private String title;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date publishDate;
 
     @Column
+    @Validate("required")
     private String content;
 
     @ManyToOne
