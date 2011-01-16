@@ -12,7 +12,7 @@ public class IntegrationTests extends SeleniumTestCase {
     public void home() {
         open("/");
 
-        assertTextPresent("Tapestry 5 Blog", "Welcome to WordPress.", "Lorem ipsum dolor sit amet");
+        assertTextPresent("Tapestry 5 Blog", "Welcome to Tapestry Blog.", "Lorem ipsum dolor sit amet");
     }
 
     @Test
@@ -75,7 +75,7 @@ public class IntegrationTests extends SeleniumTestCase {
 
         logout();
 
-        assertTextPresent("Tapestry 5 Blog", "Welcome to WordPress.", "Lorem ipsum dolor sit amet");
+        assertTextPresent("Tapestry 5 Blog", "Welcome to Tapestry Blog.", "Lorem ipsum dolor sit amet");
 
     }
 
@@ -107,7 +107,7 @@ public class IntegrationTests extends SeleniumTestCase {
         assertTextPresent("You must provide a value for Title.", "You must provide a value for Textarea.");
 
         type("title", "New Article");
-        runScript("CKEDITOR.instances['textarea'].setData('<p>New Content</p>');");
+        runScript("CKEDITOR.instances['textarea'].setData('New Content');");
 
         click(SUBMIT);
 
@@ -127,7 +127,6 @@ public class IntegrationTests extends SeleniumTestCase {
         waitForPageToLoad();
 
         type("title", "UPDATE: New Article");
-        runScript("CKEDITOR.instances['textarea'].setData('<p>UPDATE: New Content</p>');");
 
         click(SUBMIT);
 
@@ -137,7 +136,7 @@ public class IntegrationTests extends SeleniumTestCase {
 
         logout();
 
-        assertTextPresent("UPDATE: New Article", "UPDATE: New Content", "Lorem ipsum dolor sit amet");
+        assertTextPresent("UPDATE: New Article", "New Content", "Lorem ipsum dolor sit amet");
 
     }
 

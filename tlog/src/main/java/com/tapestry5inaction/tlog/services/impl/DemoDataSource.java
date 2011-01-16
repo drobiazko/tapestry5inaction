@@ -9,6 +9,7 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 import org.hibernate.Session;
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class DemoDataSource {
 
@@ -49,13 +50,13 @@ public class DemoDataSource {
         session.save(newArticle(
                 blog,
                 "Category Hierarchy",
-                new Date(),
+                newDate(2008, 6, 20),
                 "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce euismod commodo ante. Suspendisse potenti. Nunc pellentesque quam vel pede. Ut a lorem non urna molestie euismod. Fusce consequat tortor eu urna. Pellentesque aliquam, pede eget tincidunt feugiat, nunc massa hendrerit magna, non ultricies neque lectus nec dui. In hac habitasse platea dictumst. Sed feugiat quam eget lectus. Fusce at pede. Morbi sagittis tristique tortor. Sed erat justo, blandit ac, dignissim in, pretium ut, urna."));
         session.save(newArticle(
                 blog,
                 "Hello world!",
-                new Date(),
-                "Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!."));
+                newDate(2008, 5, 6),
+                "Welcome to Tapestry Blog. This is your first post. Edit or delete it, then start blogging!."));
 
     }
 
@@ -67,6 +68,10 @@ public class DemoDataSource {
         article.setPublishDate(publishDate);
         article.setContent(content);
         return article;
+    }
+
+    private Date newDate(int year, int month, int day) {
+        return new GregorianCalendar(year, month, day).getTime();
     }
 
 }

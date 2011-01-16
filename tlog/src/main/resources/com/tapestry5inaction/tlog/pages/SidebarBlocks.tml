@@ -12,15 +12,10 @@
     <t:block id="archives">
         <h2>Archives</h2>
         <ul>
-            <li>
-                <a href="http://wp-themes.com/?m=200810" title="October 2008">October 2008</a>
-            </li>
-            <li>
-                <a href="http://wp-themes.com/?m=200809" title="September 2008">September 2008 </a>
-            </li>
-
-            <li>
-                <a href="http://wp-themes.com/?m=200806" title="June 2008">June 2008</a>
+            <li t:type="loop" source="archives" value="currentArchive">
+                <a href="http://wp-themes.com/?m=200810" title="October 2008">
+                    <t:output value="currentArchive.date" format="literal:MMMMM yyyy"/> (${currentArchive.count})
+                </a>
             </li>
         </ul>
     </t:block>
