@@ -16,4 +16,6 @@ public interface BlogService {
     List<Article> findRecentArticles();
 
     List<Archive> findArchives();
+
+    List<Article> findArticles(String term);
 }

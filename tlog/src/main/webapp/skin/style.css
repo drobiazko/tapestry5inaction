@@ -482,7 +482,7 @@ ol li, #sidebar ul ol li {
     text-align: center;
 }
 
-#sidebar #searchform #searchPattern {
+#sidebar #searchform #searchTerm {
     width: 108px;
     padding: 2px;
 }

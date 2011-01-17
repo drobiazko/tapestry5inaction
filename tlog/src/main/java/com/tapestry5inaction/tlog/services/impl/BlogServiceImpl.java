@@ -7,6 +7,7 @@ import com.tapestry5inaction.tlog.entities.Archive;
 import com.tapestry5inaction.tlog.services.BlogService;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.hibernate.Session;
+import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Restrictions;
 
 import java.util.ArrayList;
@@ -35,26 +36,37 @@ public class BlogServiceImpl implements BlogService {
                 .add(Restrictions.eq("name", name)).uniqueResult();
     }
 
-    public List<Archive> findArchives(){
+    public List<Archive> findArchives() {
         List<Archive> archives = new ArrayList<Archive>();
 
         List result = session.createQuery("select count(id), year(publishDate), month(publishDate) " +
                 "from Article group by year(publishDate), month(publishDate) " +
                 "order by year(publishDate) desc, month(publishDate) desc").setMaxResults(10).list();
 
-        for (Object next: result){
+        for (Object next : result) {
             Object[] array = (Object[]) next;
 
             final Number count = (Number) array[0];
 
             Integer year = (Integer) array[1];
             Integer month = (Integer) array[2];
-            final Date date = new GregorianCalendar(year, month-1, 1).getTime();
+            final Date date = new GregorianCalendar(year, month - 1, 1).getTime();
 
             archives.add(new Archive(date, count));
         }
 
         return archives;
+    }
+
+    public List<Article> findArticles(String term) {
+        System.err.println(term);
+        return this.session.createCriteria(Article.class)
+                .add(Restrictions.or(like("title", term), like("content", term)))
+                .addOrder(desc("publishDate")).setMaxResults(20).list();
+    }
+
+    private Criterion like(String property, String value) {
+        return Restrictions.like(property, "%" + value + "%");
     }
 
 }

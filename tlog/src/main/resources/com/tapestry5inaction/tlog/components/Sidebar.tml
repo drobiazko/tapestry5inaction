@@ -6,7 +6,7 @@
                 <label class="hidden" for="s">Search for:</label>
 
                 <div>
-                    <input t:type="textfield" t:id="searchPattern"/>
+                    <input t:type="textfield" t:id="searchTerm"/>
                     <input type="submit" id="searchsubmit" value="Search"/>
                 </div>
             </t:form>
