@@ -13,8 +13,8 @@
         <h2>Archives</h2>
         <ul>
             <li t:type="loop" source="archives" value="currentArchive">
-                <a href="http://wp-themes.com/?m=200810" title="October 2008">
-                    <t:output value="currentArchive.date" format="literal:MMMMM yyyy"/> (${currentArchive.count})
+                <a href="${link}">
+                    <t:output value="currentArchive.month.start" format="literal:MMMMM yyyy"/> (${currentArchive.count})
                 </a>
             </li>
         </ul>

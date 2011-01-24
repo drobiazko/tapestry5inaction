@@ -1,19 +1,19 @@
 package com.tapestry5inaction.tlog.services;
 
 import com.tapestry5inaction.tlog.entities.Blog;
+import com.tapestry5inaction.tlog.entities.Month;
 import com.tapestry5inaction.tlog.pages.SidebarBlocks;
 import com.tapestry5inaction.tlog.services.impl.*;
+import com.tapestry5inaction.tlog.services.impl.MonthValueEncoder;
 import org.apache.tapestry5.PersistenceConstants;
+import org.apache.tapestry5.ValueEncoder;
 import org.apache.tapestry5.ioc.MappedConfiguration;
 import org.apache.tapestry5.ioc.OrderedConfiguration;
 import org.apache.tapestry5.ioc.ServiceBinder;
 import org.apache.tapestry5.ioc.annotations.Autobuild;
 import org.apache.tapestry5.ioc.annotations.Contribute;
 import org.apache.tapestry5.ioc.annotations.Startup;
-import org.apache.tapestry5.services.ApplicationStateContribution;
-import org.apache.tapestry5.services.ApplicationStateCreator;
-import org.apache.tapestry5.services.ApplicationStateManager;
-import org.apache.tapestry5.services.ComponentRequestHandler;
+import org.apache.tapestry5.services.*;
 
 public class AppModule {
 
@@ -25,7 +25,7 @@ public class AppModule {
     }
 
     @Contribute(ApplicationStateManager.class)
-    public static void contribute(
+    public static void provideApplicationStateContributions(
             final MappedConfiguration<Class, ApplicationStateContribution> configuration,
             final BlogService blogService) {
 
@@ -40,7 +40,7 @@ public class AppModule {
     }
 
     @Contribute(SidebarBlockSource.class)
-    public static void contribute(
+    public static void provideSideBlocks(
             final OrderedConfiguration<SidebarBlockContribution> configuration) {
 
         configuration.add("Pages", new SidebarBlockContribution(
@@ -57,6 +57,17 @@ public class AppModule {
 
         configuration.add("Meta", new SidebarBlockContribution(
                 SidebarBlocks.class, "meta"), "after:*");
+    }
+
+    @Contribute(ValueEncoderSource.class)
+    public static void contributeValueEncoders(MappedConfiguration<Class, ValueEncoderFactory> configuration) {
+
+        configuration.add(Month.class, new ValueEncoderFactory<Month> (){
+
+            public ValueEncoder<Month> create(Class<Month> type) {
+                return new MonthValueEncoder();
+            }
+        });
     }
 
     @Contribute(ComponentRequestHandler.class)

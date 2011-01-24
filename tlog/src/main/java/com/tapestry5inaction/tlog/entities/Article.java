@@ -26,8 +26,11 @@ public class Article {
     @Validate("required")
     private String content;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
     private Blog blog;
+
+    @ManyToMany
+    private List<Tag> tags = new ArrayList<Tag>();
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<Comment> comments = new ArrayList<Comment>();
@@ -84,4 +87,14 @@ public class Article {
     public void setComments(List<Comment> comments) {
         this.comments = comments;
     }
+
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
+    }
+
+
 }

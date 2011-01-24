@@ -2,6 +2,7 @@ package com.tapestry5inaction.tlog.services.impl;
 
 import com.tapestry5inaction.tlog.entities.Article;
 import com.tapestry5inaction.tlog.entities.Blog;
+import com.tapestry5inaction.tlog.entities.Tag;
 import com.tapestry5inaction.tlog.entities.User;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.tapestry5.hibernate.HibernateSessionManager;
@@ -22,6 +23,8 @@ public class DemoDataSource {
         final Blog blog = createBlog();
 
         createArticles(blog);
+
+        sessionManager.getSession().save(newTag("Blog"));
 
         this.sessionManager.commit();
     }
@@ -49,7 +52,7 @@ public class DemoDataSource {
         final Session session = this.sessionManager.getSession();
         session.save(newArticle(
                 blog,
-                "Category Hierarchy",
+                "Tag Hierarchy",
                 newDate(2008, 6, 20),
                 "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce euismod commodo ante. Suspendisse potenti. Nunc pellentesque quam vel pede. Ut a lorem non urna molestie euismod. Fusce consequat tortor eu urna. Pellentesque aliquam, pede eget tincidunt feugiat, nunc massa hendrerit magna, non ultricies neque lectus nec dui. In hac habitasse platea dictumst. Sed feugiat quam eget lectus. Fusce at pede. Morbi sagittis tristique tortor. Sed erat justo, blandit ac, dignissim in, pretium ut, urna."));
         session.save(newArticle(
@@ -68,6 +71,13 @@ public class DemoDataSource {
         article.setPublishDate(publishDate);
         article.setContent(content);
         return article;
+    }
+
+    private Tag newTag(String name){
+        Tag tag = new Tag();
+        tag.setName(name);
+
+        return tag;
     }
 
     private Date newDate(int year, int month, int day) {

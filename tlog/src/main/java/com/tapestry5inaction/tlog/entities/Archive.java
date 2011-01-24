@@ -7,20 +7,11 @@ public class Archive {
 
     private Number count;
 
-    private Date date;
+    private Month month;
 
-    public Archive(Date date, Number count) {
-        this.date = date;
+    public Archive(Month month, Number count) {
+        this.month = month;
         this.count = count;
-    }
-
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
     }
 
     public Number getCount() {
@@ -29,5 +20,13 @@ public class Archive {
 
     public void setCount(Number count) {
         this.count = count;
+    }
+
+    public Month getMonth() {
+        return month;
+    }
+
+    public void setMonth(Month month) {
+        this.month = month;
     }
 }

@@ -1,11 +1,9 @@
 package com.tapestry5inaction.tlog.services.impl;
 
-import com.tapestry5inaction.tlog.entities.Article;
-import com.tapestry5inaction.tlog.entities.Blog;
-import com.tapestry5inaction.tlog.entities.User;
-import com.tapestry5inaction.tlog.entities.Archive;
+import com.tapestry5inaction.tlog.entities.*;
 import com.tapestry5inaction.tlog.services.BlogService;
 import org.apache.tapestry5.ioc.annotations.Inject;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Restrictions;
@@ -31,6 +29,12 @@ public class BlogServiceImpl implements BlogService {
                 desc("publishDate")).setMaxResults(20).list();
     }
 
+    public List<Article> findArticles(Month month) {
+        return this.session.createCriteria(Article.class).add(
+                Restrictions.between("publishDate", month.getStart(), month.getEnd()))
+                .addOrder(desc("publishDate")).setMaxResults(20).list();
+    }
+
     public User findUserByName(final String name) {
         return (User) session.createCriteria(User.class)
                 .add(Restrictions.eq("name", name)).uniqueResult();
@@ -48,11 +52,9 @@ public class BlogServiceImpl implements BlogService {
 
             final Number count = (Number) array[0];
 
-            Integer year = (Integer) array[1];
-            Integer month = (Integer) array[2];
-            final Date date = new GregorianCalendar(year, month - 1, 1).getTime();
+            Month month = new Month((Integer) array[1], (Integer) array[2]);
 
-            archives.add(new Archive(date, count));
+            archives.add(new Archive(month, count));
         }
 
         return archives;

@@ -91,6 +91,23 @@ public class IntegrationTests extends SeleniumTestCase {
     }
 
     @Test
+    public void archives() {
+        open("/");
+
+        click("//a[@href='/?m=2008-07']");
+
+        waitForPageToLoad();
+
+        assertTextPresent("Lorem ipsum dolor sit amet");
+
+        click("//a[@href='/?m=2008-06']");
+
+        waitForPageToLoad();
+
+        assertTextPresent("Hello world!");
+    }
+
+    @Test
     public void post() {
         open("/admin/");
 
@@ -140,7 +157,7 @@ public class IntegrationTests extends SeleniumTestCase {
 
     }
 
-    private void login(){
+    private void login() {
 
         type("userName", "admin");
         type("password", "admin");
@@ -154,7 +171,7 @@ public class IntegrationTests extends SeleniumTestCase {
 
     }
 
-    private void logout(){
+    private void logout() {
         click("link=Log out");
 
         waitForPageToLoad();
