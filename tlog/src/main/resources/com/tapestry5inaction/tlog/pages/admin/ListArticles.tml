@@ -1,8 +1,0 @@
-<html t:type="admin/layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter"
-      title="title">
-    <t:grid source="articles" exclude="content" row="currentArticle">
-        <p:titleCell>
-            <a t:type="pagelink" page="admin/Post" context="currentArticle">${currentArticle.title}</a>
-        </p:titleCell>
-    </t:grid>
-</html>
