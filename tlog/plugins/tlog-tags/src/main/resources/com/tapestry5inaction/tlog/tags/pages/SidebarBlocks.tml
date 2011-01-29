@@ -1,0 +1,12 @@
+<div xml:space="default" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <t:block id="tags">
+        <h2>${message:headline}</h2>
+        <ul>
+            <li class="cat-item" t:type="loop" source="tags" value="currentTag">
+                <a href="http://wp-themes.com/?cat=5">${currentTag.name}</a>
+            </li>
+        </ul>
+    </t:block>
+
+</div>

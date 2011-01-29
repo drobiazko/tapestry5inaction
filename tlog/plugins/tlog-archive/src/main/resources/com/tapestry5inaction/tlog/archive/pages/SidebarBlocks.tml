@@ -1,0 +1,14 @@
+<div xml:space="default" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <t:block id="archives">
+        <h2>${message:headline}</h2>
+        <ul>
+            <li t:type="loop" source="archives" value="currentArchive">
+                <a href="${link}">
+                    <t:output value="currentArchive.month.start" format="literal:MMMMM yyyy"/> (${currentArchive.count})
+                </a>
+            </li>
+        </ul>
+    </t:block>
+
+</div>

@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Tapestry 5 Blog" parallel="false" thread-count="10" annotations="1.5" verbose="2">
+
+    <test name="Tapestry Blog Tests">
+        <packages>
+            <package name="com.tapestry5inaction.tlog.tags.test"/>
+        </packages>
+    </test>
+</suite>

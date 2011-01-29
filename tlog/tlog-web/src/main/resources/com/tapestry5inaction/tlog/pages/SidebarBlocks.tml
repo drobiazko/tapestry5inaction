@@ -1,0 +1,55 @@
+<div xml:space="default" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <t:block id="pages">
+        <h2>${message:pages}</h2>
+        <ul>
+            <li>
+                <a t:type="pagelink" page="Index">${message:about}</a>
+            </li>
+        </ul>
+    </t:block>
+
+    <t:block id="blogroll">
+        <h2>Blogroll</h2>
+        <ul class="xoxo blogroll">
+            <li>
+                <a href="http://wordpress.org/development/">Development Blog</a>
+            </li>
+            <li>
+                <a href="http://codex.wordpress.org/">Documentation</a>
+            </li>
+            <li>
+                <a href="http://wordpress.org/extend/plugins/">Plugins</a>
+            </li>
+            <li>
+                <a href="http://wordpress.org/extend/ideas/">Suggest Ideas</a>
+            </li>
+            <li>
+                <a href="http://wordpress.org/support/">Support Forum</a>
+            </li>
+
+            <li>
+                <a href="http://wordpress.org/extend/themes/">Themes</a>
+            </li>
+            <li>
+                <a href="http://planet.wordpress.org/">WordPress Planet</a>
+            </li>
+
+        </ul>
+
+    </t:block>
+
+    <t:block id="meta">
+        <h2>${message:meta}</h2>
+        <ul>
+            <li>
+                <a t:type="pagelink" page="admin/Login">${message:log-in}</a>
+            </li>
+            <li>
+                <a href="http://tapestry.apache.org/" title="${message:powered-by-tapestry}"
+                        >Tapestry</a>
+            </li>
+        </ul>
+    </t:block>
+
+</div>

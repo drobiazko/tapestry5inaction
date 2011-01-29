@@ -1,0 +1,7 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <li t:type="loop" source="blocks" value="var:currentBlock">
+        <t:delegate to="var:currentBlock"/>
+    </li>
+
+</html>

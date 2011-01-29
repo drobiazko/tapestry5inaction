@@ -1,0 +1,19 @@
+<div id="sidebar" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <ul>
+        <li>
+            <t:form method="get" t:id="searchform" action="http://wp-themes.com/">
+                <label class="hidden" for="s">Search for:</label>
+
+                <div>
+                    <input t:type="textfield" t:id="searchTerm"/>
+                    <input type="submit" id="searchsubmit" value="Search"/>
+                </div>
+            </t:form>
+        </li>
+
+        <li t:type="loop" source="blocks" value="var:currentBlock">
+            <t:delegate to="var:currentBlock"/>
+        </li>
+    </ul>
+</div>
