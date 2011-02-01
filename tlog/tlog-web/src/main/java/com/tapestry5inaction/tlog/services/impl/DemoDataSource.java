@@ -1,5 +1,6 @@
 package com.tapestry5inaction.tlog.services.impl;
 
+import com.tapestry5inaction.tlog.blogroll.entities.ExternalBlog;
 import com.tapestry5inaction.tlog.entities.Article;
 import com.tapestry5inaction.tlog.entities.Blog;
 import com.tapestry5inaction.tlog.entities.Tag;
@@ -25,6 +26,8 @@ public class DemoDataSource {
         createArticles(blog);
 
         sessionManager.getSession().save(newTag("Blog"));
+
+        sessionManager.getSession().save(newExternalBlog("http://tapestry5.de", "http://tapestry5.de"));
 
         this.sessionManager.commit();
     }
@@ -78,6 +81,14 @@ public class DemoDataSource {
         tag.setName(name);
 
         return tag;
+    }
+
+    private ExternalBlog newExternalBlog(String name, String uri){
+        ExternalBlog blog = new ExternalBlog();
+        blog.setName(name);
+        blog.setUri(uri);
+
+        return blog;
     }
 
     private Date newDate(int year, int month, int day) {

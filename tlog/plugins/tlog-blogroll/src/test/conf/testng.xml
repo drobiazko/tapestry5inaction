@@ -4,7 +4,7 @@
 
     <test name="Tapestry Blog Tests">
         <packages>
-            <package name="com.tapestry5inaction.tlog.tags.test"/>
+            <package name="com.tapestry5inaction.tlog.blogroll.test"/>
         </packages>
     </test>
 </suite>

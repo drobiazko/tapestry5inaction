@@ -47,9 +47,6 @@ public class AppModule {
         configuration.add("Pages", new SidebarBlockContribution(
                 SidebarBlocks.class, "pages"), "before:*");
 
-        configuration.add("Blogroll", new SidebarBlockContribution(
-                SidebarBlocks.class, "blogroll"), "after:Tags");
-
         configuration.add("Meta", new SidebarBlockContribution(
                 SidebarBlocks.class, "meta"), "after:*");
     }

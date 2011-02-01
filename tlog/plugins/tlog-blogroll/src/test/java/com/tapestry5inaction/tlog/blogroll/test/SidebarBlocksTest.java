@@ -1,10 +1,9 @@
-package com.tapestry5inaction.tlog.tags.test;
+package com.tapestry5inaction.tlog.blogroll.test;
 
 
-import com.tapestry5inaction.tlog.entities.Article;
-import com.tapestry5inaction.tlog.entities.Blog;
+import com.tapestry5inaction.tlog.blogroll.entities.ExternalBlog;
+import com.tapestry5inaction.tlog.blogroll.services.BlogrollModule;
 import com.tapestry5inaction.tlog.entities.Tag;
-import com.tapestry5inaction.tlog.tags.services.TagsModule;
 import org.apache.tapestry5.dom.Document;
 import org.apache.tapestry5.hibernate.HibernateSessionManager;
 import org.apache.tapestry5.test.PageTester;
@@ -14,15 +13,13 @@ import org.hibernate.Session;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.GregorianCalendar;
-
 public class SidebarBlocksTest extends TapestryTestCase {
 
     private PageTester tester;
 
     @BeforeMethod
     public void setUp() {
-        tester = new PageTester("org.example.testapp", "app", "src/test/webapp", TagsModule.class);
+        tester = new PageTester("org.example.testapp", "app", "src/test/webapp", BlogrollModule.class);
     }
 
 
@@ -32,15 +29,11 @@ public class SidebarBlocksTest extends TapestryTestCase {
 
         Session session = sessionManager.getSession();
 
-        Tag tag = new Tag();
-        tag.setName("Foo");
+        ExternalBlog blog = new ExternalBlog();
+        blog.setName("http://tapestry5.de");
+        blog.setUri("http://tapestry5.de");
 
-        Tag anotherTag = new Tag();
-        anotherTag.setName("Bar");
-
-        session.save(tag);
-
-        session.save(anotherTag);
+        session.save(blog);
 
         sessionManager.commit();
 
@@ -48,8 +41,8 @@ public class SidebarBlocksTest extends TapestryTestCase {
 
         String markup = document.toString();
 
-        assertTrue(markup.contains("Foo"));
+        assertTrue(markup.contains("Blogroll"));
 
-        assertTrue(markup.contains("Bar"));
+        assertTrue(markup.contains("http://tapestry5.de"));
     }
 }

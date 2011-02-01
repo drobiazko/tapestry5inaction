@@ -1,0 +1,46 @@
+package com.tapestry5inaction.tlog.blogroll.services;
+
+
+import com.tapestry5inaction.tlog.blogroll.pages.SidebarBlocks;
+import com.tapestry5inaction.tlog.blogroll.services.impl.BlogrollServiceImpl;
+import com.tapestry5inaction.tlog.services.CoreModule;
+import com.tapestry5inaction.tlog.services.SidebarBlockContribution;
+import com.tapestry5inaction.tlog.services.SidebarBlockSource;
+import org.apache.tapestry5.hibernate.HibernateEntityPackageManager;
+import org.apache.tapestry5.ioc.Configuration;
+import org.apache.tapestry5.ioc.OrderedConfiguration;
+import org.apache.tapestry5.ioc.ServiceBinder;
+import org.apache.tapestry5.ioc.annotations.Contribute;
+import org.apache.tapestry5.ioc.annotations.SubModule;
+import org.apache.tapestry5.services.ComponentClassResolver;
+import org.apache.tapestry5.services.LibraryMapping;
+
+@SubModule(CoreModule.class)
+public class BlogrollModule {
+
+    public static void bind(ServiceBinder binder) {
+        binder.bind(BlogrollService.class, BlogrollServiceImpl.class);
+    }
+
+    @Contribute(ComponentClassResolver.class)
+    public static void provideLibraryMapping(Configuration<LibraryMapping> configuration) {
+        configuration.add(new LibraryMapping("blogroll", "com.tapestry5inaction.tlog.blogroll"));
+    }
+
+    @Contribute(HibernateEntityPackageManager.class)
+    public static void provideHibernateEntityPackages(Configuration<String> configuration) {
+        configuration.add("com.tapestry5inaction.tlog.blogroll.entities");
+    }
+
+
+    @Contribute(SidebarBlockSource.class)
+    public static void provideSideBlocks(
+            final OrderedConfiguration<SidebarBlockContribution> configuration) {
+
+        configuration.add("Blogroll", new SidebarBlockContribution(
+                SidebarBlocks.class, "blogroll"), "after:Tags");
+
+    }
+
+
+}

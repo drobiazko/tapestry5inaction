@@ -3,10 +3,9 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.tapestry5inaction</groupId>
-    <artifactId>tlog-web</artifactId>
+    <artifactId>tlog-blogroll</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <packaging>war</packaging>
-    <name>Blog written with Tapestry 5</name>
+    <name>Archive plugin for Tapestry Blog</name>
 
     <parent>
         <groupId>com.tapestry5inaction</groupId>
@@ -19,29 +18,6 @@
             <groupId>com.tapestry5inaction</groupId>
             <artifactId>tlog-core</artifactId>
             <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.tapestry5inaction</groupId>
-            <artifactId>tlog-archive</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.tapestry5inaction</groupId>
-            <artifactId>tlog-tags</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.tapestry5inaction</groupId>
-            <artifactId>tlog-blogroll</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
         </dependency>
 
         <dependency>
@@ -69,5 +45,24 @@
             <artifactId>hsqldb</artifactId>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Tapestry-Module-Classes>com.tapestry5inaction.tlog.blogroll.services.BlogrollModule</Tapestry-Module-Classes>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
 
 </project>

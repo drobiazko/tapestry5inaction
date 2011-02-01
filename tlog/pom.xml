@@ -17,6 +17,7 @@
     <modules>
         <module>tlog-core</module>
         <module>plugins/tlog-archive</module>
+        <module>plugins/tlog-blogroll</module>
         <module>plugins/tlog-tags</module>
         <module>tlog-web</module>
     </modules>

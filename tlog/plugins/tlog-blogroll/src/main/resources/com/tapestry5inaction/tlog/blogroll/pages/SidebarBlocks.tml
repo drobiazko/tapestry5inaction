@@ -1,0 +1,15 @@
+<div xml:space="default" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <t:block id="blogroll">
+        <t:unless test="blogs.isEmpty()">
+            <h2>${message:headline}</h2>
+            <ul class="xoxo blogroll">
+                <li t:type="loop" source="blogs" value="currentBlog">
+                    <a href="${currentBlog.uri}">${currentBlog.name}</a>
+                </li>
+            </ul>
+        </t:unless>
+
+    </t:block>
+    d
+</div>
