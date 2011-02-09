@@ -39,7 +39,12 @@
 		<div class="col">
 			<h3 class="first">Why you should choose Tapestry 5?</h3>
 			<p>
-				<t:delegate to="sidebar" />
+
+                <t:if test="userExists">
+                    <ul t:type="loop" source="pluginPageNames" value="currentPage">
+                        <li><a t:type="pagelink" page="prop:currentPage">${currentLabel}</a> </li>
+                    </ul>
+                </t:if>
 			</p>
 		</div>
 

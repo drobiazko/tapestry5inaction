@@ -2,6 +2,7 @@ package com.tapestry5inaction.tlog.blogroll.entities;
 
 
 import org.apache.tapestry5.beaneditor.NonVisual;
+import org.apache.tapestry5.beaneditor.Validate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,9 +18,11 @@ public class ExternalBlog {
     private Long id;
 
     @Column
+    @Validate("required")
     private String name;
 
     @Column
+    @Validate("required")
     private String uri;
 
     public Long getId() {

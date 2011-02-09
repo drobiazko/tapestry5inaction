@@ -9,11 +9,14 @@ import com.tapestry5inaction.tlog.services.SidebarBlockSource;
 import org.apache.tapestry5.hibernate.HibernateEntityPackageManager;
 import org.apache.tapestry5.ioc.Configuration;
 import org.apache.tapestry5.ioc.OrderedConfiguration;
+import org.apache.tapestry5.ioc.Resource;
 import org.apache.tapestry5.ioc.ServiceBinder;
 import org.apache.tapestry5.ioc.annotations.Contribute;
 import org.apache.tapestry5.ioc.annotations.SubModule;
+import org.apache.tapestry5.ioc.annotations.Value;
 import org.apache.tapestry5.services.ComponentClassResolver;
 import org.apache.tapestry5.services.LibraryMapping;
+import org.apache.tapestry5.services.messages.ComponentMessagesSource;
 
 @SubModule(CoreModule.class)
 public class BlogrollModule {
@@ -42,5 +45,12 @@ public class BlogrollModule {
 
     }
 
+    @Contribute(ComponentMessagesSource.class)
+    public static void provideAppCatalogMessages(
+            @Value("/com/tapestry5inaction/tlog/blogroll/Messages.properties")
+            Resource resource,
+            OrderedConfiguration<Resource> configuration) {
+        configuration.add("Blogroll", resource, "before:AppCatalog");
+    }
 
 }

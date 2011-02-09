@@ -3,7 +3,6 @@ package com.tapestry5inaction.tlog.blogroll.test;
 
 import com.tapestry5inaction.tlog.blogroll.entities.ExternalBlog;
 import com.tapestry5inaction.tlog.blogroll.services.BlogrollModule;
-import com.tapestry5inaction.tlog.entities.Tag;
 import org.apache.tapestry5.dom.Document;
 import org.apache.tapestry5.hibernate.HibernateSessionManager;
 import org.apache.tapestry5.test.PageTester;

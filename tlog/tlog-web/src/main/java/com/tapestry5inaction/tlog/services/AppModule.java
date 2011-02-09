@@ -10,11 +10,9 @@ import org.apache.tapestry5.ValueEncoder;
 import org.apache.tapestry5.ioc.MappedConfiguration;
 import org.apache.tapestry5.ioc.OrderedConfiguration;
 import org.apache.tapestry5.ioc.ServiceBinder;
-import org.apache.tapestry5.ioc.annotations.Autobuild;
-import org.apache.tapestry5.ioc.annotations.Contribute;
-import org.apache.tapestry5.ioc.annotations.Startup;
-import org.apache.tapestry5.ioc.annotations.SubModule;
+import org.apache.tapestry5.ioc.annotations.*;
 import org.apache.tapestry5.services.*;
+import org.apache.tapestry5.services.linktransform.PageRenderLinkTransformer;
 
 @SubModule(CoreModule.class)
 public class AppModule {
@@ -23,6 +21,7 @@ public class AppModule {
         binder.bind(Authenticator.class, AuthenticatorImpl.class);
         binder.bind(GravatarService.class, GravatarServiceImpl.class);
         binder.bind(BlogService.class, BlogServiceImpl.class);
+        binder.bind(PluginPageManager.class, PluginPageManagerImpl.class);
     }
 
     @Contribute(ApplicationStateManager.class)
@@ -55,6 +54,17 @@ public class AppModule {
     public static void provideComponentRequestFilters(
             OrderedConfiguration configuration) {
         configuration.addInstance("PageAccess", PageAccessFilter.class);
+    }
+
+
+    @Contribute(PageRenderLinkTransformer.class)
+    @Primary
+    public static void provideURLRewriting(
+            OrderedConfiguration<PageRenderLinkTransformer>
+                    configuration) {
+
+        configuration.addInstance(
+                "PluginPageLinkTransformer", PluginPageLinkTransformer.class);
     }
 
 
