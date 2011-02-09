@@ -1,0 +1,6 @@
+<html t:type="admin/layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" title="title">
+
+    <h2>${message:title}</h2>
+
+    <form t:type="beaneditform" object="blog" submitLabel="message:submit-label" clientValidation="false"/>
+</html>
