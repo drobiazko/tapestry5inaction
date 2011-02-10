@@ -108,6 +108,40 @@ public class IntegrationTests extends SeleniumTestCase {
     }
 
     @Test
+    public void tags() {
+        open("/");
+
+        click("//a[@href='/?t=Blog']");
+
+        waitForPageToLoad();
+
+        assertTextPresent("Lorem ipsum dolor sit amet");
+
+        click("//a[@href='/?t=Uncategorized']");
+
+        waitForPageToLoad();
+
+        assertTextPresent("Hello world!");
+    }
+
+    @Test
+    public void sidebar_tags() {
+        open("/");
+
+        click("//li[@class='cat-item']/a[@href='/?t=Blog']");
+
+        waitForPageToLoad();
+
+        assertTextPresent("Lorem ipsum dolor sit amet");
+
+        click("//li[@class='cat-item']/a[@href='/?t=Uncategorized']");
+
+        waitForPageToLoad();
+
+        assertTextPresent("Hello world!");
+    }
+
+    @Test
     public void post() {
         open("/admin/");
 

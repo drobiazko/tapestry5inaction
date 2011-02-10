@@ -14,5 +14,7 @@ public interface BlogService {
 
     List<Article> findArticles(Month month);
 
+    List<Article> findArticles(Tag tag);
+
     List<Article> findArticles(String term);
 }

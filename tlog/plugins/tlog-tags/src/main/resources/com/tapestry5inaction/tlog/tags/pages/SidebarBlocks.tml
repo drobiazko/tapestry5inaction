@@ -4,7 +4,7 @@
         <h2>${message:headline}</h2>
         <ul>
             <li class="cat-item" t:type="loop" source="tags" value="currentTag">
-                <a href="http://wp-themes.com/?cat=5">${currentTag.name}</a>
+                <a href="${link}">${currentTag.name}</a>
             </li>
         </ul>
     </t:block>

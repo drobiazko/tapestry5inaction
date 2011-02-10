@@ -4,6 +4,7 @@ import com.tapestry5inaction.tlog.RequestParameters;
 import com.tapestry5inaction.tlog.annotations.PublicPage;
 import com.tapestry5inaction.tlog.entities.Article;
 import com.tapestry5inaction.tlog.entities.Month;
+import com.tapestry5inaction.tlog.entities.Tag;
 import com.tapestry5inaction.tlog.services.BlogService;
 import org.apache.tapestry5.annotations.ActivationRequestParameter;
 import org.apache.tapestry5.annotations.Property;
@@ -25,9 +26,14 @@ public class Index {
     @ActivationRequestParameter(RequestParameters.MONTH)
     private Month month;
 
+    @ActivationRequestParameter(RequestParameters.TAG)
+    private Tag tag;
+
     void onActivate() {
         if (month != null) {
             this.articles = this.blogService.findArticles(month);
+        } else if (tag != null) {
+            this.articles = this.blogService.findArticles(tag);
         } else {
             this.articles = this.blogService.findRecentArticles();
         }

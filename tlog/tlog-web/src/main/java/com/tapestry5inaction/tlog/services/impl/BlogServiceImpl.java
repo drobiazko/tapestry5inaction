@@ -35,13 +35,21 @@ public class BlogServiceImpl implements BlogService {
                 .addOrder(desc("publishDate")).setMaxResults(20).list();
     }
 
+    public List<Article> findArticles(Tag tag) {
+        Criteria criteria = this.session.createCriteria(Article.class);
+
+        criteria.createCriteria("tags").add(
+                Restrictions.eq("name", tag.getName()));
+
+        return criteria.addOrder(desc("publishDate")).setMaxResults(20).list();
+    }
+
     public User findUserByName(final String name) {
         return (User) session.createCriteria(User.class)
                 .add(Restrictions.eq("name", name)).uniqueResult();
     }
 
     public List<Article> findArticles(String term) {
-        System.err.println(term);
         return this.session.createCriteria(Article.class)
                 .add(Restrictions.or(like("title", term), like("content", term)))
                 .addOrder(desc("publishDate")).setMaxResults(20).list();

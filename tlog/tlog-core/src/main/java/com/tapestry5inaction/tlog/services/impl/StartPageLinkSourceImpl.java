@@ -1,0 +1,38 @@
+package com.tapestry5inaction.tlog.services.impl;
+
+
+import com.tapestry5inaction.tlog.RequestParameters;
+import com.tapestry5inaction.tlog.entities.Archive;
+import com.tapestry5inaction.tlog.entities.Month;
+import com.tapestry5inaction.tlog.entities.Tag;
+import com.tapestry5inaction.tlog.services.StartPageLinkSource;
+import org.apache.tapestry5.Link;
+import org.apache.tapestry5.ValueEncoder;
+import org.apache.tapestry5.ioc.annotations.Inject;
+import org.apache.tapestry5.services.PageRenderLinkSource;
+import org.apache.tapestry5.services.ValueEncoderSource;
+
+public class StartPageLinkSourceImpl implements StartPageLinkSource {
+    @Inject
+    private PageRenderLinkSource pageRenderLinkSource;
+
+    @Inject
+    private ValueEncoderSource valueEncoderSource;
+
+    public Link getLink(Month month) {
+        return getLink(month, RequestParameters.MONTH);
+    }
+
+    public Link getLink(Tag tag) {
+        return getLink(tag, RequestParameters.TAG);
+    }
+
+    public Link getLink(Object value, String parameterName) {
+        ValueEncoder encoder = valueEncoderSource.getValueEncoder(value.getClass());
+
+        Link link = pageRenderLinkSource.createPageRenderLink("index");
+        link.addParameter(parameterName, encoder.toClient(value));
+
+        return link;
+    }
+}

@@ -1,3 +1,5 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <div class="post" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
     <h2>
         <a t:type="pagelink" page="read" context="article">${article.title}</a>
@@ -13,20 +15,10 @@
 
     <p class="postmetadata">
         Posted in
-        <a href="http://wp-themes.com/?cat=6" title="View all posts in First Child Category"
-           rel="category">First
-            Child Category</a>
-        ,
-        <a href="http://wp-themes.com/?cat=8" title="View all posts in One Grandchild Category"
-           rel="category">One
-            Grandchild Category</a>
-        ,
-        <a href="http://wp-themes.com/?cat=5" title="View all posts in Parent"
-           rel="category">Parent</a>
-        ,
-        <a href="http://wp-themes.com/?cat=7" title="View all posts in Second Child Category"
-           rel="category">Second
-            Child Category</a>
+
+        <t:loop source="article.tags" value="currentTag">
+            <a href="${tagLink}">${currentTag.name}</a>&nbsp;
+        </t:loop>
         |
         <span>Comments Off</span>
     </p>
