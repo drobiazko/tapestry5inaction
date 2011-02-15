@@ -12,6 +12,10 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.PageRenderLinkSource;
 import org.apache.tapestry5.services.ValueEncoderSource;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class StartPageLinkSourceImpl implements StartPageLinkSource {
     @Inject
     private PageRenderLinkSource pageRenderLinkSource;
@@ -30,7 +34,14 @@ public class StartPageLinkSourceImpl implements StartPageLinkSource {
     public Link getLink(Object value, String parameterName) {
         ValueEncoder encoder = valueEncoderSource.getValueEncoder(value.getClass());
 
-        Link link = pageRenderLinkSource.createPageRenderLink("index");
+        Link link = pageRenderLinkSource.createPageRenderLinkWithContext("index");
+
+        List<String> parameters = new ArrayList<String>(link.getParameterNames());
+
+        for(String next: parameters){
+            link.removeParameter(next);
+        }
+
         link.addParameter(parameterName, encoder.toClient(value));
 
         return link;

@@ -2,17 +2,14 @@ package com.tapestry5inaction.tlog.pages;
 
 import com.tapestry5inaction.tlog.RequestParameters;
 import com.tapestry5inaction.tlog.annotations.PublicPage;
-import com.tapestry5inaction.tlog.entities.Article;
 import com.tapestry5inaction.tlog.entities.Month;
 import com.tapestry5inaction.tlog.entities.Tag;
 import com.tapestry5inaction.tlog.services.BlogService;
+import com.tapestry5inaction.tlog.services.PageableLoopDataSource;
 import org.apache.tapestry5.annotations.ActivationRequestParameter;
+import org.apache.tapestry5.annotations.PageActivationContext;
 import org.apache.tapestry5.annotations.Property;
-import org.apache.tapestry5.annotations.RequestParameter;
 import org.apache.tapestry5.ioc.annotations.Inject;
-
-import java.util.Date;
-import java.util.List;
 
 @PublicPage
 public class Index {
@@ -20,22 +17,32 @@ public class Index {
     @Inject
     private BlogService blogService;
 
-    @Property
-    private List<Article> articles;
-
     @ActivationRequestParameter(RequestParameters.MONTH)
     private Month month;
 
     @ActivationRequestParameter(RequestParameters.TAG)
     private Tag tag;
 
+    @PageActivationContext
+    @Property
+    private int currentPage;
+
+    @Property
+    private PageableLoopDataSource source;
+
     void onActivate() {
+        currentPage = currentPage == 0 ? 1 : currentPage;
+
         if (month != null) {
-            this.articles = this.blogService.findArticles(month);
+            this.source = this.blogService.findArticles(month);
         } else if (tag != null) {
-            this.articles = this.blogService.findArticles(tag);
+            this.source = this.blogService.findArticles(tag);
         } else {
-            this.articles = this.blogService.findRecentArticles();
+            this.source = this.blogService.findRecentArticles();
         }
+    }
+
+    void onGoToPage(int nextPage) {
+        currentPage = nextPage;
     }
 }

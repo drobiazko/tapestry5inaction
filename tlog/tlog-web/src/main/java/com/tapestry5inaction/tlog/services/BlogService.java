@@ -10,11 +10,11 @@ public interface BlogService {
 
     Blog findBlog();
 
-    List<Article> findRecentArticles();
+    PageableLoopDataSource findRecentArticles();
 
-    List<Article> findArticles(Month month);
+    PageableLoopDataSource findArticles(Month month);
 
-    List<Article> findArticles(Tag tag);
+    PageableLoopDataSource findArticles(Tag tag);
 
     List<Article> findArticles(String term);
 }

@@ -2,15 +2,14 @@ package com.tapestry5inaction.tlog.services.impl;
 
 import com.tapestry5inaction.tlog.entities.*;
 import com.tapestry5inaction.tlog.services.BlogService;
+import com.tapestry5inaction.tlog.services.PageableLoopDataSource;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import static org.hibernate.criterion.Order.desc;
@@ -24,24 +23,25 @@ public class BlogServiceImpl implements BlogService {
         return (Blog) this.session.createCriteria(Blog.class).uniqueResult();
     }
 
-    public List<Article> findRecentArticles() {
-        return this.session.createCriteria(Article.class).addOrder(
-                desc("publishDate")).setMaxResults(20).list();
+    public PageableLoopDataSource findRecentArticles() {
+        return new PageableLoopDataSourceImpl(session, Article.class);
     }
 
-    public List<Article> findArticles(Month month) {
-        return this.session.createCriteria(Article.class).add(
-                Restrictions.between("publishDate", month.getStart(), month.getEnd()))
-                .addOrder(desc("publishDate")).setMaxResults(20).list();
+    public PageableLoopDataSource findArticles(final Month month) {
+        return new PageableLoopDataSourceImpl(session, Article.class, new AdditionalConstraintsCallback() {
+            public void apply(Criteria criteria) {
+                criteria.add(Restrictions.between("publishDate", month.getStart(), month.getEnd()));
+            }
+        });
     }
 
-    public List<Article> findArticles(Tag tag) {
-        Criteria criteria = this.session.createCriteria(Article.class);
-
-        criteria.createCriteria("tags").add(
-                Restrictions.eq("name", tag.getName()));
-
-        return criteria.addOrder(desc("publishDate")).setMaxResults(20).list();
+    public PageableLoopDataSource findArticles(final Tag tag) {
+        return new PageableLoopDataSourceImpl(session, Article.class, new AdditionalConstraintsCallback() {
+            public void apply(Criteria criteria) {
+                criteria.createCriteria("tags").add(
+                        Restrictions.eq("name", tag.getName()));
+            }
+        });
     }
 
     public User findUserByName(final String name) {

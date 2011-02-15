@@ -1,15 +1,7 @@
 <html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
 
-    <t:loop source="articles" value="var:currentArticle">
+    <t:pageableloop source="source" value="var:currentArticle" currentPage="currentPage">
         <div t:type="articleDisplay" article="var:currentArticle"/>
-    </t:loop>
-
-
-
-    <div class="navigation">
-        <div class="alignleft"></div>
-
-        <div class="alignright"></div>
-    </div>
+    </t:pageableloop>
 
 </html>
