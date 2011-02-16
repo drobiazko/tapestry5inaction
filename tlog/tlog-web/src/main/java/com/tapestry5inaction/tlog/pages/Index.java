@@ -31,8 +31,6 @@ public class Index {
     private PageableLoopDataSource source;
 
     void onActivate() {
-        currentPage = currentPage == 0 ? 1 : currentPage;
-
         if (month != null) {
             this.source = this.blogService.findArticles(month);
         } else if (tag != null) {

@@ -59,6 +59,6 @@ public class PageableLoop {
     }
 
     public int getCurrentPage() {
-        return currentPage == null ? 1 : currentPage;
+        return currentPage == null || currentPage == 0 ? 1 : currentPage;
     }
 }

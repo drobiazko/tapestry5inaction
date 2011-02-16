@@ -1,5 +1,5 @@
 <div id="footer" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
-    <p> Theme Preview is proudly powered by <a href="http://wordpress.org/">WordPress</a>
+    <p> Theme Preview is proudly powered by <a href="http://tapestry.apache.org/">Tapestry</a>
         <br/>
         <a href="http://wp-themes.com/?feed=rss2">Entries (RSS)</a> and <a
                 href="http://wp-themes.com/?feed=comments-rss2">Comments (RSS)</a>
