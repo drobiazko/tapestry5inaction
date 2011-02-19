@@ -117,7 +117,7 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/conf/testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <argLine>-Xmx500m -XX:MaxPermSize=256m</argLine>
+                    <argLine>-Xmx500m -XX:MaxPermSize=256m -Dtapestry.production-mode=false</argLine>
                     <redirectTestOutputToFile>false</redirectTestOutputToFile>
                 </configuration>
             </plugin>

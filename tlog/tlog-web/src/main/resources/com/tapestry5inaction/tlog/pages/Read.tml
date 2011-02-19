@@ -1,4 +1,5 @@
-<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+      xmlns:p="tapestry:parameter" xmlns:tx="tapestry-library:tapx">
 
 
     <div t:type="articleDisplay" article="article"/>
@@ -56,6 +57,17 @@
 
 
         <p><textarea t:type="textarea" t:id="commentText" value="comment.content" cols="100%" rows="10" validate="required"/></p>
+
+        <p>
+            <img t:id="kaptchaImage"/>
+            <br/>
+            <tx:kaptchafield label="Word Verification" t:id="kaptchaField" image="kaptchaImage"/>
+            <label t:type="label" for="kaptchaField"/>
+
+            <t:unless test="symbol:tapestry.production-mode">
+                <div id="captureText">${captchaText}</div>
+            </t:unless>
+        </p>
 
         <p><input name="submit" type="submit" id="submit" tabindex="5" value="${message:submit-value}"/></p>
 

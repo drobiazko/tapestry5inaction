@@ -1,8 +1,6 @@
 package com.tapestry5inaction.tlog.test;
 
 
-import com.tapestry5inaction.tlog.core.entities.Skin;
-import com.tapestry5inaction.tlog.skins.SkinConstants;
 import org.apache.tapestry5.test.SeleniumTestCase;
 import org.testng.annotations.Test;
 
@@ -21,6 +19,7 @@ public class IntegrationTests extends SeleniumTestCase {
 
     @Test
     public void leave_a_reply() {
+
         open("/");
 
         click("link=Hello world!");
@@ -34,12 +33,16 @@ public class IntegrationTests extends SeleniumTestCase {
         waitForPageToLoad();
 
         assertTextPresent("0 Responses to Hello world!", "Please provide your name",
-                "Please provide your email", "Please provide a comment");
+                "Please provide your email", "Please provide a comment", "Enter the text displayed in the image.");
 
         type("author", "Igor");
         type("email", "drobiazko@apache.org");
         type("website", "http://tapestry5.de");
         type("commentText", "Bla bla bla");
+
+        String captureText = getText("//div[@id='captureText']");
+        type("kaptchaField", captureText);
+
 
         click("submit");
 
