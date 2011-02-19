@@ -1,8 +1,8 @@
 package com.tapestry5inaction.tlog.pages;
 
 
-import com.tapestry5inaction.tlog.annotations.PublicPage;
-import com.tapestry5inaction.tlog.entities.Article;
+import com.tapestry5inaction.tlog.core.annotations.PublicPage;
+import com.tapestry5inaction.tlog.core.entities.Article;
 import com.tapestry5inaction.tlog.services.BlogService;
 import org.apache.tapestry5.annotations.PageActivationContext;
 import org.apache.tapestry5.annotations.Property;

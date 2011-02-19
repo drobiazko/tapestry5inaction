@@ -1,4 +1,4 @@
-package com.tapestry5inaction.tlog.entities;
+package com.tapestry5inaction.tlog.core.entities;
 
 import javax.persistence.*;
 import java.util.ArrayList;

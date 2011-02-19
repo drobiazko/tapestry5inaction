@@ -2,8 +2,8 @@ package com.tapestry5inaction.tlog.archive.test;
 
 
 import com.tapestry5inaction.tlog.archive.services.ArchiveModule;
-import com.tapestry5inaction.tlog.entities.Article;
-import com.tapestry5inaction.tlog.entities.Blog;
+import com.tapestry5inaction.tlog.core.entities.Article;
+import com.tapestry5inaction.tlog.core.entities.Blog;
 import org.apache.tapestry5.dom.Document;
 import org.apache.tapestry5.hibernate.HibernateSessionManager;
 import org.apache.tapestry5.test.PageTester;

@@ -1,4 +1,4 @@
-package com.tapestry5inaction.tlog.services;
+package com.tapestry5inaction.tlog.core.services;
 
 import org.apache.tapestry5.Block;
 import org.apache.tapestry5.ioc.annotations.UsesOrderedConfiguration;

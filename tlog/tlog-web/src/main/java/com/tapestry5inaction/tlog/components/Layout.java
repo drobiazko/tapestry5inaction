@@ -1,8 +1,8 @@
 package com.tapestry5inaction.tlog.components;
 
-import com.tapestry5inaction.tlog.entities.Blog;
-import com.tapestry5inaction.tlog.services.Skin;
-import com.tapestry5inaction.tlog.services.SkinManager;
+import com.tapestry5inaction.tlog.core.entities.Blog;
+import com.tapestry5inaction.tlog.core.services.Skin;
+import com.tapestry5inaction.tlog.core.services.SkinManager;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.annotations.SessionState;
 import org.apache.tapestry5.ioc.Resource;

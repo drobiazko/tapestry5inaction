@@ -1,9 +1,7 @@
 package com.tapestry5inaction.tlog.tags.test;
 
 
-import com.tapestry5inaction.tlog.entities.Article;
-import com.tapestry5inaction.tlog.entities.Blog;
-import com.tapestry5inaction.tlog.entities.Tag;
+import com.tapestry5inaction.tlog.core.entities.Tag;
 import com.tapestry5inaction.tlog.tags.services.TagsModule;
 import org.apache.tapestry5.dom.Document;
 import org.apache.tapestry5.hibernate.HibernateSessionManager;
@@ -13,8 +11,6 @@ import org.example.testapp.pages.SidebarBlocksDemo;
 import org.hibernate.Session;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import java.util.GregorianCalendar;
 
 public class SidebarBlocksTest extends TapestryTestCase {
 

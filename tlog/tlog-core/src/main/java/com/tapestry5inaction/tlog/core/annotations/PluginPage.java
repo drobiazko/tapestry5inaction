@@ -1,4 +1,4 @@
-package com.tapestry5inaction.tlog.annotations;
+package com.tapestry5inaction.tlog.core.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

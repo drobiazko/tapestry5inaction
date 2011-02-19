@@ -1,7 +1,6 @@
 package com.tapestry5inaction.tlog.services.impl;
 
 
-import com.tapestry5inaction.tlog.entities.Article;
 import com.tapestry5inaction.tlog.services.PageableLoopDataSource;
 import org.hibernate.Criteria;
 import org.hibernate.Session;

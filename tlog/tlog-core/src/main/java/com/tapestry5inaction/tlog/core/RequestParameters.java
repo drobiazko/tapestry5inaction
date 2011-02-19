@@ -1,4 +1,4 @@
-package com.tapestry5inaction.tlog;
+package com.tapestry5inaction.tlog.core;
 
 
 public class RequestParameters {

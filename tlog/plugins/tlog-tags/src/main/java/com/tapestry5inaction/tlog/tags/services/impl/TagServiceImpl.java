@@ -1,7 +1,7 @@
 package com.tapestry5inaction.tlog.tags.services.impl;
 
 
-import com.tapestry5inaction.tlog.entities.Tag;
+import com.tapestry5inaction.tlog.core.entities.Tag;
 import com.tapestry5inaction.tlog.tags.services.TagService;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.hibernate.Session;

@@ -1,7 +1,5 @@
-package com.tapestry5inaction.tlog.entities;
+package com.tapestry5inaction.tlog.core.entities;
 
-
-import org.hibernate.exception.DataException;
 
 import java.util.Calendar;
 import java.util.Date;

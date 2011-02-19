@@ -1,8 +1,8 @@
 package com.tapestry5inaction.tlog.pages;
 
-import com.tapestry5inaction.tlog.annotations.PublicPage;
-import com.tapestry5inaction.tlog.entities.Article;
-import com.tapestry5inaction.tlog.entities.Comment;
+import com.tapestry5inaction.tlog.core.annotations.PublicPage;
+import com.tapestry5inaction.tlog.core.entities.Article;
+import com.tapestry5inaction.tlog.core.entities.Comment;
 import com.tapestry5inaction.tlog.services.GravatarService;
 import org.apache.tapestry5.annotations.DiscardAfter;
 import org.apache.tapestry5.annotations.PageActivationContext;

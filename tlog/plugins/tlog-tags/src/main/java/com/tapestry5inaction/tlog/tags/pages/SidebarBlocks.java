@@ -1,7 +1,7 @@
 package com.tapestry5inaction.tlog.tags.pages;
 
-import com.tapestry5inaction.tlog.entities.Tag;
-import com.tapestry5inaction.tlog.services.StartPageLinkSource;
+import com.tapestry5inaction.tlog.core.entities.Tag;
+import com.tapestry5inaction.tlog.core.services.StartPageLinkSource;
 import com.tapestry5inaction.tlog.tags.services.TagService;
 import org.apache.tapestry5.Link;
 import org.apache.tapestry5.annotations.Property;

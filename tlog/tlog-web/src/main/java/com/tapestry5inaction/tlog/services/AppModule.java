@@ -1,6 +1,7 @@
 package com.tapestry5inaction.tlog.services;
 
-import com.tapestry5inaction.tlog.entities.Blog;
+import com.tapestry5inaction.tlog.core.entities.Blog;
+import com.tapestry5inaction.tlog.core.services.*;
 import com.tapestry5inaction.tlog.pages.SidebarBlocks;
 import com.tapestry5inaction.tlog.services.impl.*;
 import org.apache.tapestry5.PersistenceConstants;

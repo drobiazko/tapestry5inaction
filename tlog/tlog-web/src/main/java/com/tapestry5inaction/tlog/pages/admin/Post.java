@@ -1,7 +1,7 @@
 package com.tapestry5inaction.tlog.pages.admin;
 
-import com.tapestry5inaction.tlog.entities.Article;
-import com.tapestry5inaction.tlog.entities.Blog;
+import com.tapestry5inaction.tlog.core.entities.Article;
+import com.tapestry5inaction.tlog.core.entities.Blog;
 import org.apache.tapestry5.PersistenceConstants;
 import org.apache.tapestry5.annotations.PageActivationContext;
 import org.apache.tapestry5.annotations.Persist;

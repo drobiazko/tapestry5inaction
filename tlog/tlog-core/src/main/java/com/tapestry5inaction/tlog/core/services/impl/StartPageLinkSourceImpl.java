@@ -1,11 +1,10 @@
-package com.tapestry5inaction.tlog.services.impl;
+package com.tapestry5inaction.tlog.core.services.impl;
 
 
-import com.tapestry5inaction.tlog.RequestParameters;
-import com.tapestry5inaction.tlog.entities.Archive;
-import com.tapestry5inaction.tlog.entities.Month;
-import com.tapestry5inaction.tlog.entities.Tag;
-import com.tapestry5inaction.tlog.services.StartPageLinkSource;
+import com.tapestry5inaction.tlog.core.RequestParameters;
+import com.tapestry5inaction.tlog.core.entities.Month;
+import com.tapestry5inaction.tlog.core.entities.Tag;
+import com.tapestry5inaction.tlog.core.services.StartPageLinkSource;
 import org.apache.tapestry5.Link;
 import org.apache.tapestry5.ValueEncoder;
 import org.apache.tapestry5.ioc.annotations.Inject;
@@ -13,7 +12,6 @@ import org.apache.tapestry5.services.PageRenderLinkSource;
 import org.apache.tapestry5.services.ValueEncoderSource;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class StartPageLinkSourceImpl implements StartPageLinkSource {

@@ -1,9 +1,9 @@
 package com.tapestry5inaction.tlog.tags.services;
 
 
-import com.tapestry5inaction.tlog.services.CoreModule;
-import com.tapestry5inaction.tlog.services.SidebarBlockContribution;
-import com.tapestry5inaction.tlog.services.SidebarBlockSource;
+import com.tapestry5inaction.tlog.core.services.CoreModule;
+import com.tapestry5inaction.tlog.core.services.SidebarBlockContribution;
+import com.tapestry5inaction.tlog.core.services.SidebarBlockSource;
 import com.tapestry5inaction.tlog.tags.pages.SidebarBlocks;
 import com.tapestry5inaction.tlog.tags.services.impl.TagServiceImpl;
 import org.apache.tapestry5.ioc.Configuration;

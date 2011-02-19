@@ -1,4 +1,4 @@
-package com.tapestry5inaction.tlog.utils;
+package com.tapestry5inaction.tlog.core.utils;
 
 
 public class Utils {

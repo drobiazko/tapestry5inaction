@@ -1,4 +1,4 @@
-package com.tapestry5inaction.tlog.services;
+package com.tapestry5inaction.tlog.core.services;
 
 public class Skin {
 

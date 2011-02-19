@@ -3,9 +3,9 @@ package com.tapestry5inaction.tlog.archive.services;
 
 import com.tapestry5inaction.tlog.archive.pages.SidebarBlocks;
 import com.tapestry5inaction.tlog.archive.services.impl.ArchiveServiceImpl;
-import com.tapestry5inaction.tlog.services.CoreModule;
-import com.tapestry5inaction.tlog.services.SidebarBlockContribution;
-import com.tapestry5inaction.tlog.services.SidebarBlockSource;
+import com.tapestry5inaction.tlog.core.services.CoreModule;
+import com.tapestry5inaction.tlog.core.services.SidebarBlockContribution;
+import com.tapestry5inaction.tlog.core.services.SidebarBlockSource;
 import org.apache.tapestry5.ioc.Configuration;
 import org.apache.tapestry5.ioc.OrderedConfiguration;
 import org.apache.tapestry5.ioc.ServiceBinder;

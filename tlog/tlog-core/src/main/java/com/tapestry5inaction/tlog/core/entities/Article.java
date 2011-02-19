@@ -1,4 +1,4 @@
-package com.tapestry5inaction.tlog.entities;
+package com.tapestry5inaction.tlog.core.entities;
 
 import org.apache.tapestry5.beaneditor.NonVisual;
 import org.apache.tapestry5.beaneditor.Validate;

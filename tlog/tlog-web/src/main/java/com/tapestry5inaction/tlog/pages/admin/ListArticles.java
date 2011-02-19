@@ -1,6 +1,6 @@
 package com.tapestry5inaction.tlog.pages.admin;
 
-import com.tapestry5inaction.tlog.entities.Article;
+import com.tapestry5inaction.tlog.core.entities.Article;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.grid.GridDataSource;
 import org.apache.tapestry5.hibernate.HibernateGridDataSource;

@@ -1,10 +1,10 @@
 package com.tapestry5inaction.tlog.services.impl;
 
 import com.tapestry5inaction.tlog.blogroll.entities.ExternalBlog;
-import com.tapestry5inaction.tlog.entities.Article;
-import com.tapestry5inaction.tlog.entities.Blog;
-import com.tapestry5inaction.tlog.entities.Tag;
-import com.tapestry5inaction.tlog.entities.User;
+import com.tapestry5inaction.tlog.core.entities.Article;
+import com.tapestry5inaction.tlog.core.entities.Blog;
+import com.tapestry5inaction.tlog.core.entities.Tag;
+import com.tapestry5inaction.tlog.core.entities.User;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.tapestry5.hibernate.HibernateSessionManager;
 import org.apache.tapestry5.ioc.annotations.Inject;

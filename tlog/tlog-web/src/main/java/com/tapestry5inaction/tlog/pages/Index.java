@@ -1,9 +1,9 @@
 package com.tapestry5inaction.tlog.pages;
 
-import com.tapestry5inaction.tlog.RequestParameters;
-import com.tapestry5inaction.tlog.annotations.PublicPage;
-import com.tapestry5inaction.tlog.entities.Month;
-import com.tapestry5inaction.tlog.entities.Tag;
+import com.tapestry5inaction.tlog.core.RequestParameters;
+import com.tapestry5inaction.tlog.core.annotations.PublicPage;
+import com.tapestry5inaction.tlog.core.entities.Month;
+import com.tapestry5inaction.tlog.core.entities.Tag;
 import com.tapestry5inaction.tlog.services.BlogService;
 import com.tapestry5inaction.tlog.services.PageableLoopDataSource;
 import org.apache.tapestry5.annotations.ActivationRequestParameter;

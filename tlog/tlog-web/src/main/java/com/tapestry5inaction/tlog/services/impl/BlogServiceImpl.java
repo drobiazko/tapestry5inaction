@@ -1,13 +1,12 @@
 package com.tapestry5inaction.tlog.services.impl;
 
-import com.tapestry5inaction.tlog.entities.*;
+import com.tapestry5inaction.tlog.core.entities.*;
 import com.tapestry5inaction.tlog.services.BlogService;
 import com.tapestry5inaction.tlog.services.PageableLoopDataSource;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Criterion;
-import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
 import java.util.List;

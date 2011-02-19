@@ -1,6 +1,6 @@
 package com.tapestry5inaction.tlog.services;
 
-import com.tapestry5inaction.tlog.entities.*;
+import com.tapestry5inaction.tlog.core.entities.*;
 
 import java.util.List;
 

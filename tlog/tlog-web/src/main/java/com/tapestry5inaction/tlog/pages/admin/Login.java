@@ -1,6 +1,6 @@
 package com.tapestry5inaction.tlog.pages.admin;
 
-import com.tapestry5inaction.tlog.entities.User;
+import com.tapestry5inaction.tlog.core.entities.User;
 import com.tapestry5inaction.tlog.services.Authenticator;
 import org.apache.tapestry5.ValidationException;
 import org.apache.tapestry5.annotations.*;

@@ -1,6 +1,6 @@
 package com.tapestry5inaction.tlog.services.impl;
 
-import com.tapestry5inaction.tlog.annotations.PublicPage;
+import com.tapestry5inaction.tlog.core.annotations.PublicPage;
 import com.tapestry5inaction.tlog.pages.admin.Login;
 import com.tapestry5inaction.tlog.services.Authenticator;
 import org.apache.tapestry5.Link;

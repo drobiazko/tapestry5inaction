@@ -1,14 +1,9 @@
-package com.tapestry5inaction.tlog.services.impl;
+package com.tapestry5inaction.tlog.core.services.impl;
 
 
-import com.tapestry5inaction.tlog.entities.Month;
-import com.tapestry5inaction.tlog.entities.Tag;
-import com.tapestry5inaction.tlog.utils.Utils;
+import com.tapestry5inaction.tlog.core.entities.Tag;
+import com.tapestry5inaction.tlog.core.utils.Utils;
 import org.apache.tapestry5.ValueEncoder;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class TagValueEncoder implements ValueEncoder<Tag> {
 

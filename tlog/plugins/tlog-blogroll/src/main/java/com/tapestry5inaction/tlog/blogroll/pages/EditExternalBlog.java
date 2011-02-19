@@ -1,7 +1,7 @@
 package com.tapestry5inaction.tlog.blogroll.pages;
 
 
-import com.tapestry5inaction.tlog.annotations.PluginPage;
+import com.tapestry5inaction.tlog.core.annotations.PluginPage;
 import com.tapestry5inaction.tlog.blogroll.entities.ExternalBlog;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.hibernate.annotations.CommitAfter;

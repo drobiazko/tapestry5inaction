@@ -1,7 +1,7 @@
 package com.tapestry5inaction.tlog.components;
 
+import com.tapestry5inaction.tlog.core.services.SidebarBlockSource;
 import com.tapestry5inaction.tlog.pages.Search;
-import com.tapestry5inaction.tlog.services.SidebarBlockSource;
 import org.apache.tapestry5.Block;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.ioc.annotations.Inject;

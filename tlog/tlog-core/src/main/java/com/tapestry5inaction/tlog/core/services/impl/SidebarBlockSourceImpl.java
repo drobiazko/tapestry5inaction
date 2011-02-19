@@ -1,7 +1,7 @@
-package com.tapestry5inaction.tlog.services.impl;
+package com.tapestry5inaction.tlog.core.services.impl;
 
-import com.tapestry5inaction.tlog.services.SidebarBlockContribution;
-import com.tapestry5inaction.tlog.services.SidebarBlockSource;
+import com.tapestry5inaction.tlog.core.services.SidebarBlockSource;
+import com.tapestry5inaction.tlog.core.services.SidebarBlockContribution;
 import org.apache.tapestry5.Block;
 import org.apache.tapestry5.internal.services.RequestPageCache;
 import org.apache.tapestry5.internal.structure.Page;

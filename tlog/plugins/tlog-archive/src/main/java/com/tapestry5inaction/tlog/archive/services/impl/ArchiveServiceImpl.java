@@ -1,8 +1,8 @@
 package com.tapestry5inaction.tlog.archive.services.impl;
 
 import com.tapestry5inaction.tlog.archive.services.ArchiveService;
-import com.tapestry5inaction.tlog.entities.Archive;
-import com.tapestry5inaction.tlog.entities.Month;
+import com.tapestry5inaction.tlog.core.entities.Archive;
+import com.tapestry5inaction.tlog.core.entities.Month;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.hibernate.Session;
 

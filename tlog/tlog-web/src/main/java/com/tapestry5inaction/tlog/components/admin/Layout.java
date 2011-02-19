@@ -1,10 +1,9 @@
 package com.tapestry5inaction.tlog.components.admin;
 
-import com.tapestry5inaction.tlog.entities.Blog;
-import com.tapestry5inaction.tlog.entities.User;
+import com.tapestry5inaction.tlog.core.entities.Blog;
+import com.tapestry5inaction.tlog.core.entities.User;
 import com.tapestry5inaction.tlog.services.PluginPageManager;
 import org.apache.tapestry5.BindingConstants;
-import org.apache.tapestry5.Block;
 import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.Property;

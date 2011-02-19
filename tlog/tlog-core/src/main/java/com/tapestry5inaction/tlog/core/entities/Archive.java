@@ -1,7 +1,5 @@
-package com.tapestry5inaction.tlog.entities;
+package com.tapestry5inaction.tlog.core.entities;
 
-
-import java.util.Date;
 
 public class Archive {
 

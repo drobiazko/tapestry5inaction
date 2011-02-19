@@ -1,7 +1,7 @@
-package com.tapestry5inaction.tlog.services.impl;
+package com.tapestry5inaction.tlog.core.services.impl;
 
-import com.tapestry5inaction.tlog.services.Skin;
-import com.tapestry5inaction.tlog.services.SkinManager;
+import com.tapestry5inaction.tlog.core.services.Skin;
+import com.tapestry5inaction.tlog.core.services.SkinManager;
 import org.apache.tapestry5.ioc.Resource;
 import org.apache.tapestry5.ioc.annotations.InjectResource;
 

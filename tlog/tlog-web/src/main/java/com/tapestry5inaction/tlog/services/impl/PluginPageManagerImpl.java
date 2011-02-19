@@ -1,7 +1,7 @@
 package com.tapestry5inaction.tlog.services.impl;
 
 
-import com.tapestry5inaction.tlog.annotations.PluginPage;
+import com.tapestry5inaction.tlog.core.annotations.PluginPage;
 import com.tapestry5inaction.tlog.services.PluginPageManager;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.ComponentClassResolver;
