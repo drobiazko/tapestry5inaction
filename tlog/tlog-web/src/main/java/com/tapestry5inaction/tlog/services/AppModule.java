@@ -1,14 +1,12 @@
 package com.tapestry5inaction.tlog.services;
 
 import com.tapestry5inaction.tlog.entities.Blog;
-import com.tapestry5inaction.tlog.entities.Month;
 import com.tapestry5inaction.tlog.pages.SidebarBlocks;
 import com.tapestry5inaction.tlog.services.impl.*;
-import com.tapestry5inaction.tlog.services.impl.MonthValueEncoder;
 import org.apache.tapestry5.PersistenceConstants;
-import org.apache.tapestry5.ValueEncoder;
 import org.apache.tapestry5.ioc.MappedConfiguration;
 import org.apache.tapestry5.ioc.OrderedConfiguration;
+import org.apache.tapestry5.ioc.Resource;
 import org.apache.tapestry5.ioc.ServiceBinder;
 import org.apache.tapestry5.ioc.annotations.*;
 import org.apache.tapestry5.services.*;
@@ -54,6 +52,14 @@ public class AppModule {
     public static void provideComponentRequestFilters(
             OrderedConfiguration configuration) {
         configuration.addInstance("PageAccess", PageAccessFilter.class);
+    }
+
+
+    @Contribute(SkinManager.class)
+    public static void provideSkins(MappedConfiguration<Skin, Resource> configuration,
+                                    @Value("/com/tapestry5inaction/tlog/skins/default.xml")
+                                    Resource defaultSkin){
+        configuration.add(new Skin("default", "1.0.0"), defaultSkin);
     }
 
 

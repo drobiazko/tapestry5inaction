@@ -2,10 +2,7 @@ package com.tapestry5inaction.tlog.services;
 
 import com.tapestry5inaction.tlog.entities.Month;
 import com.tapestry5inaction.tlog.entities.Tag;
-import com.tapestry5inaction.tlog.services.impl.MonthValueEncoder;
-import com.tapestry5inaction.tlog.services.impl.SidebarBlockSourceImpl;
-import com.tapestry5inaction.tlog.services.impl.StartPageLinkSourceImpl;
-import com.tapestry5inaction.tlog.services.impl.TagValueEncoder;
+import com.tapestry5inaction.tlog.services.impl.*;
 import org.apache.tapestry5.ValueEncoder;
 import org.apache.tapestry5.ioc.Configuration;
 import org.apache.tapestry5.ioc.MappedConfiguration;
@@ -20,6 +17,7 @@ public class CoreModule {
 
     public static void bind(final ServiceBinder binder) {
         binder.bind(SidebarBlockSource.class, SidebarBlockSourceImpl.class);
+        binder.bind(SkinManager.class, SkinManagerImpl.class);
         binder.bind(StartPageLinkSource.class, StartPageLinkSourceImpl.class);
     }
 

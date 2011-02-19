@@ -166,6 +166,15 @@
             <id>codehaus.snapshots</id>
             <url>http://snapshots.repository.codehaus.org</url>
         </repository>
+        <repository>
+            <id>tapx-stable</id>
+            <url>http://howardlewisship.com/repository/</url>
+        </repository>
+        <repository>
+            <id>tapx-snapshot</id>
+            <url>http://howardlewisship.com/snapshot-repository</url>
+        </repository>
+
     </repositories>
 
     <pluginRepositories>
