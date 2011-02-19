@@ -1,9 +1,11 @@
 package com.tapestry5inaction.tlog.services;
 
 import com.tapestry5inaction.tlog.core.entities.Blog;
+import com.tapestry5inaction.tlog.core.entities.Skin;
 import com.tapestry5inaction.tlog.core.services.*;
 import com.tapestry5inaction.tlog.pages.SidebarBlocks;
 import com.tapestry5inaction.tlog.services.impl.*;
+import com.tapestry5inaction.tlog.skins.SkinConstants;
 import org.apache.tapestry5.PersistenceConstants;
 import org.apache.tapestry5.ioc.MappedConfiguration;
 import org.apache.tapestry5.ioc.OrderedConfiguration;
@@ -57,10 +59,14 @@ public class AppModule {
 
 
     @Contribute(SkinManager.class)
-    public static void provideSkins(MappedConfiguration<Skin, Resource> configuration,
+    public static void provideSkins(MappedConfiguration<Skin, SkinResources> configuration,
                                     @Value("/com/tapestry5inaction/tlog/skins/default.xml")
-                                    Resource defaultSkin){
-        configuration.add(new Skin("default", "1.0.0"), defaultSkin);
+                                    Resource defaultSkin,
+                                    @Value("/com/tapestry5inaction/tlog/skins/default.png")
+                                    Resource defaultSkinPreview) {
+        configuration.add(
+                SkinConstants.DEFAULT_SKIN,
+                new SkinResources(defaultSkinPreview, defaultSkin));
     }
 
 

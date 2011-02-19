@@ -17,6 +17,9 @@ public class Blog {
     @Column
     private String description;
 
+    @Embedded
+    private Skin skin;
+
     @OneToMany
     private List<Article> articles = new ArrayList<Article>();
 
@@ -42,6 +45,14 @@ public class Blog {
 
     public void setDescription(final String description) {
         this.description = description;
+    }
+
+    public Skin getSkin() {
+        return skin;
+    }
+
+    public void setSkin(Skin skin) {
+        this.skin = skin;
     }
 
     public Blog addArticle(final Article article) {

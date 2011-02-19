@@ -1,8 +1,12 @@
 package com.tapestry5inaction.tlog.test;
 
 
+import com.tapestry5inaction.tlog.core.entities.Skin;
+import com.tapestry5inaction.tlog.skins.SkinConstants;
 import org.apache.tapestry5.test.SeleniumTestCase;
 import org.testng.annotations.Test;
+
+import static com.tapestry5inaction.tlog.skins.SkinConstants.DEFAULT_SKIN;
 
 public class IntegrationTests extends SeleniumTestCase {
 
@@ -142,6 +146,29 @@ public class IntegrationTests extends SeleniumTestCase {
     }
 
     @Test
+    public void activate_skin() {
+        open("/admin/");
+
+        login();
+
+        click("link=Manage Skins");
+
+        waitForPageToLoad();
+
+        assertTextPresent("Skin Management");
+
+        click("link=Activate");
+
+        waitForPageToLoad();
+
+        assertTextPresent(String.format("Skin '%s' (version=%s) has been activated.",
+                DEFAULT_SKIN.getName(), DEFAULT_SKIN.getVersion()));
+
+        logout();
+
+    }
+
+     @Test
     public void post() {
         open("/admin/");
 

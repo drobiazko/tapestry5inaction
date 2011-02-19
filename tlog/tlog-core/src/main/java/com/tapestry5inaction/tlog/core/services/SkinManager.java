@@ -1,8 +1,12 @@
 package com.tapestry5inaction.tlog.core.services;
 
-import org.apache.tapestry5.ioc.Resource;
+import com.tapestry5inaction.tlog.core.entities.Skin;
+
+import java.util.Set;
 
 public interface SkinManager {
 
-    Resource getSkinTemplate(Skin skin);
+    Set<Skin> getAvailableSkins();
+
+    SkinResources getSkinResources(Skin skin);
 }

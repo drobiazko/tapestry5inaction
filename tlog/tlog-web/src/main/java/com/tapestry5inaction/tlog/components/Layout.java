@@ -1,8 +1,9 @@
 package com.tapestry5inaction.tlog.components;
 
 import com.tapestry5inaction.tlog.core.entities.Blog;
-import com.tapestry5inaction.tlog.core.services.Skin;
+import com.tapestry5inaction.tlog.core.entities.Skin;
 import com.tapestry5inaction.tlog.core.services.SkinManager;
+import com.tapestry5inaction.tlog.core.services.SkinResources;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.annotations.SessionState;
 import org.apache.tapestry5.ioc.Resource;
@@ -17,7 +18,9 @@ public class Layout {
     private SkinManager skinManager;
 
 
-    public Resource getSkin(){
-        return skinManager.getSkinTemplate(new Skin("default", "1.0.0"));
+    public Resource getSkin() {
+        SkinResources resources = skinManager.getSkinResources(blog.getSkin());
+
+        return resources.getTemplate();
     }
 }

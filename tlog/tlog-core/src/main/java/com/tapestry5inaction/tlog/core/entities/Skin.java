@@ -1,9 +1,20 @@
-package com.tapestry5inaction.tlog.core.services;
+package com.tapestry5inaction.tlog.core.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Skin {
 
+    @Column(name = "skinName")
     private String name;
+
+    @Column(name = "skinVersion")
     private String version;
+
+    protected Skin(){
+        super();
+    }
 
     public Skin(String name, String version) {
         this.name = name;

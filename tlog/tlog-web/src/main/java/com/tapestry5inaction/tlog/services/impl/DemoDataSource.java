@@ -5,6 +5,7 @@ import com.tapestry5inaction.tlog.core.entities.Article;
 import com.tapestry5inaction.tlog.core.entities.Blog;
 import com.tapestry5inaction.tlog.core.entities.Tag;
 import com.tapestry5inaction.tlog.core.entities.User;
+import com.tapestry5inaction.tlog.skins.SkinConstants;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.tapestry5.hibernate.HibernateSessionManager;
 import org.apache.tapestry5.ioc.annotations.Inject;
@@ -63,6 +64,7 @@ public class DemoDataSource {
         final Blog blog = new Blog();
         blog.setName("Tapestry 5 Blog");
         blog.setDescription("Thoughts on coding, technology and occasional stuff");
+        blog.setSkin(SkinConstants.DEFAULT_SKIN);
 
         this.sessionManager.getSession().save(blog);
 
