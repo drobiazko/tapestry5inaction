@@ -1,0 +1,11 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+	<head>
+		<title>Tapestry 5 in Action</title>
+	</head>
+	<body>
+		<t:body />
+		<div t:type="if" test="showSource">
+			<div t:type="viewsource" />
+		</div>
+	</body>
+</html>

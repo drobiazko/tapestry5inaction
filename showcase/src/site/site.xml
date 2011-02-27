@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="Tapestry Hello-World">
+	<bannerLeft>
+		<name>Tapestry 5</name>
+		<href>http://tapestry.apache.org/tapestry5/</href>
+		<src>images/tapestry_banner.gif</src>
+	</bannerLeft>
+	<bannerRight>
+		<name>Tapesty 5 Book</name>
+		<href>http://code.google.com/p/tapestrybook/</href>
+		<src>images/cover_small.jpg</src>
+	</bannerRight>
+	<skin>
+		<groupId>de.t5book</groupId>
+		<artifactId>maven-skin</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</skin>
+
+	<publishDate format="dd.MM.yyyy" />
+
+	<version />
+
+	<body>
+
+		<menu name="de.t5book">
+			<item name="About" href="index.html" />
+		</menu>
+
+		<menu ref="reports" />
+
+	</body>
+</project>

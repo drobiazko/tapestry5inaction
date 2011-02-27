@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blog name="Tapestry 5 Blog" description="Thoughts on coding, technology and occasional stuff">
+    <articles>
+        <article title="Hello world!" publishDate="2008-6-6">
+            Welcome to Tapestry Blog. This is your first post. Edit or delete it, then start blogging!.
+        </article>
+        <article title="Tag Hierarchy" publishDate="2008-7-20">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce euismod commodo ante. Suspendisse potenti. Nunc pellentesque quam vel pede. Ut a lorem non urna molestie euismod. Fusce consequat tortor eu urna. Pellentesque aliquam, pede eget tincidunt feugiat, nunc massa hendrerit magna, non ultricies neque lectus nec dui. In hac habitasse platea dictumst. Sed feugiat quam eget lectus. Fusce at pede. Morbi sagittis tristique tortor. Sed erat justo, blandit ac, dignissim in, pretium ut, urna.
+        </article>
+    </articles>
+    <tags>
+        <tag name="Uncategorized"/>
+        <tag name="Blog"/>
+    </tags>
+    <users>
+        <user name="admin"/>
+    </users>
+</blog>

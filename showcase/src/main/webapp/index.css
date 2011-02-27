@@ -1,0 +1,11 @@
+body {
+    background-image: url("images/cover.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-color: #3F3E3B;
+    color: #ffffff;
+}
+
+a {
+    color: #ffffff;
+}

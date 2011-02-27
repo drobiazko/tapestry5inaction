@@ -1,0 +1,11 @@
+<div xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+    <hr/>
+    <div><img src="${context:images/java.png}" align="middle"/> ${pageClassPath}</div>
+    <pre class="brush: java; toolbar: false;">
+        ${javaCode}
+    </pre>
+    <div><img src="${context:images/xml.png}" align="middle"/> ${template.path}</div>
+       <pre class="brush: xml; toolbar: false;">
+        ${templateCode}
+    </pre>
+</div>

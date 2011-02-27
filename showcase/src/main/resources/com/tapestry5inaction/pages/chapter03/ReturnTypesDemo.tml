@@ -1,0 +1,15 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+    <p>
+        <a t:type="eventlink" event="navigateByPageClass">Navigate by page class</a>
+    </p>
+
+    <p>
+        <a t:type="eventlink" event="navigateByPageName">Navigate by page name</a>
+    </p>
+
+    <p>
+        <a t:type="eventlink" event="navigateByPageInstance">Navigate by page instance</a>
+    </p>
+</html>
+
+
