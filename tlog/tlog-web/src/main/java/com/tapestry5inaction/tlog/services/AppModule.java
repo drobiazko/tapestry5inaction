@@ -12,8 +12,12 @@ import org.apache.tapestry5.ioc.OrderedConfiguration;
 import org.apache.tapestry5.ioc.Resource;
 import org.apache.tapestry5.ioc.ServiceBinder;
 import org.apache.tapestry5.ioc.annotations.*;
-import org.apache.tapestry5.services.*;
+import org.apache.tapestry5.services.ApplicationStateContribution;
+import org.apache.tapestry5.services.ApplicationStateCreator;
+import org.apache.tapestry5.services.ApplicationStateManager;
+import org.apache.tapestry5.services.ComponentRequestHandler;
 import org.apache.tapestry5.services.linktransform.PageRenderLinkTransformer;
+import org.slf4j.Logger;
 
 @SubModule(CoreModule.class)
 public class AppModule {
@@ -80,10 +84,16 @@ public class AppModule {
                 "PluginPageLinkTransformer", PluginPageLinkTransformer.class);
     }
 
+    public static DemoDataParser buildDemoDataParser(Logger logger){
+        return new DemoDataParser(logger);
+    }
+
 
     @Startup
     public static void initDemoData(@Autobuild
                                     final DemoDataSource source) {
         source.create();
     }
+
+
 }

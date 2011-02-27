@@ -14,7 +14,7 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 public class Read {
 
     @PageActivationContext
-    @Property
+    @Property(write = false)
     private Article article;
 
     @Property

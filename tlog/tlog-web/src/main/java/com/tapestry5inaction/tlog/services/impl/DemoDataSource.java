@@ -14,82 +14,60 @@ import org.hibernate.Session;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 public class DemoDataSource {
 
     @Inject
     private HibernateSessionManager sessionManager;
 
+    @Inject
+    private DemoDataParser demoDataParser;
+
     public void create() {
-        createUser();
+        DemoDataParser.DemoData demoData = demoDataParser.parse(getClass().getResource("demodata.xml"));
 
-        final Blog blog = createBlog();
 
-        final Session session = this.sessionManager.getSession();
+        persistAll(demoData.getUsers());
 
-        Tag tag = newTag("Blog");
-        Tag anotherTag = newTag("Uncategorized");
-        session.save(tag);
-        session.save(anotherTag);
+        final Blog blog = demoData.getBlog();
+        persistBlog(blog);
 
-        session.save(newArticle(
-                blog,
-                "Tag Hierarchy",
-                newDate(2008, 6, 20),
-                "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce euismod commodo ante. Suspendisse potenti. Nunc pellentesque quam vel pede. Ut a lorem non urna molestie euismod. Fusce consequat tortor eu urna. Pellentesque aliquam, pede eget tincidunt feugiat, nunc massa hendrerit magna, non ultricies neque lectus nec dui. In hac habitasse platea dictumst. Sed feugiat quam eget lectus. Fusce at pede. Morbi sagittis tristique tortor. Sed erat justo, blandit ac, dignissim in, pretium ut, urna.",
-                tag));
+        List<Tag> tags = demoData.getTags();
+        persistAll(tags);
 
-        session.save(newArticle(
-                blog,
-                "Hello world!",
-                newDate(2008, 5, 6),
-                "Welcome to Tapestry Blog. This is your first post. Edit or delete it, then start blogging!.",
-                anotherTag));
+        List<Article> articles = demoData.getArticles();
+
+        addTag(articles, tags, 0, 0);
+        addTag(articles, tags, 1, 1);
+
+        persistAll(articles);
 
         sessionManager.getSession().save(newExternalBlog("http://tapestry5.de", "http://tapestry5.de"));
 
         this.sessionManager.commit();
     }
 
-    private User createUser() {
-        final User user = new User();
-        user.setName("admin");
-        user.setPassword(DigestUtils.md5Hex("admin"));
-
-        this.sessionManager.getSession().save(user);
-        return user;
-    }
-
-    private Blog createBlog() {
-        final Blog blog = new Blog();
-        blog.setName("Tapestry 5 Blog");
-        blog.setDescription("Thoughts on coding, technology and occasional stuff");
-        blog.setSkin(SkinConstants.DEFAULT_SKIN);
-
-        this.sessionManager.getSession().save(blog);
-
-        return blog;
-    }
-
-    private Article newArticle(final Blog blog, final String title,
-                               final Date publishDate, final String content, Tag... tags) {
-        final Article article = new Article();
-        article.setBlog(blog);
-        article.setTitle(title);
-        article.setPublishDate(publishDate);
-        article.setContent(content);
-
-        if (tags != null) {
-            article.getTags().addAll(Arrays.asList(tags));
+    private <T> void persistAll(List<T> list) {
+        for (T next : list) {
+            sessionManager.getSession().save(next);
         }
-        return article;
+
+        this.sessionManager.commit();
     }
 
-    private Tag newTag(String name) {
-        Tag tag = new Tag();
-        tag.setName(name);
+    private void addTag(List<Article> articles, List<Tag> tags, int articleIndex, int tagIndex) {
+        if (articleIndex < articles.size() && tagIndex < tags.size()) {
+            Article article = articles.get(articleIndex);
 
-        return tag;
+            article.getTags().add(tags.get(tagIndex));
+        }
+    }
+
+    private void persistBlog(Blog blog) {
+        blog.setSkin(SkinConstants.DEFAULT_SKIN);
+        this.sessionManager.getSession().save(blog);
+        this.sessionManager.commit();
     }
 
     private ExternalBlog newExternalBlog(String name, String uri) {
