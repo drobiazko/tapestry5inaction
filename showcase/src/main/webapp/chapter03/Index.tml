@@ -1,0 +1,42 @@
+<html t:type="indexlayout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<div>
+    This chapter covers:
+    <ul>
+        <li>
+            Linking pages of a Tapestry application
+        </li>
+        <li>
+            Restoring page state from URLs
+        </li>
+        <li>
+            Advanced navigation patterns
+        </li>
+        <li>
+            Alternative ways to send a response
+        </li>
+    </ul>
+</div>
+
+
+Demo pages:
+<p>
+    <a t:type="pagelink" page="chapter03/blog/v1/index">Activating pages without ValueEncoder</a>
+</p>
+
+<p>
+    <a t:type="pagelink" page="chapter03/blog/v2/index">Activating pages with ValueEncoder</a>
+</p>
+
+<p>
+    <a t:type="pagelink" page="chapter03/blog/v3/index">Redirect by returning a page instance</a>
+</p>
+
+<p>
+    <a t:type="pagelink" page="chapter03/blog/v4/index">Redirect by returning a Link instance</a>
+</p>
+
+<p>
+    <a t:type="pagelink" page="chapter03/returntypesdemo">Returns types for event handler methods</a>
+</p>
+
+</html>

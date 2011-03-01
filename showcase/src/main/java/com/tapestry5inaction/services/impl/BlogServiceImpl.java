@@ -15,4 +15,8 @@ public class BlogServiceImpl implements BlogService {
     public List<Article> findRecentArticles() {
         return session.createCriteria(Article.class).list();
     }
+
+    public Article findArticleById(Long id) {
+        return (Article) session.get(Article.class, id);
+    }
 }

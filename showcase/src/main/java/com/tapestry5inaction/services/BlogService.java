@@ -7,4 +7,6 @@ import java.util.List;
 public interface BlogService {
 
     List<Article> findRecentArticles();
+
+    Article findArticleById(Long id);
 }
