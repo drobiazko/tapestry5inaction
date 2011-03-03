@@ -10,6 +10,18 @@
     <p>
         <a t:type="eventlink" event="navigateByPageInstance">Navigate by page instance</a>
     </p>
+
+    <p>
+        <a t:type="eventlink" event="navigateByBoolean">Navigate by boolean value</a>
+    </p>
+
+    <p>
+        <a t:type="eventlink" event="navigateByVoid">Navigate by void</a>
+    </p>
+
+    <p>
+        <a t:type="eventlink" event="navigateByNull">Navigate by null</a>
+    </p>
 </html>
 
 

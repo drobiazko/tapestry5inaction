@@ -20,4 +20,16 @@ public class ReturnTypesDemo {
     Object onNavigateByPageInstance() {
         return index;
     }
+
+    Object onNavigateByBoolean() {
+        return true;
+    }
+
+    void onNavigateByVoid() {
+
+    }
+
+    Object onNavigateByNull() {
+        return null;
+    }
 }
