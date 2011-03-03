@@ -1,9 +1,18 @@
 body {
-    background-image: url("images/cover.png");
-    background-repeat: no-repeat;
+    background-image: url("images/background.png");
+    background-repeat: repeat-y;
     background-position: right top;
-    background-color: #3F3E3B;
+    background-color: #504F4D;
     color: #ffffff;
+}
+
+
+#cover {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: auto;
+
 }
 
 a {

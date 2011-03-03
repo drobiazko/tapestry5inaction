@@ -3,6 +3,7 @@
 		<title>Tapestry 5 in Action</title>
 	</head>
 	<body>
+        <img id="cover" src="${context:images/cover.png}"/>
         <t:body/>
 	</body>
 </html>
