@@ -1,7 +1,6 @@
 package com.tapestry5inaction.pages.chapter03.blog.v4;
 
 import com.tapestry5inaction.entities.Article;
-import com.tapestry5inaction.pages.chapter03.blog.v3.Read;
 import com.tapestry5inaction.services.BlogService;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.ioc.annotations.Inject;
