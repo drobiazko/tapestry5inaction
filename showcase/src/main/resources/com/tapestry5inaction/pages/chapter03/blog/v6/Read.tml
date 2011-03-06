@@ -1,6 +1,6 @@
 <html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
 
-    <a href="${link}">${article.title}</a>
+    <h2><a href="${link}">${article.title}</a></h2>
 
     <div t:type="output" value="article.publishDate" format="literal:d MMM, yyyy"/>
 

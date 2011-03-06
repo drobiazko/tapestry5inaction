@@ -1,0 +1,26 @@
+<html t:type="indexlayout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+    <div>
+        This chapter covers:
+        <ul>
+            <li>
+                Creating XHTML templates with Tapestry Markup Language.
+            </li>
+            <li>
+                Expansions and parameter bindings.
+            </li>
+            <li>
+                Improving the template readability.
+            </li>
+            <li>
+                Wiring templates with callback methods.
+            </li>
+        </ul>
+    </div>
+
+
+    Demo pages:
+    <p>
+        <a t:type="pagelink" page="chapter02/mockup">Mark a temlate portion for removal in production</a>
+    </p>
+
+</html>

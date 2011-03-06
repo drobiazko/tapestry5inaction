@@ -1,0 +1,17 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+   <head>
+      <title>Tapestry 5 in Action</title>
+   </head>
+   <body>
+
+    <ul>
+        <t:remove>
+            <li>list item goes here</li>
+            <li>list item goes here</li>
+        </t:remove>
+
+        <li t:type="loop"
+            source="[1,2]" value="var:index">list item ${var:index}</li>
+    </ul>
+</body>
+</html>
