@@ -20,7 +20,10 @@
 
     Demo pages:
     <p>
-        <a t:type="pagelink" page="chapter02/mockup">Mark a temlate portion for removal in production</a>
+        <a t:type="pagelink" page="chapter02/whatiscurrenttime">Accessing page properties from templates</a>
+    </p>
+    <p>
+        <a t:type="pagelink" page="chapter02/mockup">Mark a template portion for removal in production</a>
     </p>
 
 </html>

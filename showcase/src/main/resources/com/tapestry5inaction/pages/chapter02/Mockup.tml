@@ -1,8 +1,4 @@
-<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
-   <head>
-      <title>Tapestry 5 in Action</title>
-   </head>
-   <body>
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
 
     <ul>
         <t:remove>
@@ -13,5 +9,4 @@
         <li t:type="loop"
             source="[1,2]" value="var:index">list item ${var:index}</li>
     </ul>
-</body>
 </html>

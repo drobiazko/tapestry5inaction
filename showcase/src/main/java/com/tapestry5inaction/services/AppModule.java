@@ -5,6 +5,7 @@ import com.tapestry5inaction.services.impl.ArticleEncoder;
 import com.tapestry5inaction.services.impl.BlogServiceImpl;
 import com.tapestry5inaction.services.impl.DemoDataParser;
 import com.tapestry5inaction.services.impl.DemoDataSource;
+import org.apache.tapestry5.SymbolConstants;
 import org.apache.tapestry5.ValueEncoder;
 import org.apache.tapestry5.hibernate.HibernateSymbols;
 import org.apache.tapestry5.ioc.MappedConfiguration;
@@ -42,7 +43,10 @@ public class AppModule {
     @Contribute(SymbolProvider.class)
     @ApplicationDefaults
     public static void provideApplicationDefaults(MappedConfiguration<String, String> configuration) {
+
         configuration.add(HibernateSymbols.PROVIDE_ENTITY_VALUE_ENCODERS, "false");
+
+        configuration.add(SymbolConstants.SUPPORTED_LOCALES, "en,de,ru,iw");
     }
 
     @Contribute(ValueEncoderSource.class)
