@@ -1,0 +1,11 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <h2>${message:choose-language}</h2>
+
+    <div>
+        <a t:type="eventlink" event="en"><img src="${context:images/us.gif}"/></a>
+        <a t:type="eventlink" event="ru"><img src="${context:images/ru.gif}"/></a>
+        <a t:type="eventlink" event="il"><img src="${context:images/il.gif}"/></a>
+    </div>
+
+</html>

@@ -1,0 +1,11 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <p>Locale determined from the request: ${requestLocale}</p>
+
+    <p>Injected locale: ${locale}</p>
+
+    <p>Locale for the current thread: ${threadLocale}</p>
+
+    <p>Persistent locale: ${persistentLocale}</p>
+
+</html>
