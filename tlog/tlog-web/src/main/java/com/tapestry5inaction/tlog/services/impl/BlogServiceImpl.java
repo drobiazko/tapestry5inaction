@@ -48,10 +48,12 @@ public class BlogServiceImpl implements BlogService {
                 .add(Restrictions.eq("name", name)).uniqueResult();
     }
 
-    public List<Article> findArticles(String term) {
-        return this.session.createCriteria(Article.class)
-                .add(Restrictions.or(like("title", term), like("content", term)))
-                .addOrder(desc("publishDate")).setMaxResults(20).list();
+    public PageableLoopDataSource findArticles(final String term) {
+        return new PageableLoopDataSourceImpl(session, Article.class, new AdditionalConstraintsCallback() {
+            public void apply(Criteria criteria) {
+                criteria.add(Restrictions.or(like("title", term), like("content", term)));
+            }
+        });
     }
 
     private Criterion like(String property, String value) {

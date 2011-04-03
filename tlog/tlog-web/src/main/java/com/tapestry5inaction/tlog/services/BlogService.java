@@ -16,5 +16,5 @@ public interface BlogService {
 
     PageableLoopDataSource findArticles(Tag tag);
 
-    List<Article> findArticles(String term);
+    PageableLoopDataSource findArticles(String term);
 }

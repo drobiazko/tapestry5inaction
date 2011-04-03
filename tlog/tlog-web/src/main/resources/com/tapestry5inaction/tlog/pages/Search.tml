@@ -1,9 +1,9 @@
 <html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
 
 
-    <h2 class="pagetitle">Search Results</h2>
+    <h2 class="pagetitle">${message:search-results}</h2>
 
-    <div class="post" t:type="loop" source="articles" value="currentArticle">
+    <div class="post" t:type="pageableloop" source="articles" value="currentArticle">
         <h3>
             <a t:type="pagelink" page="Read" context="currentArticle">${currentArticle.title}</a>
         </h3>

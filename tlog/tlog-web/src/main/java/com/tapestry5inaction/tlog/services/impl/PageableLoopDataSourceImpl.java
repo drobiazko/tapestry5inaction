@@ -4,6 +4,7 @@ package com.tapestry5inaction.tlog.services.impl;
 import com.tapestry5inaction.tlog.services.PageableLoopDataSource;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Projections;
 
 import java.util.List;
@@ -46,7 +47,8 @@ public class PageableLoopDataSourceImpl implements PageableLoopDataSource {
 
     public void prepare(int startIndex, int endIndex) {
         Criteria criteria = session.createCriteria(entityType)
-                .setFirstResult(startIndex).setMaxResults(endIndex - startIndex + 1);
+                .setFirstResult(startIndex).setMaxResults(endIndex - startIndex + 1)
+                .addOrder(Order.desc("publishDate"));
 
         callback.apply(criteria);
 
