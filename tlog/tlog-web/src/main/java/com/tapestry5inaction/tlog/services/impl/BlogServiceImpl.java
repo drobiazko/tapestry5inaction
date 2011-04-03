@@ -55,7 +55,7 @@ public class BlogServiceImpl implements BlogService {
     }
 
     private Criterion like(String property, String value) {
-        return Restrictions.like(property, "%" + value + "%");
+        return Restrictions.ilike(property, "%" + value + "%");
     }
 
 }
