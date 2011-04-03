@@ -1,5 +1,5 @@
 <html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
 
-    <div style="text-align:right">${message:hello-world}</div>
+    <div style="text-align:right">שלום עולם</div>
 
 </html>

@@ -74,7 +74,7 @@ public class ViewSource {
     private String toString(InputStream inputStream) {
         StringWriter target = new StringWriter();
         try {
-            IOUtils.copy(inputStream, target);
+            IOUtils.copy(inputStream, target, "UTF8");
         } catch (IOException e) {
             throw new RuntimeException(e);
         } finally {

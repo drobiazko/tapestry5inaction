@@ -1,3 +1,3 @@
 Tapestry5InAction.Messages = {
-    helloWorld : "Hello, world!"
+    helloWorld : "שלום עולם"
 }
