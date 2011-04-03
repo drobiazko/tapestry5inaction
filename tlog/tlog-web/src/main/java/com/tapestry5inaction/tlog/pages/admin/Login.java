@@ -37,10 +37,12 @@ public class Login {
 
         if (loginForm.isValid()) {
 
-            user = authenticator.authenticate(userName, password);
+            User authenticated = authenticator.authenticate(userName, password);
 
-            if (user == null) {
+            if (authenticated == null) {
                 loginForm.recordError(messages.get("invalid-username-or-password"));
+            } else {
+                user = authenticated;
             }
         }
     }
