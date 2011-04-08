@@ -1,7 +1,9 @@
-package com.tapestry5inaction.tlog.pages.admin;
+package com.tapestry5inaction.pages.chapter06.blog;
 
-import com.tapestry5inaction.tlog.core.entities.User;
-import com.tapestry5inaction.tlog.services.Authenticator;
+
+import com.tapestry5inaction.entities.User;
+import com.tapestry5inaction.pages.chapter06.Index;
+import com.tapestry5inaction.services.Authenticator;
 import org.apache.tapestry5.ValidationException;
 import org.apache.tapestry5.annotations.*;
 import org.apache.tapestry5.beaneditor.Validate;
@@ -10,7 +12,6 @@ import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
 public class Login {
-
     @Property
     @Persist
     @Validate("required")
@@ -33,8 +34,7 @@ public class Login {
     @SessionState(create = false)
     private User user;
 
-    void onValidateFromLoginForm() throws ValidationException {
-
+    void onValidate() {
         if (loginForm.isValid()) {
 
             User authenticated = authenticator.authenticate(userName, password);

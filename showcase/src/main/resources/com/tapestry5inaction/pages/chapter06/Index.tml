@@ -1,0 +1,26 @@
+<html t:type="indexlayout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<div>
+    This chapter covers:
+    <ul>
+        <li>
+            Creating forms
+        </li>
+        <li>
+            Overview of available form-related components
+        </li>
+        <li>
+            Validating input data
+        </li>
+        <li>
+            Automatic conversion of input between client-side strings and server-side objects
+        </li>
+    </ul>
+</div>
+
+
+Demo pages:
+<p>
+    <a t:type="pagelink" page="chapter06/blog/login">Simple login form</a>
+</p>
+
+</html>

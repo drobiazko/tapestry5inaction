@@ -10,7 +10,7 @@
     <name>Tapestry 5 in Action</name>
 
     <properties>
-        <tapestry-release-version>5.2.4</tapestry-release-version>
+        <tapestry-release-version>5.2.5</tapestry-release-version>
         <cobertura-plugin-version>2.2</cobertura-plugin-version>
     </properties>
 
@@ -52,6 +52,12 @@
             <dependency>
                 <groupId>org.apache.tapestry</groupId>
                 <artifactId>tapestry-hibernate</artifactId>
+                <version>${tapestry-release-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.tapestry</groupId>
+                <artifactId>tapestry-upload</artifactId>
                 <version>${tapestry-release-version}</version>
             </dependency>
 

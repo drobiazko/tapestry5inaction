@@ -17,6 +17,15 @@ public class User {
     @Column(name = "PASSWD")
     private String password;
 
+    public User(){
+        super();
+    }
+
+    public User(String name, String password) {
+        this.name = name;
+        this.password = password;
+    }
+
     public Long getId() {
         return this.id;
     }

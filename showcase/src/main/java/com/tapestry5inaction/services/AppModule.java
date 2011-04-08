@@ -1,10 +1,7 @@
 package com.tapestry5inaction.services;
 
 import com.tapestry5inaction.entities.Article;
-import com.tapestry5inaction.services.impl.ArticleEncoder;
-import com.tapestry5inaction.services.impl.BlogServiceImpl;
-import com.tapestry5inaction.services.impl.DemoDataParser;
-import com.tapestry5inaction.services.impl.DemoDataSource;
+import com.tapestry5inaction.services.impl.*;
 import org.apache.tapestry5.SymbolConstants;
 import org.apache.tapestry5.ValueEncoder;
 import org.apache.tapestry5.hibernate.HibernateSymbols;
@@ -26,6 +23,7 @@ public class AppModule {
 
 
     public static void bind(ServiceBinder binder) {
+        binder.bind(Authenticator.class, AuthenticatorImpl.class);
         binder.bind(BlogService.class, BlogServiceImpl.class);
     }
 
