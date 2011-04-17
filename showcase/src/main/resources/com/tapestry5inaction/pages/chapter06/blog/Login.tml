@@ -1,6 +1,6 @@
 <html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
 
-    <form t:id="loginForm">
+    <form t:type="form" t:id="loginForm" clientValidation="false">
         <t:errors/>
         <div>
             <label t:type="label" for="userName"/>

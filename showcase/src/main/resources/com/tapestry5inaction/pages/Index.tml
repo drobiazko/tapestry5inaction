@@ -1,3 +1,9 @@
 <html t:type="indexlayout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
-	<a>Examples</a>
+
+    <p>
+        <a t:type="pagelink" page="chapter05/index">Chapter 5: Localization</a>
+    </p>
+    <p>
+        <a t:type="pagelink" page="chapter06/index">Chapter 6: Forms and user input validation</a>
+    </p>
 </html>

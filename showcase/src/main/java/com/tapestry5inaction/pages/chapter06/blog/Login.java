@@ -22,7 +22,7 @@ public class Login {
     @Validate("required")
     private String password;
 
-    @Component(parameters = "clientValidation=false")
+    @InjectComponent
     private Form loginForm;
 
     @Inject
@@ -34,9 +34,8 @@ public class Login {
     @SessionState(create = false)
     private User user;
 
-    void onValidate() {
+    void onValidateForm() {
         if (loginForm.isValid()) {
-
             User authenticated = authenticator.authenticate(userName, password);
 
             if (authenticated == null) {
@@ -45,6 +44,8 @@ public class Login {
                 user = authenticated;
             }
         }
+
+
     }
 
     @DiscardAfter
