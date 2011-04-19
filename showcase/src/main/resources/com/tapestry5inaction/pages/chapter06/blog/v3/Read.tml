@@ -1,0 +1,41 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <h2><a t:type="pagelink" page="chapter06/blog/v3/read">${article.title}</a></h2>
+
+    <div t:type="output" value="article.publishDate" format="literal:d MMM, yyyy"/>
+
+    <div t:type="outputraw" value="article.content"/>
+
+    <ol>
+
+        <li t:type="loop" source="article.comments" value="currentComment">
+            <cite>${currentComment.author}</cite> Says:
+
+            <br/>
+
+            <small class="commentmetadata">
+                <span t:type="output" value="currentComment.publishDate" format="literal:MMMM d, yyyy 'at' hh:mm a"/>
+            </small>
+
+             <p>
+                <div t:type="outputraw" value="currentComment.content"/>
+            </p>
+        </li>
+    </ol>
+
+    <form t:type="form" t:id="commentform" clientValidation="false">
+        <t:errors/>
+        <div>
+            <label t:type="label" for="author"/>
+            <input t:type="textfield" t:id="author" value="comment.author" validate="required"/>
+        </div>
+
+        <div>
+            <textarea t:type="textarea" value="comment.content" cols="100%" rows="10" validate="required"/>
+        </div>
+
+        <div>
+            <input type="submit" value="Submit Comment"/>
+        </div>
+    </form>
+</html>
