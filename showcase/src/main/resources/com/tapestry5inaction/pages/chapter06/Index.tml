@@ -23,4 +23,16 @@ Demo pages:
     <a t:type="pagelink" page="chapter06/blog/login">Simple login form</a>
 </p>
 
+<p>
+    <a t:type="pagelink" page="chapter06/blog/v2/login">Simple login form</a>
+</p>
+
+<p>
+    <a t:type="pagelink" page="chapter06/blog/v3/index">Form for commenting on blog articles</a>
+</p>
+
+<p>
+    <a t:type="pagelink" page="chapter06/blog/v4/login">Login form with Remember Me feature</a>
+</p>
+
 </html>

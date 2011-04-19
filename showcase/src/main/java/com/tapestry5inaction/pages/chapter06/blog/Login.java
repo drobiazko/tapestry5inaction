@@ -4,7 +4,6 @@ package com.tapestry5inaction.pages.chapter06.blog;
 import com.tapestry5inaction.entities.User;
 import com.tapestry5inaction.pages.chapter06.Index;
 import com.tapestry5inaction.services.Authenticator;
-import org.apache.tapestry5.ValidationException;
 import org.apache.tapestry5.annotations.*;
 import org.apache.tapestry5.beaneditor.Validate;
 import org.apache.tapestry5.corelib.components.Form;
@@ -34,7 +33,7 @@ public class Login {
     @SessionState(create = false)
     private User user;
 
-    void onValidateForm() {
+    void onValidateFromLoginForm() {
         if (loginForm.isValid()) {
             User authenticated = authenticator.authenticate(userName, password);
 

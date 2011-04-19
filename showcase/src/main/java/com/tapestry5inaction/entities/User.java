@@ -1,5 +1,7 @@
 package com.tapestry5inaction.entities;
 
+import org.apache.tapestry5.beaneditor.Validate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,9 +14,11 @@ public class User {
     private Long id;
 
     @Column
+    @Validate("required")
     private String name;
 
     @Column(name = "PASSWD")
+    @Validate("required")
     private String password;
 
     public User(){

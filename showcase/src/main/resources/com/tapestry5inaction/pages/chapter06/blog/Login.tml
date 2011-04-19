@@ -4,12 +4,12 @@
         <t:errors/>
         <div>
             <label t:type="label" for="userName"/>
-            <input t:type="textfield" t:id="userName" size="20"/>
+            <input t:type="textfield" t:id="userName" value="userName" size="20"/>
         </div>
 
         <div>
             <label t:type="label" for="password"/>
-            <input t:type="passwordfield" t:id="password" size="20"/>
+            <input t:type="passwordfield" t:id="password" value="password" size="20"/>
         </div>
 
         <div>
