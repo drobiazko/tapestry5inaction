@@ -2,6 +2,7 @@ package com.tapestry5inaction.pages.chapter06.blog.v4;
 
 import com.tapestry5inaction.entities.User;
 import com.tapestry5inaction.pages.chapter06.Index;
+import com.tapestry5inaction.pages.chapter06.blog.Welcome;
 import com.tapestry5inaction.services.Authenticator;
 import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.Property;
@@ -56,8 +57,7 @@ public class Login {
     }
 
     Object onSuccess() {
-        System.err.println("rememberMe: " + rememberMe);
-        return Index.class;
+        return Welcome.class;
     }
 
 }

@@ -49,6 +49,6 @@ public class Login {
 
     @DiscardAfter
     Object onSuccess() {
-        return Index.class;
+        return Welcome.class;
     }
 }
