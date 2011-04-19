@@ -5,7 +5,7 @@ import org.apache.tapestry5.upload.services.UploadedFile;
 
 import java.io.File;
 
-public class UploadFile {
+public class Upload {
 
     @Property
     private UploadedFile file;

@@ -35,4 +35,8 @@ Demo pages:
     <a t:type="pagelink" page="chapter06/blog/v4/login">Login form with Remember Me feature</a>
 </p>
 
+<p>
+    <a t:type="pagelink" page="chapter06/blog/upload">Uploading files</a>
+</p>
+
 </html>
