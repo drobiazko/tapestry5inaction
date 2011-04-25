@@ -36,6 +36,19 @@ Demo pages:
 </p>
 
 <p>
+    <a t:type="pagelink" page="chapter06/radiodemo">Radio buttons demo</a>
+</p>
+
+<p>
+    <a t:type="pagelink" page="chapter06/radioenumdemo">Radio buttons with enums demo</a>
+</p>
+
+
+<p>
+    <a t:type="pagelink" page="chapter06/datefielddemo">Date input</a>
+</p>
+
+<p>
     <a t:type="pagelink" page="chapter06/blog/upload">Uploading files</a>
 </p>
 

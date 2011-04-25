@@ -1,0 +1,25 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <div t:type="if" test="gender">
+       Your gender is: ${gender}
+    </div>
+
+    <form t:type="form" clientValidation="false">
+        <t:errors/>
+        <div>
+            <t:radiogroup t:id="gender">
+                <label t:type="label" for="male"/>
+                <input t:type="radio" t:id="male" value="literal:male"/>
+
+                <label t:type="label" for="female"/>
+                <input t:type="radio" t:id="female" value="literal:female"/>
+            </t:radiogroup>
+
+        </div>
+
+        <div>
+            <input type="submit" value="Submit"/>
+        </div>
+    </form>
+
+</html>

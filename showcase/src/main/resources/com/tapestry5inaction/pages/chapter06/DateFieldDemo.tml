@@ -1,0 +1,15 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <form t:type="form" clientValidation="false">
+        <t:errors/>
+        <div>
+            <label t:type="label" for="birthday"/>
+            <input t:type="datefield" t:id="birthday" validate="required"/>
+        </div>
+
+        <div>
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+
+</html>

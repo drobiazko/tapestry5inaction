@@ -4,7 +4,8 @@
 	</head>
 	<body>
 		<t:body />
-		<div t:type="if" test="showSource">
+
+		<div t:type="if" test="showSource" id="sourcecode">
 			<div t:type="viewsource" />
 		</div>
 	</body>

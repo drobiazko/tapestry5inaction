@@ -1,0 +1,16 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <form t:type="form" clientValidation="false">
+        <t:errors/>
+        <div>
+            <select t:type="select" value="paymentType" validate="required"
+                    model="options"/>
+
+        </div>
+
+        <div>
+            <input type="submit" value="Submit"/>
+        </div>
+    </form>
+
+</html>
