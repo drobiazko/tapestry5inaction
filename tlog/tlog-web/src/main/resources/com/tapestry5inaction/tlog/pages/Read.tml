@@ -40,13 +40,13 @@
         <t:errors/>
 
         <p>
-            <input t:type="textfield" t:id="author" value="comment.author" validate="required"/>
+            <input t:type="textfield" t:id="author" value="comment.author" validate="required,minlength=3,maxlength=50"/>
             <label t:type="label" for="author"/>
         </p>
 
 
        <p>
-            <input t:type="textfield" t:id="email" value="comment.email" validate="required"/>
+            <input t:type="textfield" t:id="email" value="comment.email" validate="required,email"/>
             <label t:type="label" for="email"/>
         </p>
 

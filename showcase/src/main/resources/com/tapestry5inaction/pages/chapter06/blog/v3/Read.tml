@@ -27,7 +27,12 @@
         <t:errors/>
         <div>
             <label t:type="label" for="author"/>
-            <input t:type="textfield" t:id="author" value="comment.author" validate="required"/>
+            <input t:type="textfield" t:id="author" value="comment.author" validate="required,minlength=3,maxlength=50"/>
+        </div>
+
+        <div>
+            <label t:type="label" for="email"/>
+            <input t:type="textfield" t:id="email" value="comment.email" validate="required,email"/>
         </div>
 
         <div>
