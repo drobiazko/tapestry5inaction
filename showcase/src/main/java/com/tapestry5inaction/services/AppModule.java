@@ -1,7 +1,9 @@
 package com.tapestry5inaction.services;
 
 import com.tapestry5inaction.entities.Article;
+import com.tapestry5inaction.entities.Blog;
 import com.tapestry5inaction.services.impl.*;
+import org.apache.tapestry5.PersistenceConstants;
 import org.apache.tapestry5.SymbolConstants;
 import org.apache.tapestry5.ValueEncoder;
 import org.apache.tapestry5.hibernate.HibernateSymbols;
@@ -45,6 +47,21 @@ public class AppModule {
         configuration.add(HibernateSymbols.PROVIDE_ENTITY_VALUE_ENCODERS, "false");
 
         configuration.add(SymbolConstants.SUPPORTED_LOCALES, "en,de,ru,iw");
+    }
+
+    @Contribute(ApplicationStateManager.class)
+    public static void provideApplicationStateContributions(
+            final MappedConfiguration<Class, ApplicationStateContribution> configuration,
+            final BlogService blogService) {
+
+        final ApplicationStateCreator<Blog> creator = new ApplicationStateCreator<Blog>() {
+            public Blog create() {
+                return blogService.findBlog();
+            }
+
+        };
+        configuration.add(Blog.class, new ApplicationStateContribution(
+                PersistenceConstants.SESSION, creator));
     }
 
     @Contribute(ValueEncoderSource.class)

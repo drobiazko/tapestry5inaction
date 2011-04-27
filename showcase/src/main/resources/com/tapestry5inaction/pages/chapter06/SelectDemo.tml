@@ -1,9 +1,18 @@
-<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+
+    <div t:type="if" test="paymentType">
+        Your payment type is: ${paymentType}
+        <p:else>
+            No payment type selected.
+        </p:else>
+    </div>
+
+    <p/>
 
     <form t:type="form" clientValidation="false">
         <t:errors/>
         <div>
-            <select t:type="select" value="paymentType" validate="required"
+            <select t:type="select" t:id="paymentType"
                     model="literal:cc=Credit Card,bt=Bank Transfer,ca=Cash,pp=PayPal"/>
 
         </div>

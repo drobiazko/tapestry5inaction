@@ -1,0 +1,22 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    ${message}
+
+    <form t:type="form" clientValidation="false">
+        <t:errors/>
+        <div>
+            <label t:type="label" for="title"/>
+            <input t:type="textfield" t:id="title" value="article.title"/>
+        </div>
+
+        <div>
+            <textarea t:type="textarea" value="article.content"/>
+        </div>
+
+        <div>
+            <input t:type="submit" t:id="cancel" value="Save"/>
+            <input t:type="submit" t:id="register" value="Publish" event="publish"/>
+        </div>
+    </form>
+
+</html>

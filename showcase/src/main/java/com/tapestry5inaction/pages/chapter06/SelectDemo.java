@@ -22,7 +22,6 @@ public class SelectDemo {
     @Inject
     private Logger logger;
 
-    @DiscardAfter
     void onSuccess() {
         logger.info("Selected payment type {} ", paymentType);
     }
