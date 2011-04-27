@@ -173,6 +173,8 @@ public class IntegrationTests extends SeleniumTestCase {
 
      @Test
     public void post() {
+        String publishSubmit = "//input[@type='submit' and @value='Publish']";
+
         open("/admin/");
 
         login();
@@ -181,16 +183,16 @@ public class IntegrationTests extends SeleniumTestCase {
 
         waitForPageToLoad();
 
-        click(SUBMIT);
+        click(publishSubmit);
 
         waitForPageToLoad();
 
-        assertTextPresent("You must provide a value for Title.", "You must provide a value for Textarea.");
+        assertTextPresent("Please provide a title for the article", "The article content is empty");
 
         type("title", "New Article");
         runScript("CKEDITOR.instances['textarea'].setData('New Content');");
 
-        click(SUBMIT);
+        click(publishSubmit);
 
         waitForPageToLoad();
 
@@ -209,7 +211,7 @@ public class IntegrationTests extends SeleniumTestCase {
 
         type("title", "UPDATE: New Article");
 
-        click(SUBMIT);
+        click(publishSubmit);
 
         waitForPageToLoad();
 

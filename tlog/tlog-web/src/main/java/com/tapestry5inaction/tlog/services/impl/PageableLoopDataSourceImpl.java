@@ -6,6 +6,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
 
 import java.util.List;
 
@@ -35,6 +36,7 @@ public class PageableLoopDataSourceImpl implements PageableLoopDataSource {
     public int getAvailableRows() {
         Criteria criteria = session.createCriteria(entityType);
 
+        published(criteria);
 
         callback.apply(criteria);
 
@@ -50,6 +52,8 @@ public class PageableLoopDataSourceImpl implements PageableLoopDataSource {
                 .setFirstResult(startIndex).setMaxResults(endIndex - startIndex + 1)
                 .addOrder(Order.desc("publishDate"));
 
+        published(criteria);
+
         callback.apply(criteria);
 
         preparedResults = criteria.list();
@@ -57,5 +61,9 @@ public class PageableLoopDataSourceImpl implements PageableLoopDataSource {
 
     public List<?> getRow() {
         return preparedResults;
+    }
+
+    private void published(Criteria criteria) {
+        criteria.add(Restrictions.isNotNull("publishDate"));
     }
 }

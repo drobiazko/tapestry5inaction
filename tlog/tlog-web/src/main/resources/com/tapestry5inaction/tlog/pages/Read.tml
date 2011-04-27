@@ -56,7 +56,7 @@
         </p>
 
 
-        <p><textarea t:type="textarea" value="comment.content" cols="100%" rows="10" validate="required"/></p>
+        <p><textarea t:type="textarea" t:id="commentText" value="comment.content" cols="100%" rows="10" validate="required"/></p>
 
         <p>
             <img t:id="kaptchaImage"/>

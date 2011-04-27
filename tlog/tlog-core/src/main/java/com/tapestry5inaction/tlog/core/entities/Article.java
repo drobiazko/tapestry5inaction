@@ -37,7 +37,6 @@ public class Article {
 
     public Article() {
         super();
-        this.publishDate = new Date();
     }
 
     public Long getId() {

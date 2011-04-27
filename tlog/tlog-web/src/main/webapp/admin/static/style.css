@@ -520,7 +520,30 @@ div.t-beaneditor-row label {
     width: 50px;
 }
 
-#loginForm div label{
+#loginForm div label {
     width: 100px;
     float: left;
+}
+
+div.form-row {
+    padding: 4px 0 2px;
+}
+
+div.form-row label {
+    float: left;
+    width: 50px;
+}
+
+.button {
+    -moz-border-radius: 11px 11px 11px 11px;
+    -moz-box-sizing: content-box;
+    border-color: #BBBBBB;
+    color: #464646;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    font-size: 11px !important;
+    line-height: 13px;
+    padding: 3px 8px;
+    text-decoration: none;
 }

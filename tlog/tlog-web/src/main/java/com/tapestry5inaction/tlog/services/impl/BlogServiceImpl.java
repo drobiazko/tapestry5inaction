@@ -39,6 +39,7 @@ public class BlogServiceImpl implements BlogService {
             public void apply(Criteria criteria) {
                 criteria.createCriteria("tags").add(
                         Restrictions.eq("name", tag.getName()));
+                published(criteria);
             }
         });
     }
@@ -52,8 +53,13 @@ public class BlogServiceImpl implements BlogService {
         return new PageableLoopDataSourceImpl(session, Article.class, new AdditionalConstraintsCallback() {
             public void apply(Criteria criteria) {
                 criteria.add(Restrictions.or(like("title", term), like("content", term)));
+                published(criteria);
             }
         });
+    }
+
+    private void published(Criteria criteria) {
+        criteria.add(Restrictions.isNotNull("publishDate"));
     }
 
     private Criterion like(String property, String value) {

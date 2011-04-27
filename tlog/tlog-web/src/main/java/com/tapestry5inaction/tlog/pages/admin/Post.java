@@ -12,6 +12,8 @@ import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.hibernate.Session;
 
+import java.util.Date;
+
 public class Post {
 
     @Property
@@ -31,6 +33,16 @@ public class Post {
     @Persist(PersistenceConstants.FLASH)
     @Property
     private String message;
+
+    void onPrepare() {
+        if (article == null) {
+            article = new Article();
+        }
+    }
+
+    void onPublish(){
+        article.setPublishDate(new Date());
+    }
 
     @CommitAfter
     void onSuccess() {

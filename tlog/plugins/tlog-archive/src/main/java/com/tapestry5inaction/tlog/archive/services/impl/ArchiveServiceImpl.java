@@ -17,7 +17,8 @@ public class ArchiveServiceImpl implements ArchiveService {
         List<Archive> archives = new ArrayList<Archive>();
 
         List result = session.createQuery("select count(id), year(publishDate), month(publishDate) " +
-                "from Article group by year(publishDate), month(publishDate) " +
+                "from Article where publishDate is not null " +
+                "group by year(publishDate), month(publishDate) " +
                 "order by year(publishDate) desc, month(publishDate) desc").setMaxResults(10).list();
 
         for (Object next : result) {
