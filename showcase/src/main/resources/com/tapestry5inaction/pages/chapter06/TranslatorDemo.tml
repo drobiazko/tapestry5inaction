@@ -1,0 +1,21 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <div t:type="if" test="currency">
+       Selected currency: ${currency}
+    </div>
+
+    <p/>
+
+    <form t:type="form" clientValidation="none">
+        <t:errors/>
+        <div>
+            <label t:type="label" for="currency"/>
+            <input t:type="textfield" t:id="currency" validate="required"/>
+        </div>
+
+        <div>
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+
+</html>
