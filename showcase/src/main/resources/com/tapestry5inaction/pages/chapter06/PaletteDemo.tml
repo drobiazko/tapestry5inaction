@@ -1,6 +1,6 @@
 <html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
 
-    <form t:type="form" clientValidation="false">
+    <form t:type="form" clientValidation="none">
         <t:errors/>
         <div>
             <input t:type="palette" selected="languages" model="model" encoder="encoder"/>

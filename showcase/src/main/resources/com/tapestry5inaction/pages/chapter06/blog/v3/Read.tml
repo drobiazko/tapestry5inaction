@@ -23,7 +23,7 @@
         </li>
     </ol>
 
-    <form t:type="form" t:id="commentform" clientValidation="false">
+    <form t:type="form" t:id="commentform" clientValidation="none">
         <t:errors/>
         <div>
             <label t:type="label" for="author"/>

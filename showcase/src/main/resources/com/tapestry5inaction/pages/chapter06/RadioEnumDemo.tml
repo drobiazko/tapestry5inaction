@@ -5,7 +5,7 @@
        Your gender is: ${selectedGender}
     </div>
 
-    <form t:type="form" clientValidation="false">
+    <form t:type="form" clientValidation="none">
         <t:errors/>
         <div>
             <t:radiogroup t:id="gender">
