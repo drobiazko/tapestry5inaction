@@ -14,6 +14,7 @@ import org.apache.tapestry5.ioc.services.ApplicationDefaults;
 import org.apache.tapestry5.ioc.services.SymbolProvider;
 import org.apache.tapestry5.services.*;
 import org.apache.tapestry5.services.messages.ComponentMessagesSource;
+import org.apache.tapestry5.validator.ValidatorMacro;
 import org.slf4j.Logger;
 
 import java.io.IOException;
@@ -87,18 +88,23 @@ public class AppModule {
     }
 
     @Contribute(TranslatorSource.class)
-    public static void provideTranslators(
-            MappedConfiguration<Class, Translator> configuration) {
+    public static void provideTranslators(MappedConfiguration<Class, Translator> configuration) {
 
         configuration.add(Currency.class, new CurrencyTranslator());
     }
 
     @Contribute(NullFieldStrategySource.class)
-    public static void provideNullFieldStrategies(
-            MappedConfiguration<String, NullFieldStrategy> configuration) {
+    public static void provideNullFieldStrategies(MappedConfiguration<String, NullFieldStrategy> configuration) {
 
         configuration.add("currency", new CurrencyNullFieldStrategy());
     }
+
+    @Contribute(ValidatorMacro.class)
+    public static void combineValidators(MappedConfiguration<String,String> configuration) {
+
+        configuration.add("requiredMinMax","required,minlength=3,maxlength=50");
+    }
+
 
     /**
      * This is a service definition, the service will be named "TimingFilter".

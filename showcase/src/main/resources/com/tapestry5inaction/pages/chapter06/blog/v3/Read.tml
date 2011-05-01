@@ -27,7 +27,7 @@
         <t:errors/>
         <div>
             <label t:type="label" for="author"/>
-            <input t:type="textfield" t:id="author" value="comment.author" validate="required,minlength=3,maxlength=50"/>
+            <input t:type="textfield" t:id="author" value="comment.author" validate="requiredMinMax"/>
         </div>
 
         <div>
