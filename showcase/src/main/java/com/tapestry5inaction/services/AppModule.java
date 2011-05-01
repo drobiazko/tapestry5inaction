@@ -3,10 +3,7 @@ package com.tapestry5inaction.services;
 import com.tapestry5inaction.entities.Article;
 import com.tapestry5inaction.entities.Blog;
 import com.tapestry5inaction.services.impl.*;
-import org.apache.tapestry5.PersistenceConstants;
-import org.apache.tapestry5.SymbolConstants;
-import org.apache.tapestry5.Translator;
-import org.apache.tapestry5.ValueEncoder;
+import org.apache.tapestry5.*;
 import org.apache.tapestry5.hibernate.HibernateSymbols;
 import org.apache.tapestry5.ioc.MappedConfiguration;
 import org.apache.tapestry5.ioc.OrderedConfiguration;
@@ -90,10 +87,17 @@ public class AppModule {
     }
 
     @Contribute(TranslatorSource.class)
-    public static void contributeTranslatorSource(
+    public static void provideTranslators(
             MappedConfiguration<Class, Translator> configuration) {
 
         configuration.add(Currency.class, new CurrencyTranslator());
+    }
+
+    @Contribute(NullFieldStrategySource.class)
+    public static void provideNullFieldStrategies(
+            MappedConfiguration<String, NullFieldStrategy> configuration) {
+
+        configuration.add("currency", new CurrencyNullFieldStrategy());
     }
 
     /**

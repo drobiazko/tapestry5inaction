@@ -13,7 +13,7 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 public class Login {
     @Property
     @Persist
-    @Validate("required")
+    @Validate("required,minlength=3")
     private String userName;
 
     @Property
