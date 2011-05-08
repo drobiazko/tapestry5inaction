@@ -1,0 +1,34 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+
+
+    <p>${message}</p>
+
+    <form t:type="form" clientValidation="none">
+        <t:errors/>
+        <div class="form-row">
+            <label t:type="label" for="question"/>
+            <input t:type="textfield" t:id="question" value="vote.question" validate="required" size="50"/>
+        </div>
+
+        <div t:type="if" test="votePersisted">
+            <h2>Vote options:</h2>
+
+            <div t:type="ajaxformloop" t:id="options"
+                 source="vote.options" value="currentOption">
+                <input t:type="textfield" t:id="option" value="currentOption.value"/> |
+
+                <a t:type="removerowlink">Remove option</a>
+
+                <p:addRow>
+                    <a t:type="addrowlink">Add option</a>
+                </p:addRow>
+            </div>
+
+        </div>
+
+        <div>
+            <input type="submit" value="Save vote"/>
+        </div>
+    </form>
+
+</html>

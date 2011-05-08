@@ -2,6 +2,8 @@ package com.tapestry5inaction.services;
 
 import com.tapestry5inaction.entities.Article;
 import com.tapestry5inaction.entities.Blog;
+import com.tapestry5inaction.entities.Option;
+import com.tapestry5inaction.entities.Vote;
 import com.tapestry5inaction.services.impl.*;
 import org.apache.tapestry5.*;
 import org.apache.tapestry5.hibernate.HibernateSymbols;
@@ -26,6 +28,7 @@ public class AppModule {
     public static void bind(ServiceBinder binder) {
         binder.bind(Authenticator.class, AuthenticatorImpl.class);
         binder.bind(BlogService.class, BlogServiceImpl.class);
+        binder.bind(VoteService.class, VoteServiceImpl.class);
     }
 
     public static DemoDataParser buildDemoDataParser(Logger logger) {
@@ -66,17 +69,26 @@ public class AppModule {
     @Contribute(ValueEncoderSource.class)
     public static void provideEncoders(
             MappedConfiguration<Class, ValueEncoderFactory> configuration,
-            final BlogService blogService) {
+            BlogService blogService,
+            VoteService voteService) {
 
-        ValueEncoderFactory<Article> factory = new ValueEncoderFactory<Article>() {
+        contributeEncoder(configuration, Article.class, new ArticleEncoder(blogService));
+        contributeEncoder(configuration, Vote.class, new VoteEncoder(voteService));
+        contributeEncoder(configuration, Option.class, new OptionEncoder(voteService));
 
-            public ValueEncoder<Article> create(Class<Article> clazz) {
-                return new ArticleEncoder(blogService);
+    }
+
+    private static <T> void contributeEncoder(MappedConfiguration<Class, ValueEncoderFactory> configuration,
+                                              Class<T> clazz, final ValueEncoder<T> encoder) {
+
+        ValueEncoderFactory<T> factory = new ValueEncoderFactory<T>() {
+
+            public ValueEncoder<T> create(Class<T> clazz) {
+                return encoder;
             }
         };
 
-        configuration.add(Article.class, factory);
-
+        configuration.add(clazz, factory);
     }
 
     @Contribute(ComponentMessagesSource.class)
@@ -100,9 +112,9 @@ public class AppModule {
     }
 
     @Contribute(ValidatorMacro.class)
-    public static void combineValidators(MappedConfiguration<String,String> configuration) {
+    public static void combineValidators(MappedConfiguration<String, String> configuration) {
 
-        configuration.add("requiredMinMax","required,minlength=3,maxlength=50");
+        configuration.add("requiredMinMax", "required,minlength=3,maxlength=50");
     }
 
 
