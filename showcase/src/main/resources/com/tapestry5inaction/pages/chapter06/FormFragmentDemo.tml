@@ -1,0 +1,69 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+
+<form t:type="form" clientValidation="none">
+    <t:errors/>
+
+    <div style="float: left;">
+
+        <h2>Billing address</h2>
+
+        <div class="form-row">
+            <label t:type="label" for="billingStreet"/>
+            <input t:type="textfield" t:id="billingStreet" value="billingAdress.street" validate="required"/>
+        </div>
+
+        <div class="form-row">
+            <label t:type="label" for="billingCity"/>
+            <input t:type="textfield" t:id="billingCity" value="billingAdress.city" validate="required"/>
+        </div>
+
+        <div class="form-row">
+            <label t:type="label" for="billingZip"/>
+            <input t:type="textfield" t:id="billingZip" value="billingAdress.zipCode" validate="required"/>
+        </div>
+
+        <div class="form-row">
+
+            <t:label for="shipToAnotherAddress"/>
+
+            <input t:type="checkbox" t:id="shipToAnotherAddress"
+                   t:mixins="triggerfragment"
+                   fragment="shippingAddress"/>
+        </div>
+
+    </div>
+    <div style="float: left; margin-left:10px;">
+        <t:formfragment t:id="shippingAddress"
+                        visible="shipToAnotherAddress">
+
+            <h2>Shipping address</h2>
+
+
+            <div class="form-row">
+                <label t:type="label" for="shippingStreet"/>
+                <input t:type="textfield" t:id="shippingStreet" value="shippingAdress.street" validate="required"/>
+            </div>
+
+            <div class="form-row">
+                <label t:type="label" for="shippingCity"/>
+                <input t:type="textfield" t:id="shippingCity" value="shippingAdress.city" validate="required"/>
+            </div>
+
+            <div class="form-row">
+                <label t:type="label" for="shippingZip"/>
+                <input t:type="textfield" t:id="shippingZip" value="shippingAdress.zipCode" validate="required"/>
+            </div>
+        </t:formfragment>
+    </div>
+
+    <div style="clear: left;"/>
+
+
+    <div class="form-row">
+        <input type="submit" value="Submit"/>
+    </div>
+
+</form>
+
+</html>
