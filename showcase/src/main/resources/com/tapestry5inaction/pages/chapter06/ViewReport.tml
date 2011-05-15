@@ -1,0 +1,36 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <form t:type="form" clientValidation="none">
+        <t:errors/>
+        <div t:type="loop" source="parameters" value="currentParameter" encoder="encoder" class="form-row">
+            <t:submitNotifier>
+                <t:delegate to="activeBlock"/>
+            </t:submitNotifier>
+        </div>
+
+        <div class="form-row">
+            <input type="submit" value="Generate report"/>
+        </div>
+    </form>
+
+
+    <t:block id="stringBlock">
+        <label t:type="label" for="textField"/>
+        <input t:type="textfield" t:id="textField" value="currentParameter.value"
+               label="prop:currentParameter.name" translate="string" validate="required"/>
+    </t:block>
+
+    <t:block id="dateBlock">
+        <label t:type="label" for="dateField"/>
+        <input t:type="datefield" t:id="dateField" value="currentParameter.value"
+               label="prop:currentParameter.name" validate="required"/>
+    </t:block>
+
+    <t:block id="numericBlock">
+        <label t:type="label" for="numericField"/>
+        <input t:type="textfield" t:id="numericField" value="currentParameter.value"
+               label="prop:currentParameter.name" translate="integer" validate="required"/>
+    </t:block>
+
+
+</html>

@@ -28,6 +28,7 @@ public class AppModule {
     public static void bind(ServiceBinder binder) {
         binder.bind(Authenticator.class, AuthenticatorImpl.class);
         binder.bind(BlogService.class, BlogServiceImpl.class);
+        binder.bind(ReportService.class, ReportServiceImpl.class);
         binder.bind(VoteService.class, VoteServiceImpl.class);
     }
 
