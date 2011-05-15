@@ -1,18 +1,18 @@
 <html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
 
-    <form t:type="form" t:id="loginForm" clientValidation="none">
+    <form t:type="form" t:id="loginForm">
         <t:errors/>
-        <div>
+        <div class="form-row">
             <label t:type="label" for="userName"/>
             <input t:type="textfield" t:id="userName" value="userName" size="20"/>
         </div>
 
-        <div>
+        <div class="form-row">
             <label t:type="label" for="password"/>
             <input t:type="passwordfield" t:id="password" value="password" size="20"/>
         </div>
 
-        <div>
+        <div class="form-row">
             <input type="submit" value="${message:submit-value}" />
         </div>
     </form>
