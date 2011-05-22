@@ -11,13 +11,13 @@
 
     <form t:type="form" clientValidation="none">
         <t:errors/>
-        <div>
+        <div class="form-row">
             <select t:type="select" t:id="paymentType"
                     model="literal:cc=Credit Card,bt=Bank Transfer,ca=Cash,pp=PayPal"/>
 
         </div>
 
-        <div>
+        <div class="form-row">
             <input type="submit" value="Submit"/>
         </div>
     </form>

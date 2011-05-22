@@ -4,12 +4,12 @@
 
     <form t:type="form" clientValidation="none">
         <t:errors/>
-        <div>
+        <div class="form-row">
             <label t:type="label" for="birthdayField"/>
-            <input t:type="datefield" t:id="birthdayField" value="birthday" validate="required"/>
+            <input t:type="datefield" t:id="birthdayField" value="birthday" validate="required" hideTextField="true"/>
         </div>
 
-        <div>
+        <div class="form-row">
             <input type="submit" value="Submit" />
         </div>
     </form>

@@ -2,21 +2,22 @@
 
     <form t:type="form" t:id="loginForm" clientValidation="none">
         <t:errors/>
-        <div>
+        <div class="form-row">
             <label t:type="label" for="userName"/>
             <input t:type="textfield" t:id="userName" value="user.name" size="20"/>
         </div>
 
-        <div>
+        <div class="form-row">
             <label t:type="label" for="password"/>
             <input t:type="passwordfield" t:id="password" value="user.password" size="20"/>
         </div>
-        <div>
+
+        <div class="form-row">
             <label t:type="label" for="rememberMe"/>
             <input t:type="checkbox" t:id="rememberMe" value="rememberMe"/>
         </div>
 
-        <div>
+        <div class="form-row">
             <input type="submit" value="${message:submit-value}"/>
         </div>
     </form>

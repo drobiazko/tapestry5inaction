@@ -2,12 +2,12 @@
 
     <form t:type="form" clientValidation="none">
         <t:errors/>
-        <div>
+        <div class="form-row">
             <label t:type="label" for="file"/>
             <input t:type="upload" t:id="file" validate="required"/>
         </div>
 
-        <div>
+        <div class="form-row">
             <input type="submit" value="Upload" />
         </div>
     </form>
