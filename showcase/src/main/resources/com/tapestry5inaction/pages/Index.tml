@@ -1,6 +1,9 @@
 <html t:type="indexlayout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
 
     <p>
+        <a t:type="pagelink" page="chapter02/index">Chapter 2: Tapestry templates</a>
+    </p>
+    <p>
         <a t:type="pagelink" page="chapter05/index">Chapter 5: Localization</a>
     </p>
     <p>

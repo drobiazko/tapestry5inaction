@@ -1,0 +1,8 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+    <div>
+        <a t:type="actionlink" t:id="pageLink">Go home</a>
+    </div>
+    <div>
+        <a t:type="actionlink" t:id="externalLink">Go to Google</a>
+    </div>
+</html>

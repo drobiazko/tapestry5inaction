@@ -23,7 +23,31 @@
         <a t:type="pagelink" page="chapter02/whatiscurrenttime">Accessing page properties from templates</a>
     </p>
     <p>
+        <a t:type="pagelink" page="chapter02/propdemo">Accessing page methods from templates</a>
+    </p>
+    <p>
+        <a t:type="pagelink" page="chapter02/vardemo">Creating render variables with <i>var</i> prefix</a>
+    </p>
+    <p>
         <a t:type="pagelink" page="chapter02/mockup">Mark a template portion for removal in production</a>
+    </p>
+    <p>
+        <a t:type="pagelink" page="chapter02/actionlinkdemo">Triggering actions with ActionLink component</a>
+    </p>
+    <p>
+        <a t:type="pagelink" page="chapter02/oneventannotationdemo">Using @OnEvent annotation to mark event handler methods</a>
+    </p>
+    <p>
+        <a t:type="pagelink" page="chapter02/eventcontextdemo">Triggering event with context</a>
+    </p>
+    <p>
+        <a t:type="pagelink" page="chapter02/returntypedemo">Returning different types in event handler methods</a>
+    </p>
+    <p>
+        <a t:type="pagelink" page="chapter02/eventlinkdemo">Triggering events with EventLink component</a>
+    </p>
+    <p>
+        <a t:type="pagelink" page="chapter02/programmaticlinkdemo">Creating event request links programmatically</a>
     </p>
 
 </html>

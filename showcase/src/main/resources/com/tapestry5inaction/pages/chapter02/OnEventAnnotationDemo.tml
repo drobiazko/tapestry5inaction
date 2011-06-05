@@ -1,0 +1,10 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+    <p>Current value: ${number}</p>
+
+    <div>
+        <a t:type="actionlink"  t:id="byOne">Increment by 1</a>
+    </div>
+    <div>
+        <a t:type="actionlink" t:id="byTwo">Increment by 2</a>
+    </div>
+</html>
