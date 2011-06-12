@@ -1,0 +1,11 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+    <div>Random number: ${randomNumber}</div>
+
+    <div>
+        <a t:type="eventlink" event="nextRandom">Generate next random</a>
+    </div>
+
+    <div>
+        <a t:type="eventlink" event="clear">Clear</a>
+    </div>
+</html>

@@ -1,0 +1,34 @@
+<html t:type="indexlayout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<div>
+    This chapter covers:
+    <ul>
+        <li>
+            Life cycle of Tapestry pages
+        </li>
+        <li>
+            Persisting page's state
+        </li>
+        <li>
+            Working with Session State Objects
+        </li>
+        <li>
+           Working with session
+        </li>
+    </ul>
+</div>
+
+
+Demo pages:
+<p>
+    <a t:type="pagelink" page="chapter04/randomnumberdemo">Persisting page's properties</a>
+</p>
+
+<p>
+    <a t:type="pagelink" page="chapter04/flashdemo">Using flash persistence strategy for persistent properties</a>
+</p>
+
+<p>
+    <a t:type="pagelink" page="chapter04/discarddemo">Discarding values of persistent fields</a>
+</p>
+
+</html>
