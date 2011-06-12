@@ -1,3 +1,49 @@
 <html t:type="indexlayout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<div>
+    This chapter covers:
+    <ul>
+        <li>
+            Providing translations for messages displayed in pages and components
+        </li>
+        <li>
+            Declaring supported locales
+        </li>
+        <li>
+            Switching the application's language
+        </li>
+        <li>
+            Creating localizable templates
+        </li>
+        <li>
+            Localizing static resources like images, Cascading Style Sheets and JavaScript files
+        </li>
+    </ul>
+</div>
+
+
+Demo pages:
+<p>
+    <a t:type="pagelink" page="chapter05/messagesdemo">Accessing localized messages from templates</a>
+</p>
+
+<p>
+    <a t:type="pagelink" page="chapter05/chooselanguage">Switching the application's language</a>
+</p>
+
+<p>
+    <a t:type="pagelink" page="chapter05/localedemo">Accessing the Locale of the current request</a>
+</p>
+
+<p>
+    <a t:type="pagelink" page="chapter05/localizedtemplatedemo">Localizing templates</a>
+</p>
+
+<p>
+    <a t:type="pagelink" page="chapter05/contextprefixdemo">Using <i>context</i> binding prefix</a>
+</p>
+
+<p>
+    <a t:type="pagelink" page="chapter05/localizedcssjavascriptdemo">Localizing CSS and JavaScript</a>
+</p>
 
 </html>
