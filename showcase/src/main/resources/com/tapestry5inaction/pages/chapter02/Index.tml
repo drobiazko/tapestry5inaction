@@ -20,6 +20,9 @@
 
     Demo pages:
     <p>
+        <a t:type="pagelink" page="chapter02/htmlentitydemo">Using html entities in templates</a>
+    </p>
+    <p>
         <a t:type="pagelink" page="chapter02/whatiscurrenttime">Accessing page properties from templates</a>
     </p>
     <p>
