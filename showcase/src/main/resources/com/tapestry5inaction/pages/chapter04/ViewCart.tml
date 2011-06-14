@@ -1,0 +1,25 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <div>
+        Tracks in the basket: ${trackCount} (Total price: ${totalPrice} USD)
+    </div>
+
+    <div><a t:type="pagelink" page="chapter04/tracks">Get a track</a></div>
+
+    <table>
+        <tr>
+            <td>Track</td>
+            <td>Price</td>
+        </tr>
+        <tr t:type="loop" source="cart.tracks" value="currentTrack">
+            <td>${currentTrack.artist} - ${currentTrack.title}:</td>
+            <td> ${cart.getPrice(currentTrack)}</td>
+        </tr>
+    </table>
+
+    <div><a t:type="eventlink" event="clear">Clear the basket</a></div>
+
+
+</html>
+
+

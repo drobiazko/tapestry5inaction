@@ -1,9 +1,6 @@
 package com.tapestry5inaction.services;
 
-import com.tapestry5inaction.entities.Article;
-import com.tapestry5inaction.entities.Blog;
-import com.tapestry5inaction.entities.Option;
-import com.tapestry5inaction.entities.Vote;
+import com.tapestry5inaction.entities.*;
 import com.tapestry5inaction.services.impl.*;
 import org.apache.tapestry5.*;
 import org.apache.tapestry5.hibernate.HibernateSymbols;
@@ -29,11 +26,16 @@ public class AppModule {
         binder.bind(Authenticator.class, AuthenticatorImpl.class);
         binder.bind(BlogService.class, BlogServiceImpl.class);
         binder.bind(ReportService.class, ReportServiceImpl.class);
+		binder.bind(TrackPriceService.class, TrackPriceServiceImpl.class);
         binder.bind(VoteService.class, VoteServiceImpl.class);
     }
 
     public static DemoDataParser buildDemoDataParser(Logger logger) {
         return new DemoDataParser(logger);
+    }
+
+    public MusicLibrary buildMusicLibrary(Logger logger) {
+        return new MusicLibraryImpl(logger);
     }
 
 
@@ -55,27 +57,40 @@ public class AppModule {
     @Contribute(ApplicationStateManager.class)
     public static void provideApplicationStateContributions(
             final MappedConfiguration<Class, ApplicationStateContribution> configuration,
-            final BlogService blogService) {
+            final BlogService blogService,
+            final TrackPriceService trackPriceService) {
 
-        final ApplicationStateCreator<Blog> creator = new ApplicationStateCreator<Blog>() {
+        final ApplicationStateCreator<Blog> blogCreator = new ApplicationStateCreator<Blog>() {
             public Blog create() {
                 return blogService.findBlog();
             }
 
         };
+
+        ApplicationStateCreator<ShoppingCart> shoppingCartCreator = new ApplicationStateCreator<ShoppingCart>() {
+            public ShoppingCart create() {
+                return new ShoppingCart(trackPriceService);
+            }
+        };
+
         configuration.add(Blog.class, new ApplicationStateContribution(
-                PersistenceConstants.SESSION, creator));
+                PersistenceConstants.SESSION, blogCreator));
+
+        configuration.add(ShoppingCart.class, new ApplicationStateContribution(
+                PersistenceConstants.SESSION, shoppingCartCreator));
     }
 
     @Contribute(ValueEncoderSource.class)
     public static void provideEncoders(
             MappedConfiguration<Class, ValueEncoderFactory> configuration,
             BlogService blogService,
-            VoteService voteService) {
+            VoteService voteService,
+            MusicLibrary musicLibrary) {
 
         contributeEncoder(configuration, Article.class, new ArticleEncoder(blogService));
         contributeEncoder(configuration, Vote.class, new VoteEncoder(voteService));
         contributeEncoder(configuration, Option.class, new OptionEncoder(voteService));
+        contributeEncoder(configuration, Track.class, new TrackEncoder(musicLibrary));
 
     }
 

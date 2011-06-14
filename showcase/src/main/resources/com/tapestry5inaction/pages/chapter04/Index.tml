@@ -31,4 +31,8 @@ Demo pages:
     <a t:type="pagelink" page="chapter04/discarddemo">Discarding values of persistent fields</a>
 </p>
 
+<p>
+    <a t:type="pagelink" page="chapter04/viewcart">Working with session state objects</a>
+</p>
+
 </html>
