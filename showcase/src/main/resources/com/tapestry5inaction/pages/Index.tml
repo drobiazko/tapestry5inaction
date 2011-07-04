@@ -12,4 +12,7 @@
     <p>
         <a t:type="pagelink" page="chapter06/index">Chapter 6: Forms and user input validation</a>
     </p>
+    <p>
+        <a t:type="pagelink" page="chapter08/index">Chapter 8: Generating UI for JavaBeans</a>
+    </p>
 </html>

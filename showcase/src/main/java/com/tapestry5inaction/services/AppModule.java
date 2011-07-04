@@ -26,7 +26,8 @@ public class AppModule {
         binder.bind(Authenticator.class, AuthenticatorImpl.class);
         binder.bind(BlogService.class, BlogServiceImpl.class);
         binder.bind(ReportService.class, ReportServiceImpl.class);
-		binder.bind(TrackPriceService.class, TrackPriceServiceImpl.class);
+        binder.bind(TrackPriceService.class, TrackPriceServiceImpl.class);
+        binder.bind(UserDao.class, UserDaoImpl.class);
         binder.bind(VoteService.class, VoteServiceImpl.class);
     }
 

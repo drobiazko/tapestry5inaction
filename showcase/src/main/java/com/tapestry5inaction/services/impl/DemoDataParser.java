@@ -1,9 +1,6 @@
 package com.tapestry5inaction.services.impl;
 
-import com.tapestry5inaction.entities.Article;
-import com.tapestry5inaction.entities.Blog;
-import com.tapestry5inaction.entities.Tag;
-import com.tapestry5inaction.entities.User;
+import com.tapestry5inaction.entities.*;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.slf4j.Logger;
 import org.xml.sax.Attributes;
@@ -14,23 +11,24 @@ import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.helpers.XMLReaderFactory;
 
 import java.net.URL;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class
-
-        DemoDataParser {
+public class DemoDataParser {
 
     private Logger logger;
+
+    private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
 
     public DemoDataParser(Logger logger) {
         this.logger = logger;
     }
 
-    public class DemoData{
+    public class DemoData {
         private Blog blog;
         private List<Article> articles;
         private List<User> users;
@@ -94,12 +92,12 @@ public class
         private Blog blog;
         private Article article;
 
-        private List<Article> articles  = new ArrayList<Article>();
+        private List<Article> articles = new ArrayList<Article>();
 
         private List<User> users = new ArrayList<User>();
 
         private List<Tag> tags = new ArrayList<Tag>();
-        
+
         private StringBuilder buffer;
 
         @Override
@@ -117,12 +115,21 @@ public class
                 article.setTitle(attributes.getValue("title"));
                 article.setPublishDate(parseDate(attributes.getValue("publishDate")));
                 article.setBlog(blog);
-            }else if(localName.equals("user")){
+            } else if (localName.equals("user")) {
                 User user = new User();
                 user.setName(attributes.getValue("name"));
                 user.setPassword(DigestUtils.md5Hex(user.getName()));
+                user.setGender(Enum.valueOf(Gender.class, attributes.getValue("gender").toUpperCase()));
+                final Date birthday;
+                try {
+                    birthday = DATE_FORMAT.parse(attributes.getValue("birthday"));
+                } catch (ParseException e) {
+                    throw new RuntimeException(e);
+                }
+                user.setBirthday(birthday);
+                user.setRememberMe(Boolean.valueOf(attributes.getValue("rememberMe")));
                 users.add(user);
-            }else if(localName.equals("tag")){
+            } else if (localName.equals("tag")) {
                 Tag tag = new Tag();
                 tag.setName(attributes.getValue("name"));
                 tags.add(tag);

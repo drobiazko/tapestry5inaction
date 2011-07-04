@@ -1,0 +1,23 @@
+<html t:type="indexlayout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<div>
+    This chapter covers:
+    <ul>
+        <li>
+            Generating forms for JavaBeans using BeanEditForm component
+        </li>
+        <li>
+            Displaying JavaBean's properties using BeanDisplay component
+        </li>
+        <li>
+            Creating a tabular view of JavaBean's properties using Grid component
+        </li>
+    </ul>
+</div>
+
+
+Demo pages:
+<p>
+    <a t:type="pagelink" page="chapter08/beaneditformdemo">Creating forms with BeanEditForm component</a>
+</p>
+
+</html>

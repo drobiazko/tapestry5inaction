@@ -1,0 +1,6 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <table t:type="grid" source="users" rowsPerPage="5" pagerPosition="both"/>
+
+</html>
+

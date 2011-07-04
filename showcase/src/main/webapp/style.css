@@ -18,3 +18,8 @@ div.form-row label {
     float: left;
     width: 150px;
 }
+
+div.t-beaneditor {
+    background: none;
+    border: none;
+}

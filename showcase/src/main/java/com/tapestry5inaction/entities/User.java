@@ -1,16 +1,17 @@
 package com.tapestry5inaction.entities;
 
+import org.apache.tapestry5.beaneditor.NonVisual;
 import org.apache.tapestry5.beaneditor.Validate;
+import org.apache.tapestry5.ioc.annotations.Inject;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class User {
     @Id
     @GeneratedValue
+    @NonVisual
     private Long id;
 
     @Column
@@ -21,11 +22,23 @@ public class User {
     @Validate("required")
     private String password;
 
+    @Column
+    private boolean rememberMe;
+
+    @Column
+    private Date birthday;
+
+    @Enumerated (EnumType.STRING)
+    private Gender gender;
+
+
+    @Inject
     public User(){
         super();
     }
 
     public User(String name, String password) {
+        this();
         this.name = name;
         this.password = password;
     }
@@ -52,5 +65,29 @@ public class User {
 
     public void setPassword(final String password) {
         this.password = password;
+    }
+
+    public boolean isRememberMe() {
+        return rememberMe;
+    }
+
+    public void setRememberMe(boolean rememberMe) {
+        this.rememberMe = rememberMe;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 }
