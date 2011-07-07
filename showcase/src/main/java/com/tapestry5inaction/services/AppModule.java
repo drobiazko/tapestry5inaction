@@ -25,6 +25,7 @@ public class AppModule {
     public static void bind(ServiceBinder binder) {
         binder.bind(Authenticator.class, AuthenticatorImpl.class);
         binder.bind(BlogService.class, BlogServiceImpl.class);
+        binder.bind(NavigationService.class, NavigationServiceImpl.class);
         binder.bind(ReportService.class, ReportServiceImpl.class);
         binder.bind(TrackPriceService.class, TrackPriceServiceImpl.class);
         binder.bind(UserDao.class, UserDaoImpl.class);
@@ -86,12 +87,14 @@ public class AppModule {
             MappedConfiguration<Class, ValueEncoderFactory> configuration,
             BlogService blogService,
             VoteService voteService,
-            MusicLibrary musicLibrary) {
+            MusicLibrary musicLibrary,
+            UserDao userDao) {
 
         contributeEncoder(configuration, Article.class, new ArticleEncoder(blogService));
         contributeEncoder(configuration, Vote.class, new VoteEncoder(voteService));
         contributeEncoder(configuration, Option.class, new OptionEncoder(voteService));
         contributeEncoder(configuration, Track.class, new TrackEncoder(musicLibrary));
+        contributeEncoder(configuration, User.class, new UserEncoder(userDao));
 
     }
 

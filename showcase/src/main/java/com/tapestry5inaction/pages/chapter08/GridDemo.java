@@ -18,6 +18,9 @@ public class GridDemo {
     @Property
     private List<User> users;
 
+    @Property
+    private User currentUser;
+
     void setupRender() {
         users = userDao.findAll();
     }

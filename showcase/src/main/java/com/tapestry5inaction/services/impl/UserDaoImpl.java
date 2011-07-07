@@ -12,6 +12,10 @@ public class UserDaoImpl implements UserDao {
     @Inject
     private Session session;
 
+    public User findById(Long id) {
+        return (User) session.get(User.class, id);
+    }
+
     public List<User> findAll() {
         return session.createCriteria(User.class).list();
     }

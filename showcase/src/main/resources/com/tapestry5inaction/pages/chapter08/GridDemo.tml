@@ -1,6 +1,12 @@
-<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+      xmlns:p="tapestry:parameter">
 
-    <table t:type="grid" source="users" rowsPerPage="5" pagerPosition="both"/>
+    <table t:type="grid" source="users" rowsPerPage="5" pagerPosition="both" row="currentUser">
+        <p:nameHeader>${message:nameHeader}</p:nameHeader>
+        <p:nameCell>
+            <a t:type="pagelink" page="chapter08/beandisplaydemo" context="currentUser">${currentUser.name}</a>
+        </p:nameCell>
+    </table>
 
 </html>
 
