@@ -1,0 +1,6 @@
+<div xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+    <t:block id="urlBlock">
+        <t:label for="urlField"/>
+        <input t:id="urlField"/>
+    </t:block>
+</div>
