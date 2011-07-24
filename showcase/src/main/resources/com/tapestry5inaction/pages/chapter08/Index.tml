@@ -19,5 +19,20 @@ Demo pages:
 <p>
     <a t:type="pagelink" page="chapter08/beaneditformdemo">Creating forms with BeanEditForm component</a>
 </p>
+<p>
+    <a t:type="pagelink" page="chapter08/login">Creating login form with BeanEditForm component</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter08/griddemo">Creating a tabular view of a collection of JavaBeans using Grid component</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter08/login2">Creating BeanModel programmatically</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter08/register">Adding synthetic properties using component parameters</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter08/register">Adding synthetic properties programmatically</a>
+</p>
 
 </html>

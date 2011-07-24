@@ -1,5 +1,12 @@
-<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+      xmlns:p="tapestry:parameter">
 
-    <div t:type="beandisplay" object="user"/>
+    <div t:type="if" test="user">
+        <div t:type="beandisplay" object="user"/>
+
+        <p:else>
+            No user selected. Please navigate to the <a t:type="pagelink" page="chapter08/griddemo">GridDemo</a> to select a User.
+        </p:else>
+    </div>
 
 </html>
