@@ -1,0 +1,17 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+        xmlns:p="tapestry:parameter">
+
+    <form t:type="beaneditform" t:id="registerForm" object="user"
+          submitLabel="message:submit-value" clientValidation="none"
+          reorder="name,password,passwordConfirmed" add="passwordConfirmed">
+        <p:password>
+            <t:label for="password"/>
+            <t:passwordfield t:id="password" value="user.password"/>
+        </p:password>
+        <p:passwordConfirmed>
+            <t:label for="passwordConfirmed"/>
+            <t:passwordfield t:id="passwordConfirmed" value="passwordConfirmed"/>
+        </p:passwordConfirmed>
+    </form>
+
+</html>

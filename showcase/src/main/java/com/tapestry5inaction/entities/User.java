@@ -5,6 +5,7 @@ import org.apache.tapestry5.beaneditor.Validate;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
 import javax.persistence.*;
+import java.net.URL;
 import java.util.Date;
 
 @Entity
@@ -30,6 +31,9 @@ public class User {
 
     @Enumerated (EnumType.STRING)
     private Gender gender;
+
+    @Column
+    private URL website;
 
 
     @Inject
@@ -89,5 +93,13 @@ public class User {
 
     public void setGender(Gender gender) {
         this.gender = gender;
+    }
+
+    public URL getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(URL website) {
+        this.website = website;
     }
 }

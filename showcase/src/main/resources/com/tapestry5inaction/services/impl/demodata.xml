@@ -13,7 +13,7 @@
         <tag name="Blog"/>
     </tags>
     <users>
-        <user name="admin" gender="male" birthday="1970-01-01" rememberMe="false"/>
+        <user name="admin" gender="male" birthday="1970-01-01" rememberMe="false" website="http://tapestry5.de"/>
         <user name="homer" gender="male" birthday="1987-04-19" rememberMe="true"/>
         <user name="marge" gender="female" birthday="1987-04-19" rememberMe="false"/>
         <user name="bart" gender="male" birthday="1987-04-19" rememberMe="false"/>

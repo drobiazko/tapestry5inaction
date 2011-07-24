@@ -4,10 +4,7 @@ import com.tapestry5inaction.entities.*;
 import com.tapestry5inaction.services.impl.*;
 import org.apache.tapestry5.*;
 import org.apache.tapestry5.hibernate.HibernateSymbols;
-import org.apache.tapestry5.ioc.MappedConfiguration;
-import org.apache.tapestry5.ioc.OrderedConfiguration;
-import org.apache.tapestry5.ioc.Resource;
-import org.apache.tapestry5.ioc.ServiceBinder;
+import org.apache.tapestry5.ioc.*;
 import org.apache.tapestry5.ioc.annotations.*;
 import org.apache.tapestry5.ioc.services.ApplicationDefaults;
 import org.apache.tapestry5.ioc.services.SymbolProvider;
@@ -17,6 +14,7 @@ import org.apache.tapestry5.validator.ValidatorMacro;
 import org.slf4j.Logger;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Currency;
 
 public class AppModule {
@@ -25,7 +23,6 @@ public class AppModule {
     public static void bind(ServiceBinder binder) {
         binder.bind(Authenticator.class, AuthenticatorImpl.class);
         binder.bind(BlogService.class, BlogServiceImpl.class);
-        binder.bind(NavigationService.class, NavigationServiceImpl.class);
         binder.bind(ReportService.class, ReportServiceImpl.class);
         binder.bind(TrackPriceService.class, TrackPriceServiceImpl.class);
         binder.bind(UserDao.class, UserDaoImpl.class);
@@ -123,6 +120,7 @@ public class AppModule {
     public static void provideTranslators(MappedConfiguration<Class, Translator> configuration) {
 
         configuration.add(Currency.class, new CurrencyTranslator());
+        configuration.add(URL.class, new URLTranslator());
     }
 
     @Contribute(NullFieldStrategySource.class)
@@ -135,6 +133,42 @@ public class AppModule {
     public static void combineValidators(MappedConfiguration<String, String> configuration) {
 
         configuration.add("requiredMinMax", "required,minlength=3,maxlength=50");
+    }
+
+    public static void contributeDefaultDataTypeAnalyzer(
+            MappedConfiguration<Class, String> configuration) {
+        configuration.add(URL.class, "url");
+    }
+
+    @Contribute(BeanBlockSource.class)
+    public static void providePropertyBlocks(
+            Configuration<BeanBlockContribution> configuration) {
+
+
+        EditBlockContribution editBlock =
+                new EditBlockContribution(
+                        "url",
+                        "chapter08/AppPropertyEditBlocks",
+                        "urlBlock");
+
+        DisplayBlockContribution displayBlock =
+                new DisplayBlockContribution(
+                        "url",
+                        "chapter08/AppPropertyDisplayBlocks",
+                        "urlBlock");
+
+        configuration.add(editBlock);
+        configuration.add(displayBlock);
+    }
+
+
+    @Contribute(BeanBlockOverrideSource.class)
+    public static void overridePropertyBlocks(Configuration<BeanBlockContribution> configuration) {
+
+        configuration.add(new DisplayBlockContribution(
+                "date",
+                "chapter08/AppPropertyDisplayBlocks",
+                "dateBlock"));
     }
 
 

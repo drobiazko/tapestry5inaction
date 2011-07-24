@@ -10,7 +10,7 @@
     <name>Tapestry 5 in Action</name>
 
     <properties>
-        <tapestry-release-version>5.2.5</tapestry-release-version>
+        <tapestry-release-version>5.3-alpha-3</tapestry-release-version>
         <cobertura-plugin-version>2.2</cobertura-plugin-version>
     </properties>
 
@@ -166,6 +166,11 @@
         <repository>
             <id>tapestry-snapshots</id>
             <url>http://repository.apache.org/snapshots/</url>
+        </repository>
+
+        <repository>
+            <id>apache-staging</id>
+            <url>https://repository.apache.org/content/repositories/staging/</url>
         </repository>
 
         <repository>

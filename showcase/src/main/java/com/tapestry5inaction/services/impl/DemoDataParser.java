@@ -10,6 +10,7 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.helpers.XMLReaderFactory;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -120,6 +121,7 @@ public class DemoDataParser {
                 user.setName(attributes.getValue("name"));
                 user.setPassword(DigestUtils.md5Hex(user.getName()));
                 user.setGender(Enum.valueOf(Gender.class, attributes.getValue("gender").toUpperCase()));
+
                 final Date birthday;
                 try {
                     birthday = DATE_FORMAT.parse(attributes.getValue("birthday"));
@@ -128,6 +130,16 @@ public class DemoDataParser {
                 }
                 user.setBirthday(birthday);
                 user.setRememberMe(Boolean.valueOf(attributes.getValue("rememberMe")));
+
+                final String website = attributes.getValue("website");
+                if(website!=null){
+                    try {
+                        user.setWebsite(new URL(website));
+                    } catch (MalformedURLException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+
                 users.add(user);
             } else if (localName.equals("tag")) {
                 Tag tag = new Tag();

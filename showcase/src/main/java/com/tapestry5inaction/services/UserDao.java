@@ -8,5 +8,9 @@ public interface UserDao {
 
     User findById(Long id);
 
+    User findByName(String name);
+
     List<User> findAll();
+
+    void persist(User user);
 }
