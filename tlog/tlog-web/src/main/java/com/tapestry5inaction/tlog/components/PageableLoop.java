@@ -16,17 +16,17 @@ public class PageableLoop {
     private int rowsPerPage;
 
     @Parameter
-    private Integer currentPage;
+    private int currentPage;
 
     @Parameter(principal = true)
     @Property
     private Object value;
 
     @Property(write = false)
-    private Integer previousPage;
+    private int previousPage;
 
     @Property(write = false)
-    private Integer nextPage;
+    private int nextPage;
 
 
     void setupRender() {
@@ -37,7 +37,7 @@ public class PageableLoop {
 
         int maxPage = ((availableRows - 1) / rowsPerPage) + 1;
 
-        int current = getCurrentPage();
+        int current = currentPage == 0 ? 1 : currentPage;
 
         int startIndex = (current - 1) * rowsPerPage;
 
@@ -56,10 +56,6 @@ public class PageableLoop {
             nextPage = current + 1;
         }
 
-    }
-
-    public int getCurrentPage() {
-        return currentPage == null || currentPage == 0 ? 1 : currentPage;
     }
 
     void onGoToPage(int nextPage) {
