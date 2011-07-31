@@ -1,6 +1,5 @@
 package com.tapestry5inaction.tlog.pages;
 
-import com.howardlewisship.tapx.kaptcha.components.KaptchaImage;
 import com.tapestry5inaction.tlog.core.annotations.PublicPage;
 import com.tapestry5inaction.tlog.core.entities.Article;
 import com.tapestry5inaction.tlog.core.entities.Comment;
@@ -9,6 +8,7 @@ import org.apache.tapestry5.annotations.*;
 import org.apache.tapestry5.hibernate.annotations.CommitAfter;
 import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
+import org.apache.tapestry5.kaptcha.components.KaptchaImage;
 
 @PublicPage
 public class Read {

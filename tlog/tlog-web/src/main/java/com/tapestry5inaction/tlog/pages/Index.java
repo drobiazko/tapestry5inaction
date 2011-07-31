@@ -39,8 +39,4 @@ public class Index {
             this.source = this.blogService.findRecentArticles();
         }
     }
-
-    void onGoToPage(int nextPage) {
-        currentPage = nextPage;
-    }
 }

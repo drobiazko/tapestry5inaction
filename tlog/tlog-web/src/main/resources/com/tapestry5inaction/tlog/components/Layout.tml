@@ -1,5 +1,5 @@
-<x:dynamic template="prop:skin" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
-           xmlns:p="tapestry:parameter" xmlns:x="tapestry-library:tapx">
+<t:dynamic template="prop:skin" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+           xmlns:p="tapestry:parameter">
     <p:header>
         <t:header/>
     </p:header>
@@ -12,5 +12,5 @@
     <p:body>
         <t:body/>
     </p:body>
-</x:dynamic>
+</t:dynamic>
 

@@ -37,9 +37,9 @@ public class PageableLoop {
 
         int maxPage = ((availableRows - 1) / rowsPerPage) + 1;
 
-        int currentPage = getCurrentPage();
+        int current = getCurrentPage();
 
-        int startIndex = (currentPage - 1) * rowsPerPage;
+        int startIndex = (current - 1) * rowsPerPage;
 
         int endIndex = Math.min(startIndex + rowsPerPage - 1, availableRows - 1);
 
@@ -48,17 +48,21 @@ public class PageableLoop {
         List<?> row = source.getRow();
 
 
-        if (1 < currentPage && currentPage <= maxPage) {
-            previousPage = currentPage - 1;
+        if (1 < current && current <= maxPage) {
+            previousPage = current - 1;
         }
 
-        if (0 < currentPage && currentPage < maxPage) {
-            nextPage = currentPage + 1;
+        if (0 < current && current < maxPage) {
+            nextPage = current + 1;
         }
 
     }
 
     public int getCurrentPage() {
         return currentPage == null || currentPage == 0 ? 1 : currentPage;
+    }
+
+    void onGoToPage(int nextPage) {
+        currentPage = nextPage;
     }
 }
