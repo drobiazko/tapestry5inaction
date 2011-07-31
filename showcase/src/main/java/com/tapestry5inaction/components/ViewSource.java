@@ -10,7 +10,8 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.model.ComponentModel;
 import org.apache.tapestry5.runtime.Component;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
-import org.apache.tapestry5.services.templates.ComponentTemplateLocator;
+import org.apache.tapestry5.services.pageload.ComponentResourceLocator;
+import org.apache.tapestry5.services.pageload.ComponentResourceSelector;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,7 +27,7 @@ public class ViewSource {
     private ComponentResources resources;
 
     @Inject
-    private ComponentTemplateLocator componentTemplateLocator;
+    private ComponentResourceLocator componentResourceLocator;
 
     @Inject
     private JavaScriptSupport javaScriptSupport;
@@ -50,7 +51,7 @@ public class ViewSource {
 
         ComponentModel model = page.getComponentResources().getComponentModel();
 
-        template = componentTemplateLocator.locateTemplate(model, locale);
+        template = componentResourceLocator.locateTemplate(model, new ComponentResourceSelector(locale));
     }
 
     public void beginRender(MarkupWriter writer) {
