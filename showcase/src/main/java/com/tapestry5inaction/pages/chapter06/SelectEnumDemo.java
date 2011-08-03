@@ -17,6 +17,7 @@ public class SelectEnumDemo {
 
     @Inject
     private Messages messages;
+
     @Inject
     private Logger logger;
 

@@ -10,7 +10,7 @@
     <name>Tapestry 5 in Action</name>
 
     <properties>
-        <tapestry-release-version>5.3-alpha-6</tapestry-release-version>
+        <tapestry-release-version>5.3-alpha-8</tapestry-release-version>
         <cobertura-plugin-version>2.2</cobertura-plugin-version>
     </properties>
 
