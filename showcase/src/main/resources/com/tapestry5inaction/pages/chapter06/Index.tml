@@ -43,6 +43,13 @@ Demo pages:
     <a t:type="pagelink" page="chapter06/radioenumdemo">Radio buttons with enums demo</a>
 </p>
 
+<p>
+    <a t:type="pagelink" page="chapter06/palettedemo">Using Palette component for multiple selection</a>
+</p>
+
+<p>
+    <a t:type="pagelink" page="chapter06/checklistdemo">Using Checklist component for multiple selection</a>
+</p>
 
 <p>
     <a t:type="pagelink" page="chapter06/datefielddemo">Date input</a>
@@ -50,6 +57,10 @@ Demo pages:
 
 <p>
     <a t:type="pagelink" page="chapter06/blog/upload">Uploading files</a>
+</p>
+
+<p>
+    <a t:type="pagelink" page="chapter06/alertsdemo">Alerts demo</a>
 </p>
 
 </html>

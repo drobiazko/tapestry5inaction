@@ -1,0 +1,36 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <div>
+
+        <div t:type="alerts"/>
+
+        <form t:type="form" clientValidation="none">
+            <t:errors/>
+            <div class="form-row">
+                <label t:type="label" for="severity"/>
+                <select t:id="severity" t:type="select" validate="required"
+                        model="severityModel"/>
+            </div>
+
+            <div class="form-row">
+                <label t:type="label" for="duration"/>
+                <select t:id="duration" t:type="select" validate="required"
+                        model="durationModel"/>
+            </div>
+
+            <div class="form-row">
+                <label t:type="label" for="message"/>
+                <input t:id="message" t:type="textfield" validate="required" size="80"/>
+            </div>
+
+            <div class="form-row">
+                <input type="submit" value="Submit"/>
+            </div>
+        </form>
+    </div>
+
+    <p>
+        [<a t:type="actionlink" t:id="reset">reset</a>]
+    </p>
+
+</html>
