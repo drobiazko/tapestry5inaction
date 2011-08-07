@@ -7,6 +7,9 @@
         <a t:type="pagelink" page="chapter03/index">Chapter 3: Page navigation</a>
     </p>
     <p>
+        <a t:type="pagelink" page="chapter04/index">Chapter 4: Developing stateful applications</a>
+    </p>
+    <p>
         <a t:type="pagelink" page="chapter05/index">Chapter 5: Localization</a>
     </p>
     <p>

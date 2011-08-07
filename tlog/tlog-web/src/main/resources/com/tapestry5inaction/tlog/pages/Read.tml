@@ -61,7 +61,7 @@
         <p>
             <img t:id="kaptchaImage"/>
             <br/>
-            <t:kaptchafield label="Word Verification" t:id="kaptchaField" image="kaptchaImage"/>
+            <input t:type="kaptchafield" label="Word Verification" t:id="kaptchaField" image="kaptchaImage"/>
             <label t:type="label" for="kaptchaField"/>
 
             <t:unless test="symbol:tapestry.production-mode">

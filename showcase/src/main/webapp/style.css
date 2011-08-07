@@ -28,3 +28,8 @@ dl.t-beandisplay {
     background: none;
     border: none;
 }
+
+.kaptcha-image {
+    margin-left: 150px;
+    padding: 3px 0 3px 0;
+}

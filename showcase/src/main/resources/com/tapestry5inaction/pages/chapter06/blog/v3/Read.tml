@@ -39,6 +39,14 @@
             <textarea t:type="textarea" value="comment.content" cols="50" rows="10" validate="required"/>
         </div>
 
+        <div class="form-row">
+            <div class="kaptcha-image">
+                <img t:type="kaptchaImage"/>
+            </div>
+            <input t:type="kaptchafield" label="Word Verification" t:id="kaptchaField" image="kaptchaImage"/>
+            <label t:type="label" for="kaptchaField"/>
+        </div>
+
         <div>
             <input type="submit" value="Submit Comment"/>
         </div>
