@@ -1,5 +1,17 @@
 package com.tapestry5inaction.components;
 
+import com.tapestry5inaction.services.PageableLoopDataSource;
+import org.apache.tapestry5.BindingConstants;
+import org.apache.tapestry5.ComponentResources;
+import org.apache.tapestry5.MarkupWriter;
+import org.apache.tapestry5.annotations.Parameter;
+import org.apache.tapestry5.annotations.Property;
+import org.apache.tapestry5.annotations.SupportsInformalParameters;
+import org.apache.tapestry5.ioc.annotations.Inject;
+
+import java.util.List;
+
+@SupportsInformalParameters
 public class PageableLoop {
 
     @Parameter(required = true)
@@ -16,11 +28,18 @@ public class PageableLoop {
     @Property
     private Object value;
 
+    @Parameter(defaultPrefix = BindingConstants.LITERAL)
+    @Property
+    private String element;
+
     @Property(write = false)
     private int previousPage;
 
     @Property(write = false)
     private int nextPage;
+
+    @Inject
+    private ComponentResources componentResources;
 
 
     void setupRender() {
@@ -31,13 +50,9 @@ public class PageableLoop {
 
         int maxPage = ((availableRows - 1) / rowsPerPage) + 1;
 
-        if(currentPage == 0) {
-            currentPage = 1;
-        }
+        int current = currentPage == 0 ? 1 : currentPage;
 
-        //int current = currentPage == 0 ? 1 : currentPage;
-
-        int startIndex = (currentPage - 1) * rowsPerPage;
+        int startIndex = (current - 1) * rowsPerPage;
 
         int endIndex = Math.min(startIndex + rowsPerPage - 1, availableRows - 1);
 
@@ -45,18 +60,21 @@ public class PageableLoop {
 
         List<?> row = source.getRow();
 
-
-        if (1 < currentPage && currentPage <= maxPage) {
-            previousPage = currentPage - 1;
+        if (1 < current && current <= maxPage) {
+            previousPage = current - 1;
         }
 
-        if (0 < currentPage && currentPage < maxPage) {
-            nextPage = currentPage + 1;
+        if (0 < current && current < maxPage) {
+            nextPage = current + 1;
         }
 
     }
 
     void onGoToPage(int nextPage) {
         currentPage = nextPage;
+    }
+
+    String defaultElement() {
+        return componentResources.getElementName();
     }
 }

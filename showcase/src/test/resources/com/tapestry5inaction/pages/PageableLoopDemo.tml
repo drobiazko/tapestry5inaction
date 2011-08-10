@@ -1,0 +1,8 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <body>
+        <div t:type="pageableloop" source="alphabet" currentPage="currentPage" value="letter">
+            ${letter}
+        </div>
+     </body>
+</html>

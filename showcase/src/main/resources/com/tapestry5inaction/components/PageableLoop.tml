@@ -1,0 +1,16 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+    <t:loop source="source.row" value="value" element="prop:element">
+        <t:body/>
+    </t:loop>
+
+    <div class="navigation">
+        <div class="older-entries" t:type="if" test="nextPage">
+            <a t:type="eventlink" event="gotopage" context="nextPage">« Older Entries</a>
+        </div>
+
+        <div class="newer-entries" t:type="if" test="previousPage">
+            <a t:type="eventlink" event="gotopage" context="previousPage">Newer Entries »</a>
+        </div>
+    </div>
+
+</t:container>

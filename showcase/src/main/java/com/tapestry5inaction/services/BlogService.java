@@ -11,6 +11,8 @@ public interface BlogService {
 
     List<Article> findRecentArticles();
 
+    PageableLoopDataSource findRecentArticles2();
+
     Article findArticleById(Long id);
 
     void persistArticle(Article article);

@@ -33,3 +33,18 @@ dl.t-beandisplay {
     margin-left: 150px;
     padding: 3px 0 3px 0;
 }
+
+.navigation {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 60px;
+}
+
+.newer-entries {
+    float: right;
+}
+
+.older-entries {
+    float: left;
+}

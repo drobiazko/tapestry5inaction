@@ -1,5 +1,7 @@
 package com.tapestry5inaction.services;
 
+import java.util.List;
+
 public interface PageableLoopDataSource {
 
     int getAvailableRows();

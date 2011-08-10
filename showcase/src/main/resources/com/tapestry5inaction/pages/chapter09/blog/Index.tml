@@ -1,0 +1,9 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <ul>
+        <li t:type="pageableloop" source="articles" currentPage="currentPage" rowsPerPage="4" value="currentArticle">
+            <a t:type="pagelink" page="chapter09/blog/read" context="currentArticle">${currentArticle.title}</a>
+        </li>
+    </ul>
+
+</html>
