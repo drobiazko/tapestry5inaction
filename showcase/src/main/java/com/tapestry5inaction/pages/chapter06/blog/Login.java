@@ -4,6 +4,10 @@ package com.tapestry5inaction.pages.chapter06.blog;
 import com.tapestry5inaction.entities.User;
 import com.tapestry5inaction.pages.chapter06.Index;
 import com.tapestry5inaction.services.Authenticator;
+import com.tapestry5inaction.services.PasswordPolicyService;
+import org.apache.tapestry5.alerts.AlertManager;
+import org.apache.tapestry5.alerts.Duration;
+import org.apache.tapestry5.alerts.Severity;
 import org.apache.tapestry5.annotations.*;
 import org.apache.tapestry5.beaneditor.Validate;
 import org.apache.tapestry5.corelib.components.Form;
@@ -30,6 +34,12 @@ public class Login {
     @Inject
     private Messages messages;
 
+    @Inject
+    private AlertManager alertManager;
+
+    @Inject
+    private PasswordPolicyService passwordPolicyService;
+
     @SessionState(create = false)
     private User user;
 
@@ -49,6 +59,13 @@ public class Login {
 
     @DiscardAfter
     Object onSuccess() {
+        if (passwordPolicyService.isPasswordAboutToExpire(user)) {
+            alertManager.alert(
+                    Duration.UNTIL_DISMISSED,
+                    Severity.INFO,
+                    messages.get("password-about-to-expire"));
+        }
+
         return Welcome.class;
     }
 }

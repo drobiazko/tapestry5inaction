@@ -35,10 +35,14 @@ public class User {
     @Column
     private URL website;
 
+    @Column
+    private Date passwordChanged;
+
 
     @Inject
     public User(){
         super();
+        passwordChanged = new Date();
     }
 
     public User(String name, String password) {
@@ -101,5 +105,13 @@ public class User {
 
     public void setWebsite(URL website) {
         this.website = website;
+    }
+
+    public Date getPasswordChanged() {
+        return passwordChanged;
+    }
+
+    public void setPasswordChanged(Date passwordChanged) {
+        this.passwordChanged = passwordChanged;
     }
 }

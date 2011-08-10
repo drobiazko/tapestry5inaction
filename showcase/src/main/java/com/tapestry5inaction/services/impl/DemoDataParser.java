@@ -129,6 +129,7 @@ public class DemoDataParser {
                     throw new RuntimeException(e);
                 }
                 user.setBirthday(birthday);
+                user.setPasswordChanged(birthday);
                 user.setRememberMe(Boolean.valueOf(attributes.getValue("rememberMe")));
 
                 final String website = attributes.getValue("website");

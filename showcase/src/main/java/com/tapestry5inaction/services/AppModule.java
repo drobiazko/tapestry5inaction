@@ -1,5 +1,6 @@
 package com.tapestry5inaction.services;
 
+import com.tapestry5inaction.AppSymbolConstants;
 import com.tapestry5inaction.entities.*;
 import com.tapestry5inaction.services.impl.*;
 import org.apache.tapestry5.*;
@@ -23,6 +24,7 @@ public class AppModule {
     public static void bind(ServiceBinder binder) {
         binder.bind(Authenticator.class, AuthenticatorImpl.class);
         binder.bind(BlogService.class, BlogServiceImpl.class);
+        binder.bind(PasswordPolicyService.class, PasswordPolicyServiceImpl.class);
         binder.bind(ReportService.class, ReportServiceImpl.class);
         binder.bind(TrackPriceService.class, TrackPriceServiceImpl.class);
         binder.bind(UserDao.class, UserDaoImpl.class);
@@ -51,6 +53,8 @@ public class AppModule {
         configuration.add(HibernateSymbols.PROVIDE_ENTITY_VALUE_ENCODERS, "false");
 
         configuration.add(SymbolConstants.SUPPORTED_LOCALES, "en,de,ru,iw");
+
+        configuration.add(AppSymbolConstants.PASSWORD_EXPIRY_PERIOD, "60 d");
     }
 
     @Contribute(ApplicationStateManager.class)
