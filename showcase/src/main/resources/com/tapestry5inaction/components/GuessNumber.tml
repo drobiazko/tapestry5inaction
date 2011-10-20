@@ -1,0 +1,14 @@
+<div xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <div t:type="alerts"/>
+
+    <h2>Hi. My name is Duke. I’m thinking of a number from ${min} to ${max}. Can you guess it?</h2>
+    <img src="${duke}"/>
+
+    <form t:type="form">
+        <t:errors/>
+        <input t:type="textfield" t:id="answer" validate="required"/>
+
+        <input type="submit" value="Guess"/>
+    </form>
+</div>
