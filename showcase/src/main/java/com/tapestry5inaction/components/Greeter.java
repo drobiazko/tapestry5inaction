@@ -7,7 +7,7 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 
 public class Greeter {
 
-    @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
+    @Parameter(required = true)
     private String name;
 
     @Inject

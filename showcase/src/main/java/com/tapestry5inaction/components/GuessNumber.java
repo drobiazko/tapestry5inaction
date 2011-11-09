@@ -6,6 +6,7 @@ import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.Path;
 import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
+import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
 import java.util.Random;
@@ -30,9 +31,7 @@ public class GuessNumber {
     private AlertManager alertManager;
 
     @Inject
-    @Path("duke.jpg")
-    @Property
-    private Asset duke;
+    private Messages messages;
 
     void setupRender() {
         if (number == null) {
@@ -45,12 +44,12 @@ public class GuessNumber {
         final int result = number.compareTo(answer);
 
         if (result == 0) {
-            alertManager.info(String.format("Yay! You got it! %d is correct.", answer));
+            alertManager.info(messages.format("correct-answer", answer));
             number = null;
-        } else if (result < 0) {
-            alertManager.error(String.format("Sorry, %d is incorrect. Try a smaller number.", answer));
         } else {
-            alertManager.error(String.format("Sorry, %d is incorrect. Try a larger number.", answer));
+            String key = result < 0 ? "try-smaller" : "try-larger";
+
+            alertManager.error(messages.format(key, answer));
         }
     }
 }

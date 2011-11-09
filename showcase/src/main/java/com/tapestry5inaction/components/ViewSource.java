@@ -54,8 +54,7 @@ public class ViewSource {
         template = componentResourceLocator.locateTemplate(model, new ComponentResourceSelector(locale));
     }
 
-    public void beginRender(MarkupWriter writer) {
-
+    void beginRender() {
         javaScriptSupport.addScript("SyntaxHighlighter.all();");
     }
 

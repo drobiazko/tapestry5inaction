@@ -6,7 +6,7 @@
     <artifactId>showcase</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>Tapestry 5 in Action Demo application</name>
+    <name>Tapestry 5 Book Demo application</name>
 
     <parent>
         <groupId>com.tapestry5inaction</groupId>
