@@ -1,0 +1,9 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+    <ul>
+        <li t:type="simpleloop" source="1..10" value="currentValue">
+            ${currentValue}
+        </li>
+    </ul>
+
+</html>
+
