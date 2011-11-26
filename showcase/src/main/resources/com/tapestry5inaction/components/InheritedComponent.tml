@@ -1,0 +1,7 @@
+<t:extend xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <t:replace id="title">
+        <div>Duke is cool</div>
+    </t:replace>
+
+</t:extend>

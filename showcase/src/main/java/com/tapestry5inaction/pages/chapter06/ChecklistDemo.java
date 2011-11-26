@@ -8,8 +8,8 @@ import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
+import org.apache.tapestry5.services.ValueEncoderSource;
 import org.apache.tapestry5.util.EnumSelectModel;
-import org.apache.tapestry5.util.EnumValueEncoder;
 
 import java.util.List;
 
@@ -20,6 +20,9 @@ public class ChecklistDemo {
     @Inject
     private AlertManager alertManager;
 
+    @Inject
+    private ValueEncoderSource valueEncoderSource;
+
     @Persist
     @Property
     private List<Language> languages;
@@ -29,7 +32,7 @@ public class ChecklistDemo {
     }
 
     public ValueEncoder getEncoder() {
-        return new EnumValueEncoder(Language.class);
+        return valueEncoderSource.getValueEncoder(Language.class);
     }
 
     void onSuccess(){

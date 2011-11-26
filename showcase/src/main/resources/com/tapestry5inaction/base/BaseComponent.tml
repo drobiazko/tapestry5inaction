@@ -1,0 +1,10 @@
+<span xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <t:extension-point id="title">
+        <h1>Hi, I'm Duke.</h1>
+    </t:extension-point>
+
+    <t:extension-point id="logo">
+        <img src="${asset:duke.jpg}"/>
+    </t:extension-point>
+</span>

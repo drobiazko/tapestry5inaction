@@ -11,12 +11,29 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 
 import java.util.Random;
 
+/**
+ * Component that renders an entire UI for the Guess Number game, known from the Java EE tutorial.
+ *
+ * @since 1.0
+ *
+ * @tapestrydoc
+ */
 public class GuessNumber {
 
+    /**
+     * Used to configure the minimal number to guess.
+     *
+     * @since 1.0
+     */
     @Parameter("0")
     @Property
     private int min;
 
+    /**
+     * Used to configure the maximal number to guess.
+     *
+     * @since 1.0
+     */
     @Parameter("10")
     @Property
     private int max;

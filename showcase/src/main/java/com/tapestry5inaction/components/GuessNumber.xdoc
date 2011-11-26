@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+    <body>
+        <section name="Simple Example">
+
+            <p>
+                The component renders an image of Duke, the Java mascot, asking the user to guess a number from a
+                predefined range and to enter it into an input field. When the form is submitted, the entered value
+                is compared to the number Duke is thinking of. If the user entered a wrong number, a corresponding
+                message is presented and the game continues. The game is over if the user finally guessed the number
+                Duke was thinking of.
+            </p>
+
+            <p>
+                <img src="doc-files/GuessNumber.png"/>
+            </p>
+
+            <p>
+                The following example demonstrates how to use the component.
+            </p>
+
+            <subsection name="GuessNumberDemo.tml">
+
+                <source><![CDATA[
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+    <body>
+        <div t:type="guessnumber" max="20"/>
+    </body>
+</html>
+]]></source>
+
+            </subsection>
+        </section>
+    </body>
+</document>

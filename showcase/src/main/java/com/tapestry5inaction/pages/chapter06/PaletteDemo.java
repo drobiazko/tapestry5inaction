@@ -7,8 +7,8 @@ import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
+import org.apache.tapestry5.services.ValueEncoderSource;
 import org.apache.tapestry5.util.EnumSelectModel;
-import org.apache.tapestry5.util.EnumValueEncoder;
 
 import java.util.List;
 
@@ -16,6 +16,9 @@ public class PaletteDemo {
 
     @Inject
     private Messages messages;
+
+    @Inject
+    private ValueEncoderSource valueEncoderSource;
 
     @Persist
     @Property
@@ -26,7 +29,7 @@ public class PaletteDemo {
     }
 
     public ValueEncoder getEncoder() {
-        return new EnumValueEncoder(Language.class);
+        return valueEncoderSource.getValueEncoder(Language.class);
     }
 
 }
