@@ -3,7 +3,19 @@
     This chapter covers:
     <ul>
         <li>
-            TODO
+           Creating custom components
+        </li>
+        <li>
+             Understanding component parameters
+        </li>
+        <li>
+            Component rendering in details
+        </li>
+        <li>
+           Component design patterns
+        </li>
+        <li>
+           Bundling components into libraries
         </li>
     </ul>
 </div>
@@ -12,6 +24,21 @@
 Demo pages:
 <p>
     <a t:type="pagelink" page="chapter09/greeterdemo">Using Greeter component</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter09/guessnumberdemo">Using GuessNumber component</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter09/dukedemo">Using Duke component</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter09/simpleloopdemo">Using SimpleLoop component</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter09/subcomponentdemo">Inheriting component templates</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter09/librarydemo">Using a component from a library</a>
 </p>
 
 </html>
