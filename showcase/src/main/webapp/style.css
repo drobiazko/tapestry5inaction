@@ -48,3 +48,11 @@ dl.t-beandisplay {
 .older-entries {
     float: left;
 }
+
+.even {
+    background-color: #eee;
+}
+
+.odd {
+    background-color: #EAF4FF;
+}
