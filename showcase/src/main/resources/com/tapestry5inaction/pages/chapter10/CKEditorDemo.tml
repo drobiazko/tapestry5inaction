@@ -1,0 +1,19 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+
+    <form t:type="form" clientValidation="false">
+        <t:errors/>
+        <div class="form-row">
+            <label t:type="label" for="title"/>
+            <input t:type="textfield" t:id="title" value="article.title"/>
+        </div>
+        <div class="form-row">
+            <textarea t:type="textarea" value="article.content" t:mixins="ckeditor" skin="office2003"/>
+        </div>
+        <div class="form-row">
+            <input t:type="submit" value="Save"/>
+        </div>
+    </form>
+
+</html>
+

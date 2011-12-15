@@ -1,0 +1,9 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+
+    <div t:type="loop" source="1..5" value="var:value" t:mixins="Zebra">
+        ${var:value}
+    </div>
+
+</html>
+

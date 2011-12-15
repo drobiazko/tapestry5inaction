@@ -1,0 +1,11 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+
+    <div t:type="simpleloop" source="1..5" value="var:value"
+         style="border-color:#9999FF; border-style:dashed; padding:5px;"
+         t:mixins="RenderInformals">
+        ${var:value}
+    </div>
+
+</html>
+

@@ -1,0 +1,19 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+    <t:alerts/>
+
+    <form t:type="form" clientValidation="false">
+        <t:errors/>
+
+        <div class="form-row">
+            <label t:type="label" for="country"/>
+            <input t:type="textfield" t:id="country" t:mixins="Autocomplete" minChars="2"/>
+        </div>
+
+        <div class="form-row">
+            <input t:type="submit" value="Search"/>
+        </div>
+    </form>
+
+</html>
+

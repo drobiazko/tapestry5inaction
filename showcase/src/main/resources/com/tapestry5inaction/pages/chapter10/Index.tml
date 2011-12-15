@@ -1,0 +1,38 @@
+<html t:type="indexlayout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<div>
+    This chapter covers:
+    <ul>
+        <li>
+            Introduction into mixns
+        </li>
+        <li>
+            Using Tapestry's mixns
+        </li>
+        <li>
+            Creating custom mixins
+        </li>
+    </ul>
+</div>
+
+
+Demo pages:
+<p>
+    <a t:type="pagelink" page="chapter10/renderinformalsdemo">Rendering informal parameters using RenderInformals mixin</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter10/mixinsannotationdemo">Applying mixins using Mixins annotation</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter10/mixinclassesannotationdemo">Applying mixins using MixinClasses annotation</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter10/autocompletedemo">Enabling a simple text field to function as Google's search field using Autocomplete mixin</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter10/ckeditordemo">Turning a TextArea component instance into a WYSIWYG editor using CKEditor mixin</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter10/zebrademo">Applying zebra stripe look &amp; feel to the Loop component using Zebra mixin.</a>
+</p>
+
+</html>
