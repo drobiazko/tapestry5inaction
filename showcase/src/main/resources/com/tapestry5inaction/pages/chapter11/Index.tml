@@ -1,0 +1,53 @@
+<html t:type="indexlayout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+<div>
+    This chapter covers:
+    <ul>
+        <li>
+            Using Tapestry's Ajax components
+        </li>
+        <li>
+            Peforming partial page updates
+        </li>
+        <li>
+            Creating custom Ajax components
+        </li>
+    </ul>
+</div>
+
+
+Demo pages:
+<p>
+    <a t:type="pagelink" page="chapter11/worldtime">Performing partial page updates periodically with ZoneRefresh mixin</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter11/progressivedisplaydemo">Lazy loading page content with ProgressiveDisplay component</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter11/zonedemo">Performing partial updates with Zone component (Returning zone's body)</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter11/blockdemo">Performing partial updates with Zone component (Returning a block from template)</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter11/login">Ajax-enabled Login form</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter11/multizonedemo">Updating multiple zones (Providing new content with blocks)</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter11/multizonerendercommanddemo">Updating multiple zones (Providing new content with RenderCommand)</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter11/multizonecallbackdemo">Updating multiple zones (Registering JavaScript callbacks)</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter11/jsondemo">Working with JSON</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter11/effectsdemo">Visualising Zone updates</a>
+</p>
+<p>
+    <a t:type="pagelink" page="chapter11/inplaceeditordemo">Creating a in-place editor with InPlaceEditor component.</a>
+</p>
+
+</html>
