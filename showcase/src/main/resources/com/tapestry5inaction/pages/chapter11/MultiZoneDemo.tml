@@ -1,0 +1,37 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+
+    <span id="status"/>
+
+    <div class="t-data-grid" style="{width: 100%;}">
+
+        <table class="t-data-grid">
+                <thead>
+                    <tr>
+                        <th>Dragons</th>
+                        <th>Duke</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+            <tbody>
+
+            <tr>
+                <td t:type="zone" t:id="dragonsZone" id="dragons">
+                    Here be dragons
+                </td>
+                <td t:type="zone" t:id="dukeZone" id="duke">
+                    Duke's image goes here
+                </td>
+                <td t:type="zone" t:id="messageZone" id="message">
+                    ${message}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <t:actionlink t:id="update" zone="dragons">update</t:actionlink>
+
+    <t:block id="dukeBlock">
+        <div t:type="duke"/>
+    </t:block>
+</html>

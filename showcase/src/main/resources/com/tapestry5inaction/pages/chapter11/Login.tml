@@ -1,0 +1,22 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+
+    <t:zone t:id="formZone">
+        <form t:type="form" t:id="loginForm" clientValidation="none" zone="formZone">
+            <t:errors/>
+            <div class="form-row">
+                <label t:type="label" for="userName"/>
+                <input t:type="textfield" t:id="userName" value="user.name" size="20"/>
+            </div>
+
+            <div class="form-row">
+                <label t:type="label" for="password"/>
+                <input t:type="passwordfield" t:id="password" value="user.password" size="20"/>
+            </div>
+
+            <div class="form-row">
+                <input type="submit" value="Login"/>
+            </div>
+        </form>
+    </t:zone>
+
+</html>

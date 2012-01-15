@@ -1,0 +1,8 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+
+    Berlin: <div t:id="berlin" t:type='zone' t:mixins='zonerefresh' period="1">${berlinTime}</div>
+    Moscow: <div t:id="moscow" t:type='zone' t:mixins='zonerefresh' period="1">${moscowTime}</div>
+    New York: <div t:id="newYork" t:type='zone' t:mixins='zonerefresh' period="1">${newYorkTime}</div>
+
+</html>
+
