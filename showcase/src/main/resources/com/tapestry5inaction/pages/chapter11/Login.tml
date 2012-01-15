@@ -1,7 +1,7 @@
 <html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
 
     <t:zone t:id="formZone">
-        <form t:type="form" t:id="loginForm" clientValidation="none" zone="formZone">
+        <form t:type="form" t:id="loginForm" clientValidation="none" zone="^">
             <t:errors/>
             <div class="form-row">
                 <label t:type="label" for="userName"/>

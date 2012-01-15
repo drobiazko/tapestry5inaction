@@ -1,8 +1,10 @@
-<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
-    <head>
-        <title>Hello World Page</title>
-    </head>
-    <body>
-        <h1>Hello World</h1>
-    </body>
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+
+    <t:zone t:id="numberZone" update="shake">
+        <p>Current value: ${number}</p>
+    </t:zone>
+
+    <a t:type="eventlink" event="increment" zone="numberZone">Increment</a>
+
 </html>
+

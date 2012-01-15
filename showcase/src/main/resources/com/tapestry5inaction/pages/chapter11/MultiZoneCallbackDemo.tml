@@ -1,8 +1,8 @@
 <html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
 
-    <t:zone t:id="statusZone" update="grow"/>
+    <span id="status"/>
 
-    <t:zone t:id="numberZone" update="grow"/>
+    <t:zone t:id="numberZone"/>
 
     <t:block id="numberBlock">
         <p>Current value: ${number}</p>

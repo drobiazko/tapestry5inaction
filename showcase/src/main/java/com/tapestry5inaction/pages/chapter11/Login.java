@@ -59,6 +59,6 @@ public class Login {
     }
 
     Object onFailure() {
-        return request.isXHR() ? formZone.getBody() : null;
+        return request.isXHR() ? formZone.getBody() : this;
     }
 }

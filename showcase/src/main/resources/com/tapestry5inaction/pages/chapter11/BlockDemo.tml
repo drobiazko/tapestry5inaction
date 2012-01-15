@@ -1,8 +1,8 @@
 <html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
 
-    <t:zone t:id="numberZone" update="grow">
-        <p>Current value: ${number}</p>
-    </t:zone>
+    <t:zone t:id="numberZone"/>
+
+    <t:block id="numberBlock"><p>Current value: ${number}</p></t:block>
 
     <a t:type="eventlink" event="increment" zone="numberZone">Increment</a>
 

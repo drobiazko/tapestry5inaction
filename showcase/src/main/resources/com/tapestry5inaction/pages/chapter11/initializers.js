@@ -1,5 +1,5 @@
 T5.extendInitializers({
-    writeMessageTo : function(spec) {
-        $(spec.id).update(spec.statusMessage);
+    replaceContent : function(spec) {
+        $(spec.id).update(spec.newContent);
     }
 })

@@ -1,6 +1,6 @@
 <html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
 
-    <t:zone t:id="numberZone" update="grow">
+    <t:zone t:id="numberZone">
         <p>Current value: ${number}</p>
     </t:zone>
 
