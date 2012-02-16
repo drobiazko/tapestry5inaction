@@ -27,6 +27,7 @@ public class User {
     private boolean rememberMe;
 
     @Column
+    @Temporal(TemporalType.DATE)
     private Date birthday;
 
     @Enumerated (EnumType.STRING)
@@ -36,6 +37,7 @@ public class User {
     private URL website;
 
     @Column
+    @Temporal(TemporalType.DATE)
     private Date passwordChanged;
 
 

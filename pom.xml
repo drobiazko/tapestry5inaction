@@ -69,6 +69,18 @@
             </dependency>
 
             <dependency>
+                <groupId>org.apache.tapestry</groupId>
+                <artifactId>tapestry-jpa</artifactId>
+                <version>${tapestry-release-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.tapestry</groupId>
+                <artifactId>tapestry-spring</artifactId>
+                <version>${tapestry-release-version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>servlet-api</artifactId>
                 <version>2.5</version>

@@ -5,6 +5,7 @@ import com.tapestry5inaction.entities.*;
 import com.tapestry5inaction.services.impl.*;
 import org.apache.tapestry5.*;
 import org.apache.tapestry5.hibernate.HibernateSymbols;
+import org.apache.tapestry5.hibernate.HibernateTransactionAdvisor;
 import org.apache.tapestry5.ioc.*;
 import org.apache.tapestry5.ioc.annotations.*;
 import org.apache.tapestry5.ioc.services.ApplicationDefaults;
@@ -173,6 +174,12 @@ public class AppModule {
                 "date",
                 "chapter08/AppPropertyDisplayBlocks",
                 "dateBlock"));
+    }
+
+    @Advise(serviceInterface = BlogService.class)
+    public static void adviseTransactionally(
+            HibernateTransactionAdvisor advisor, MethodAdviceReceiver receiver) {
+        advisor.addTransactionCommitAdvice(receiver);
     }
 
 
