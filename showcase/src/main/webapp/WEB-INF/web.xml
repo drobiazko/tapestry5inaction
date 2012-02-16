@@ -8,9 +8,16 @@
 		<param-name>tapestry.app-package</param-name>
 		<param-value>com.tapestry5inaction</param-value>
 	</context-param>
+    <!--
+    Use this filter if you don't need to integrate Spring Framework into your Tapestry application
 	<filter>
 		<filter-name>app</filter-name>
 		<filter-class>org.apache.tapestry5.TapestryFilter</filter-class>
+	</filter>
+    -->
+	<filter>
+		<filter-name>app</filter-name>
+		<filter-class>org.apache.tapestry5.spring.TapestrySpringFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>app</filter-name>

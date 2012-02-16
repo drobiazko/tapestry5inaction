@@ -1,0 +1,9 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+
+    <ul t:type="loop" source="blogBean.articles" value="currentArticle">
+        ${currentArticle.title}
+    </ul>
+
+    <div>Production mode: ${blogBean.productionMode}</div>
+
+</html>
