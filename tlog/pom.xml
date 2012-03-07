@@ -9,16 +9,14 @@
     <name>Tapestry Blog Projects</name>
 
     <parent>
-        <groupId>com.tapestry5inaction</groupId>
-        <artifactId>tapestry5inaction</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+    	<groupId>com.tapestry5inaction</groupId>
+    	<artifactId>tapestry5inaction</artifactId>
+    	<version>1.0.0-SNAPSHOT</version>
     </parent>
 
     <modules>
         <module>tlog-core</module>
-        <module>plugins/tlog-archive</module>
-        <module>plugins/tlog-blogroll</module>
-        <module>plugins/tlog-tags</module>
+        <module>plugins</module>
         <module>tlog-web</module>
     </modules>
 
