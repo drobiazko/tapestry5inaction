@@ -6,7 +6,7 @@
     <artifactId>tapestry5inaction</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <inceptionYear>2010</inceptionYear>
+    <inceptionYear>2011</inceptionYear>
     <name>Tapestry 5 in Action</name>
 
     <properties>
