@@ -15,8 +15,10 @@
     </properties>
 
     <modules>
-        <module>tlog</module>
+        <module>hello-world</module>
         <module>demo-library</module>
+        <module>showcase</module>
+        <module>tlog</module>
     </modules>
 
     <developers>
@@ -103,7 +105,7 @@
             <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
-                <version>5.12.1</version>
+                <version>6.4</version>
                 <scope>test</scope>
             </dependency>
 
@@ -134,18 +136,7 @@
                     <optimize>true</optimize>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.4.3</version>
-                <configuration>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>src/test/conf/testng.xml</suiteXmlFile>
-                    </suiteXmlFiles>
-                    <argLine>-Xmx500m -XX:MaxPermSize=256m -Dtapestry.production-mode=false</argLine>
-                    <redirectTestOutputToFile>false</redirectTestOutputToFile>
-                </configuration>
-            </plugin>
+
             <!-- This gets the plugin to clean up the cobertura.ser file left in the root directory. -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>

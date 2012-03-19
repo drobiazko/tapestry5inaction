@@ -1,4 +1,0 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-
-<suite name="Tapestry 5 in Action Showcase" parallel="false" thread-count="10" annotations="1.5" verbose="2">
-</suite>

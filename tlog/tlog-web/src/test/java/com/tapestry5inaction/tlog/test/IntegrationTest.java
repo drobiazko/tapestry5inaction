@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import static com.tapestry5inaction.tlog.skins.SkinConstants.DEFAULT_SKIN;
 
-public class IntegrationTests extends SeleniumTestCase {
+public class IntegrationTest extends SeleniumTestCase {
 
     private static final String SUBMIT = "//input[@type='submit']";
 

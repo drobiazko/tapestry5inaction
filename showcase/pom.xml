@@ -77,6 +77,8 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
+            <version>6.4</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -87,6 +89,34 @@
         <dependency>
             <groupId>hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit-dep</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.9.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jmock</groupId>
+            <artifactId>jmock-junit4</artifactId>
+            <version>2.5.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-core</artifactId>
+            <version>0.5-groovy-1.7</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -101,6 +131,26 @@
         </resources>
 
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.12</version>
+                <configuration>
+                    <argLine>-Xmx500m -XX:MaxPermSize=256m</argLine>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>test-junit</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <configuration>
+                            <testNGArtifactName>none:none</testNGArtifactName>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.simplericity.jettyconsole</groupId>
                 <artifactId>jetty-console-maven-plugin</artifactId>
