@@ -8,9 +8,6 @@ import org.apache.tapestry5.test.TapestryTestCase;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-/**
- * @author Igor Drobiazko (igor.drobiazko@net-m.de)
- */
 public class TestNGAuthenticatorImplTest extends TapestryTestCase {
 
     private UserDao userDao;
