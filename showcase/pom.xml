@@ -115,7 +115,7 @@
         <dependency>
             <groupId>org.spockframework</groupId>
             <artifactId>spock-core</artifactId>
-            <version>0.5-groovy-1.7</version>
+            <version>0.6-groovy-1.8</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -181,7 +181,7 @@
                     <dependency>
                         <groupId>org.codehaus.groovy</groupId>
                         <artifactId>groovy-all</artifactId>
-                        <version>1.7.10</version>
+                        <version>1.8.6</version>
                     </dependency>
                 </dependencies>
             </plugin>

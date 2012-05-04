@@ -40,9 +40,7 @@ public class LoginTest {
         parameters.put("userName", "admin");
         document = pageTester.submitForm(loginForm, parameters);
 
-        String markup = document.toString();
-
-        assertTrue(markup.contains("Password is required"));
+        assertTrue(document.toString().contains("Password is required"));
 
         parameters.put("password", "wrong");
         document = pageTester.submitForm(loginForm, parameters);

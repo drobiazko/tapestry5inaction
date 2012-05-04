@@ -41,6 +41,7 @@ class SpockAuthenticatorImplTest extends Specification {
         user == null
 
     }
+
     def "wrong password"() {
         when:
         def user = authenticator.authenticate("admin", "admin")
@@ -50,6 +51,22 @@ class SpockAuthenticatorImplTest extends Specification {
 
         expect:
         user == null
+
+    }
+
+
+    def "user is logged in"() {
+        when:
+        def loggedIn = authenticator.isLoggedIn()
+
+        then:
+        applicationStateManager.exists(User.class) >> userExists
+
+        expect:
+        loggedIn == userExists
+
+        where:
+        userExists << [true, false]
 
     }
 }
