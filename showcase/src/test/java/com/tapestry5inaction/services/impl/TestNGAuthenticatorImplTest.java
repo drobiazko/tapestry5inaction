@@ -19,7 +19,7 @@ public class TestNGAuthenticatorImplTest extends TapestryTestCase {
         userDao = newMock(UserDao.class);
         applicationStateManager = mockApplicationStateManager();
 
-        authenticator = TestBase.create(AuthenticatorImpl.class, "userDao", userDao, "applicationStateManager", applicationStateManager);
+        authenticator = new AuthenticatorImpl(userDao, applicationStateManager);
     }
 
     @Test

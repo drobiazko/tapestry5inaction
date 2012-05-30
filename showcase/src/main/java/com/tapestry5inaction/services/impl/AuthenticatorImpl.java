@@ -9,11 +9,14 @@ import org.apache.tapestry5.services.ApplicationStateManager;
 
 public class AuthenticatorImpl implements Authenticator {
 
-    @Inject
     private UserDao userDao;
 
-    @Inject
     private ApplicationStateManager applicationStateManager;
+
+    public AuthenticatorImpl(UserDao userDao, ApplicationStateManager applicationStateManager) {
+        this.userDao = userDao;
+        this.applicationStateManager = applicationStateManager;
+    }
 
     public User authenticate(String userName, String password) {
         User user = userDao.findByName(userName);

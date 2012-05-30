@@ -12,9 +12,7 @@ class SpockAuthenticatorImplTest extends Specification {
     AuthenticatorImpl authenticator;
 
     def setup() {
-        authenticator = new AuthenticatorImpl()
-        authenticator.userDao = dao
-        authenticator.applicationStateManager = applicationStateManager
+        authenticator = new AuthenticatorImpl(dao, applicationStateManager)
     }
 
     def "authenticate user successfully"() {
@@ -22,9 +20,10 @@ class SpockAuthenticatorImplTest extends Specification {
         def user = authenticator.authenticate("admin", "admin")
 
         then:
-        dao.findByName("admin") >> new User("admin", "21232f297a57a5a743894a0e4a801fc3")
+        dao.findByName("admin") >>
+                new User("admin", "21232f297a57a5a743894a0e4a801fc3")
 
-        expect:
+        then:
         user.name == "admin";
         user.password == "21232f297a57a5a743894a0e4a801fc3"
 
@@ -37,7 +36,7 @@ class SpockAuthenticatorImplTest extends Specification {
         then:
         dao.findByName("admin") >> null
 
-        expect:
+        then:
         user == null
 
     }
@@ -49,7 +48,7 @@ class SpockAuthenticatorImplTest extends Specification {
         then:
         dao.findByName("admin") >> new User("admin", "secret")
 
-        expect:
+        then:
         user == null
 
     }
@@ -62,7 +61,7 @@ class SpockAuthenticatorImplTest extends Specification {
         then:
         applicationStateManager.exists(User.class) >> userExists
 
-        expect:
+        then:
         loggedIn == userExists
 
         where:

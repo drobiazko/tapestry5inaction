@@ -34,7 +34,7 @@ public class JMockAuthenticatorImplTest {
 
         userDao = mockery.mock(UserDao.class);
         applicationStateManager = mockery.mock(ApplicationStateManager.class);
-        authenticator = TestBase.create(AuthenticatorImpl.class, "userDao", userDao, "applicationStateManager", applicationStateManager);
+        authenticator = new AuthenticatorImpl(userDao, applicationStateManager);
     }
 
     @Test

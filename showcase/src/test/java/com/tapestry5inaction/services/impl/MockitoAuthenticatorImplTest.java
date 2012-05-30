@@ -32,19 +32,21 @@ public class MockitoAuthenticatorImplTest {
     @Before
     public void setUp() {
 
-        authenticator = TestBase.create(AuthenticatorImpl.class, "userDao", userDao, "applicationStateManager", applicationStateManager);
+        authenticator = new AuthenticatorImpl(userDao, applicationStateManager);
     }
 
     @Test
     public void authenticateSuccessfully() {
 
-        when(userDao.findByName("admin")).thenReturn(new User("admin", "21232f297a57a5a743894a0e4a801fc3"));
+        final User user = new User("admin", "21232f297a57a5a743894a0e4a801fc3");
 
-        User user = authenticator.authenticate("admin", "admin");
+        when(userDao.findByName("admin")).thenReturn(user);
 
-        assertNotNull(user);
-        assertEquals(user.getName(), "admin");
-        assertEquals(user.getPassword(), "21232f297a57a5a743894a0e4a801fc3");
+        User result = authenticator.authenticate("admin", "admin");
+
+        assertNotNull(result);
+        assertEquals(result.getName(), "admin");
+        assertEquals(result.getPassword(), "21232f297a57a5a743894a0e4a801fc3");
     }
 
     @Test
