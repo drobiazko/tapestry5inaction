@@ -1,6 +1,10 @@
 <html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
 
+    <span id="status"/>
+
     <t:zone t:id="numberZone"/>
 
     <a t:type="eventlink" event="increment" zone="numberZone">Increment</a>
+
 </html>
+
