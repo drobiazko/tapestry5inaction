@@ -44,6 +44,9 @@ Demo pages:
     <a t:type="pagelink" page="chapter11/jsondemo">Working with JSON</a>
 </p>
 <p>
+    <a t:type="pagelink" page="chapter11/jsoninitsdemo">Working with JSON and initializer functions</a>
+</p>
+<p>
     <a t:type="pagelink" page="chapter11/effectsdemo">Visualising Zone updates</a>
 </p>
 <p>
