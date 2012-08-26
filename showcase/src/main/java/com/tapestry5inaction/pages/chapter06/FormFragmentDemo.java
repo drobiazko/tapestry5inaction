@@ -7,23 +7,23 @@ import org.apache.tapestry5.annotations.Property;
 public class FormFragmentDemo {
 
     @Property
-    private Address billingAdress;
+    private Address billingAddress;
 
     @Property
-    private Address shippingAdress;
+    private Address shippingAddress;
 
     @Property
     @Persist
     private boolean shipToAnotherAddress;
 
     void onPrepare() {
-        billingAdress = new Address();
-        shippingAdress = new Address();
+        billingAddress = new Address();
+        shippingAddress = new Address();
     }
 
     void onSuccess() {
-        System.err.println(billingAdress.getStreet());
-        System.err.println(shippingAdress.getStreet());
+        System.err.println(billingAddress.getStreet());
+        System.err.println(shippingAddress.getStreet());
     }
 
 }
