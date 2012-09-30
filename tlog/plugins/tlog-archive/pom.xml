@@ -55,7 +55,7 @@
                 <configuration>
                     <archive>
                         <manifestEntries>
-                            <Tapestry-Module-Classes>com.tapestry5inaction.tlog.archive.services.ArchiveModule</Tapestry-Module-Classes>
+                            <Tapestry-Module-Classes>com.tapestry5book.tlog.archive.services.ArchiveModule</Tapestry-Module-Classes>
                         </manifestEntries>
                     </archive>
                 </configuration>

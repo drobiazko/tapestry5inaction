@@ -33,7 +33,7 @@
                 <configuration>
                     <archive>
                         <manifestEntries>
-                            <Tapestry-Module-Classes>com.tapestry5inaction.library.services.LibraryModule</Tapestry-Module-Classes>
+                            <Tapestry-Module-Classes>com.tapestry5book.library.services.LibraryModule</Tapestry-Module-Classes>
                         </manifestEntries>
                     </archive>
                 </configuration>

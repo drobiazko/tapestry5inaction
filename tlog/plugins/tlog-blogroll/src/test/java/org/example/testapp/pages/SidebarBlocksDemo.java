@@ -1,6 +1,6 @@
 package org.example.testapp.pages;
 
-import com.tapestry5inaction.tlog.core.services.SidebarBlockSource;
+import com.tapestry5book.tlog.core.services.SidebarBlockSource;
 import org.apache.tapestry5.Block;
 import org.apache.tapestry5.ioc.annotations.Inject;
 

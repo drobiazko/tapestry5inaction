@@ -55,7 +55,7 @@
                 <configuration>
                     <archive>
                         <manifestEntries>
-                            <Tapestry-Module-Classes>com.tapestry5inaction.tlog.blogroll.services.BlogrollModule</Tapestry-Module-Classes>
+                            <Tapestry-Module-Classes>com.tapestry5book.tlog.blogroll.services.BlogrollModule</Tapestry-Module-Classes>
                         </manifestEntries>
                     </archive>
                 </configuration>

@@ -6,7 +6,7 @@
     <display-name>Tapestry 5 Application</display-name>
     <context-param>
         <param-name>tapestry.app-package</param-name>
-        <param-value>com.tapestry5inaction</param-value>
+        <param-value>com.tapestry5book</param-value>
     </context-param>
     <filter>
         <filter-name>app</filter-name>

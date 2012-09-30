@@ -9,7 +9,7 @@
 
     <context:annotation-config/>
 
-    <bean id="echoBean" class="com.tapestry5inaction.services.impl.EchoBean"/>
-    <bean id="blogBean" class="com.tapestry5inaction.services.impl.BlogBean"/>
+    <bean id="echoBean" class="com.tapestry5book.services.impl.EchoBean"/>
+    <bean id="blogBean" class="com.tapestry5book.services.impl.BlogBean"/>
 
 </beans>

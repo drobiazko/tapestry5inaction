@@ -6,7 +6,7 @@
     <display-name>Blog written with Tapestry 5</display-name>
     <context-param>
         <param-name>tapestry.app-package</param-name>
-        <param-value>com.tapestry5inaction.tlog</param-value>
+        <param-value>com.tapestry5book.tlog</param-value>
     </context-param>
     <filter>
         <filter-name>app</filter-name>
