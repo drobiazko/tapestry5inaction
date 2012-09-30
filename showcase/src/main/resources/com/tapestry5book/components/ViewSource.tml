@@ -1,4 +1,4 @@
-<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
     <hr/>
     <div><img src="${context:images/java.png}" align="middle"/>${pageClassPath}</div>
     <pre class="brush: java; toolbar: false;">${javaCode}</pre>

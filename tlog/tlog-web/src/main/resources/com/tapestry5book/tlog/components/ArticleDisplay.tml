@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<div class="post" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<div class="post" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
     <h2>
         <a t:type="pagelink" page="read" context="article">${article.title}</a>
     </h2>

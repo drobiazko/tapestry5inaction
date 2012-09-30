@@ -1,4 +1,4 @@
-<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
       xmlns:p="tapestry:parameter">
 
     <table t:type="grid" source="users" rowsPerPage="5" pagerPosition="both" row="currentUser">

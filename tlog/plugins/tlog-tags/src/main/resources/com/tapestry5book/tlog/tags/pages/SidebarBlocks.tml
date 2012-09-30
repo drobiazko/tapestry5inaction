@@ -1,4 +1,4 @@
-<div xml:space="default" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<div xml:space="default" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
 
     <t:block id="tags">
         <h2>${message:headline}</h2>

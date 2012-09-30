@@ -1,4 +1,4 @@
-<div id="header" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<div id="header" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
     <div id="headerimg">
         <h1>
             <a t:type="pagelink" page="Index">${blog.name}</a>

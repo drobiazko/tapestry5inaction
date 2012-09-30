@@ -1,4 +1,4 @@
-<div id="footer" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<div id="footer" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
     <p> Theme Preview is proudly powered by <a href="http://tapestry.apache.org/">Tapestry</a>
         <br/>
         <a href="http://wp-themes.com/?feed=rss2">Entries (RSS)</a> and <a

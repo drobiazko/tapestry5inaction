@@ -1,4 +1,4 @@
-<html t:type="admin/layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter"
+<html t:type="admin/layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter"
       title="title">
 
 <h2>${message:title}</h2>

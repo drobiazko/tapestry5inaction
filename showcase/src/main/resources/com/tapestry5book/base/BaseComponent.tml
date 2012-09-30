@@ -1,4 +1,4 @@
-<span xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<span xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
 
     <t:extension-point id="title">
         <h1>Hi, I'm Duke.</h1>

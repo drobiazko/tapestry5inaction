@@ -1,4 +1,4 @@
-<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
 
     <ul t:type="loop" source="articles" value="currentArticle">
         <a t:type="pagelink" page="chapter03/blog/v1/read" context="currentArticle.id">${currentArticle.title}</a>
