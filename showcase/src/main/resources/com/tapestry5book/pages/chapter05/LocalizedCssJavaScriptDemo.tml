@@ -1,6 +1,6 @@
 <html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
 
-<div class="flag" onclick="javascript:alert(Tapestry5InAction.Messages.helloWorld)"/>
+<div class="flag" onclick="javascript:alert(Tapestry5Book.Messages.helloWorld)"/>
 
 </html>
 

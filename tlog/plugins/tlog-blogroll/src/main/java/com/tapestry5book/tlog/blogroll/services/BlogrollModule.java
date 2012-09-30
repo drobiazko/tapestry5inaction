@@ -27,12 +27,12 @@ public class BlogrollModule {
 
     @Contribute(ComponentClassResolver.class)
     public static void provideLibraryMapping(Configuration<LibraryMapping> configuration) {
-        configuration.add(new LibraryMapping("blogroll", "com.tapestry5inaction.tlog.blogroll"));
+        configuration.add(new LibraryMapping("blogroll", "com.tapestry5book.tlog.blogroll"));
     }
 
     @Contribute(HibernateEntityPackageManager.class)
     public static void provideHibernateEntityPackages(Configuration<String> configuration) {
-        configuration.add("com.tapestry5inaction.tlog.blogroll.entities");
+        configuration.add("com.tapestry5book.tlog.blogroll.entities");
     }
 
 
@@ -47,7 +47,7 @@ public class BlogrollModule {
 
     @Contribute(ComponentMessagesSource.class)
     public static void provideAppCatalogMessages(
-            @Value("/com/tapestry5inaction/tlog/blogroll/Messages.properties")
+            @Value("/com/tapestry5book/tlog/blogroll/Messages.properties")
             Resource resource,
             OrderedConfiguration<Resource> configuration) {
         configuration.add("Blogroll", resource, "before:AppCatalog");

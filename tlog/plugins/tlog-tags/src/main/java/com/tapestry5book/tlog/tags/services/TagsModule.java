@@ -23,7 +23,7 @@ public class TagsModule {
 
     @Contribute(ComponentClassResolver.class)
     public static void provideLibraryMapping(Configuration<LibraryMapping> configuration) {
-        configuration.add(new LibraryMapping("tlt", "com.tapestry5inaction.tlog.tags"));
+        configuration.add(new LibraryMapping("tlt", "com.tapestry5book.tlog.tags"));
     }
 
     @Contribute(SidebarBlockSource.class)

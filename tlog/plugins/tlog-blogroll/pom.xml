@@ -2,20 +2,20 @@
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.tapestry5inaction</groupId>
+    <groupId>com.tapestry5book</groupId>
     <artifactId>tlog-blogroll</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>Archive plugin for Tapestry Blog</name>
 
     <parent>
-        <groupId>com.tapestry5inaction</groupId>
+        <groupId>com.tapestry5book</groupId>
         <artifactId>tlog-plugins</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
     <dependencies>
         <dependency>
-            <groupId>com.tapestry5inaction</groupId>
+            <groupId>com.tapestry5book</groupId>
             <artifactId>tlog-core</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>

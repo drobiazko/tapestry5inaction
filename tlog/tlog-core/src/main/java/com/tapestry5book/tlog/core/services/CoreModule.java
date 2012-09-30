@@ -22,7 +22,7 @@ public class CoreModule {
 
     @Contribute(HibernateEntityPackageManager.class)
     public static void provideHibernateEntityPackages(Configuration<String> configuration) {
-        configuration.add("com.tapestry5inaction.tlog.core.entities");
+        configuration.add("com.tapestry5book.tlog.core.entities");
     }
 
     @Contribute(ValueEncoderSource.class)

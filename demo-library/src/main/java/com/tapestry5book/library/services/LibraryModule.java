@@ -9,6 +9,6 @@ public class LibraryModule {
 
     @Contribute(ComponentClassResolver.class)
     public static void provideRootPackage(Configuration<LibraryMapping> configuration) {
-        configuration.add(new LibraryMapping("lib", "com.tapestry5inaction.library"));
+        configuration.add(new LibraryMapping("lib", "com.tapestry5book.library"));
     }
 }

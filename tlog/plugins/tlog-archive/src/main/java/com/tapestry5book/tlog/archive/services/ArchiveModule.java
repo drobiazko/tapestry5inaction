@@ -23,7 +23,7 @@ public class ArchiveModule {
 
     @Contribute(ComponentClassResolver.class)
     public static void provideLibraryMapping(Configuration<LibraryMapping> configuration){
-        configuration.add(new LibraryMapping("tla", "com.tapestry5inaction.tlog.archive"));
+        configuration.add(new LibraryMapping("tla", "com.tapestry5book.tlog.archive"));
     }
 
     @Contribute(SidebarBlockSource.class)

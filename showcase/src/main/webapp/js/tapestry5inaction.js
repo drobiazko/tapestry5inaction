@@ -1,1 +1,0 @@
-var Tapestry5InAction = {}

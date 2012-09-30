@@ -115,7 +115,7 @@ public class AppModule {
 
     @Contribute(ComponentMessagesSource.class)
     public static void provideMessages(
-            @Value("/com/tapestry5inaction/Messages.properties")
+            @Value("/com/tapestry5book/Messages.properties")
             Resource resource,
             OrderedConfiguration<Resource> configuration) {
         configuration.add("Messages", resource);

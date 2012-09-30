@@ -19,7 +19,7 @@ public class LoginTest {
 
     @BeforeClass
     public void setUp() {
-        pageTester = new PageTester("com.tapestry5inaction", "app");
+        pageTester = new PageTester("com.tapestry5book", "app");
     }
 
 

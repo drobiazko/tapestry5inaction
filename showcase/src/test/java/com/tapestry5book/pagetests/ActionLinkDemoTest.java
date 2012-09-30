@@ -15,7 +15,7 @@ public class ActionLinkDemoTest {
 
     @BeforeClass
     public void setUp() {
-        pageTester = new PageTester("com.tapestry5inaction", "app", "src/main/webapp");
+        pageTester = new PageTester("com.tapestry5book", "app", "src/main/webapp");
     }
 
     @Test

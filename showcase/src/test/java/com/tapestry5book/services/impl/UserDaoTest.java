@@ -50,7 +50,7 @@ public class UserDaoTest extends TapestryTestCase {
         @Contribute(SymbolProvider.class)
         @ApplicationDefaults
         public static void provideApplicationDefaults(MappedConfiguration<String, String> configuration) {
-            configuration.add("tapestry.app-package", "com.tapestry5inaction");
+            configuration.add("tapestry.app-package", "com.tapestry5book");
         }
     }
 

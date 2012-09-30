@@ -64,9 +64,9 @@ public class AppModule {
 
     @Contribute(SkinManager.class)
     public static void provideSkins(MappedConfiguration<Skin, SkinResources> configuration,
-                                    @Value("/com/tapestry5inaction/tlog/skins/default.xml")
+                                    @Value("/com/tapestry5book/tlog/skins/default.xml")
                                     Resource defaultSkin,
-                                    @Value("/com/tapestry5inaction/tlog/skins/default.png")
+                                    @Value("/com/tapestry5book/tlog/skins/default.png")
                                     Resource defaultSkinPreview) {
         configuration.add(
                 SkinConstants.DEFAULT_SKIN,
